@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Note extends Model {}
+class Braindump extends Model {}
 
-Note.init(
+Braindump.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,11 +11,14 @@ Note.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        content: {
+            type: DataTypes.TEXT,
+        },
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'note',
+        modelName: 'braindump',
     }
 );
 
-module.exports = Note;
+module.exports = Braindump;
