@@ -17,7 +17,7 @@ router.get("/signup",(req,res)=>{
 //render home page
 
 router.get("/", (req, res)=>{
-    req.render("home")
+    res.render("home")
 })
 
 router.get("*", (req, res)=>{
