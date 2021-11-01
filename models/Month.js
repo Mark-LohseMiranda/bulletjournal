@@ -19,6 +19,7 @@ Month.init(
             type: DataTypes.INTEGER,
             allowNull:false,
         },
+    },{
         sequelize,
         timestamps: false,
         freezeTableName: true,
