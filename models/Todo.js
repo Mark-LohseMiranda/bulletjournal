@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Note extends Model {}
+class Todo extends Model {}
 
-Note.init(
+Todo.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,11 +11,14 @@ Note.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        content: {
+            type: DataTypes.STRING,
+        },
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'note',
+        modelName: 'todo',
     }
 );
 
-module.exports = Note;
+module.exports = Todo;
