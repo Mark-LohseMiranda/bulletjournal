@@ -14,6 +14,7 @@ Todo.init(
         content: {
             type: DataTypes.STRING,
         },
+    },{
         sequelize,
         freezeTableName: true,
         underscored: true,
