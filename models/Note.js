@@ -11,6 +11,7 @@ Note.init(
             primaryKey: true,
             autoIncrement: true,
         },
+    },{
         sequelize,
         freezeTableName: true,
         underscored: true,

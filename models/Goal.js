@@ -14,6 +14,7 @@ Goal.init(
         content: {
             type: DataTypes.TEXT,
         },
+    },{
         sequelize,
         freezeTableName: true,
         underscored: true,

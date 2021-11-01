@@ -18,6 +18,7 @@ Schedule.init(
             type:DataTypes.INTEGER,
 
         },
+    },{
         sequelize,
         freezeTableName: true,
         underscored: true,
