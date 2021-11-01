@@ -10,11 +10,11 @@ const loginHandler = async (event)=> {
             body: JSON.stringify({email,password}),
             headers: {'Content-Type' : 'application/json'},
         });
-    }
-    if(resp.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert(resp.statusText);
+        if(resp.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert(resp.statusText);
+        }
     }
 };
 
