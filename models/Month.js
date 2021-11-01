@@ -11,20 +11,13 @@ Month.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        month: {
+        month_name: {
             type: DataTypes.STRING,
             allowNull:false,
         },
         days: {
             type: DataTypes.INTEGER,
             allowNull:false,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
         },
         sequelize,
         timestamps: false,
