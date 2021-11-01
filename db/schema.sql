@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS bullet_db;
+CREATE DATABASE bullet_db;
