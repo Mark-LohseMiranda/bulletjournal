@@ -1,3 +1,4 @@
+
 const signupForm = document.querySelector("#signup-form");
 
 //gathers form info and sends it to user controller
@@ -35,3 +36,4 @@ signupForm.addEventListener("submit",(e)=>{
         }
     })
 })
+
