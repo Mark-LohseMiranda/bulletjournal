@@ -5,15 +5,16 @@ const includeSchedule = document.querySelector('#addSchedule');
 const includeToDo = document.querySelector('#addToDo');
 const includeInspo = document.querySelector('#addInspo');
 const includeDump = document.querySelector('#addDump');
-
+const moment = require('moment');
 
 
 addPage.addEventListener('submit', async (event) => {
     event.preventDefault();
+    const day = moment().format('D')
     let note_id;
     fetch('/api/notes', {
         method: 'POST',
-        body: JSON.stringify(),
+        body: JSON.stringify({day}),
         headers: {'Content-Type' : 'application/json'},
     }).then((response) => response.json())
     .then((notes)=> {
@@ -51,7 +52,8 @@ addPage.addEventListener('submit', async (event) => {
                 alert(responseDump.statusText);
             } 
         };
-        // document.location.replace('/note');
+        //inspo quote
+        document.location.replace('/note');
     
 
 });

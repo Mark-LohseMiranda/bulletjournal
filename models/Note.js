@@ -11,6 +11,10 @@ Note.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        day: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+        }
     },{
         sequelize,
         freezeTableName: true,
