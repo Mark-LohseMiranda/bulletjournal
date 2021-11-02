@@ -24,38 +24,33 @@
             <li class="uk-nav-header">ACCOUNT</li>
             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Upgrade</a>
             </li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account
-                    Settings</a></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
             <li class="uk-nav-divider"></li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
-
     </div>
 </div>
 
 <div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
-
     <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
     <div uk-sortable="handle: .uk-card"
         class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
+        
+        <div id="scheduler">
+            {{> scheduler}}
+        </div>
 
+        <div id="brainDump">
+            {{> braindump}}
+        </div>
 
-        {{#if addSchedule}}
-        {{> schedulerPartial}}
-        {{/if}}
+        <div id="toDo">
+            {{> todo}}
+        </div>
 
-        {{#if addDump}}
-        {{> brainDumpPartial}}
-        {{/if}}
-
-        {{#if addToDo}}
-        {{> todoPartial}}
-        {{/if}}
-
-        {{#if addInspo}}
-        {{> inspoPartial}}
-        {{/if}}
-
+        <div id="inspo">
+            {{> inspo}}
+        </div>
     </div>
 </div>

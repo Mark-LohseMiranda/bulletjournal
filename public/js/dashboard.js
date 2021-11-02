@@ -53,6 +53,10 @@ const pageAdd = async (event) => {
         alert(response.statusText);
     }
 
+addPage.addEventListener('click', (e) => {
+  document.location.replace('/note')
+  
+})
 
 }
 

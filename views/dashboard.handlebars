@@ -1,9 +1,7 @@
 <div class='uk-flex-inline'>
     <div class="uk-card uk-card-default uk-card-body uk-width-1-3@s">
         <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <li class="uk-active"><a href="#">New Page</a></li>
-            <li class="uk-nav-header">PAGES</li>
-            <li class="uk-active newPage"><a href="#modal" uk-toggle>New Page</a></li>
+            <li class="uk-active"><a href="#modal" uk-toggle>New Page</a></li>
             <li class="uk-nav-header">PAGES</li>
             <li class='newPage'><a href="#modal" uk-toggle>Add a Page</a></li>
             <li><a href="#">New Page From Template</a></li>
@@ -20,7 +18,7 @@
             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Upgrade</a></li>
             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
             <li class="uk-nav-divider"></li>
-            <li><a href="#" id='logout'><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
     </div>
@@ -106,7 +104,7 @@
 
         <p class="uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button" id='confirmPageAdd'>Continue</button>
+            <a href="/note"><button class="uk-button uk-button-primary" type="button" id='confirmPageAdd'>Continue</button></a>
         </p>
     </div>
 </div>
