@@ -1,7 +1,7 @@
 const loginHandler = async (event)=> {
     event.preventDefault();
 
-    const email = document.querySelector('#username').valuse.trim();
+    const email = document.querySelector('#username').value.trim();
     const password = document.querySelector('#password').value.trim();
 
     if(password && email) {
@@ -18,4 +18,4 @@ const loginHandler = async (event)=> {
     }
 };
 
-document.querySelector('.login-form').addEventListener('subit', loginHandler);
+document.querySelector('.login-form').addEventListener('submit', loginHandler);
