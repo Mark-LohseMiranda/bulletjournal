@@ -11,13 +11,57 @@ Schedule.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        content: {
+        content8am: {
             type: DataTypes.TEXT,
             defaultValue: ' ',
         },
-        time_of_day:{
-            type:DataTypes.INTEGER,
-
+        content9am: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content10am: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content11am: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content12pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content1pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content2pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content3pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content4pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content5pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content6pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content7pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
+        },
+        content8pm: {
+            type: DataTypes.TEXT,
+            defaultValue: ' ',
         },
     },{
         sequelize,
