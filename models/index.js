@@ -1,21 +1,21 @@
 const User = require('./User');
 const Goal = require('./Goal');
 const Braindump = require('./Braindump');
-const Month = require('./Month');
+// const Month = require('./Month');
 const Note = require('./Note');
 const Post_it = require('./Post_it');
 const Reminder = require('./Reminder');
 const Schedule = require('./Schedule');
 const Todo = require('./Todo');
 
-User.hasMany(Month, {
-    foreignKey: 'user_id',
-    onDelete:'CASCADE'
-});
+// User.hasMany(Month, {
+//     foreignKey: 'user_id',
+//     onDelete:'CASCADE'
+// });
 
-Month.belongsTo(User, {
-    foreignKey:'user_id'
-});
+// Month.belongsTo(User, {
+//     foreignKey:'user_id'
+// });
 
 User.hasMany(Note, {
     foreignKey: 'user_id',
@@ -26,14 +26,14 @@ Note.belongsTo(User, {
     foreignKey:'user_id'
 });
 
-Month.hasMany(Note, {
-    foreignKey: 'month_id',
-    onDelete:'CASCADE'
-});
+// Month.hasMany(Note, {
+//     foreignKey: 'month_id',
+//     onDelete:'CASCADE'
+// });
 
-Note.belongsTo(Month, {
-    foreignKey:'month_id'
-});
+// Note.belongsTo(Month, {
+//     foreignKey:'month_id'
+// });
 
 Note.hasMany(Goal, {
     foreignKey: 'note_id',
@@ -89,4 +89,4 @@ Todo.belongsTo(Note, {
     foreignKey:'note_id'
 });
 
-module.exports = {User,Month,Note,Schedule,Reminder,Todo,Post_it,Goal, Braindump};
+module.exports = {User,Note,Schedule,Reminder,Todo,Post_it,Goal, Braindump};
