@@ -8,10 +8,15 @@ const pageArchive = document.querySelector('pageArchive');
 
 // Handlebars.registerPartial('schedulerPartial')
 
+// function pageAdd() {
+//     preventDefault();
 
 addPage.addEventListener('click', (e) => {
   document.location.replace('/note')
   
 })
+
+
+// }
 
 // addPage.addEventListener('click', pageAdd)
