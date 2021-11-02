@@ -1,5 +1,5 @@
 const todoItem = document.querySelector('#todo-item')
-const todoList = document.querySelector('todo-list')
+const todoList = document.querySelector('#todo-list')
 
 
 todoItem.addEventListener('click', (e) => {
