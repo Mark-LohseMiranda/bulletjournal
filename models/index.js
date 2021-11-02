@@ -50,7 +50,7 @@ Note.hasMany(Braindump, {
     onDelete:'CASCADE'
 });
 
-Goal.belongsTo(Braindump, {
+Braindump.belongsTo(Note, {
     foreignKey:'note_id'
 });
 
