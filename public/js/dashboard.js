@@ -1,22 +1,17 @@
-import { Calendar } from '@fullcalendar/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
+const addPage = document.querySelector('#confirmPageAdd')
+const addList = document.querySelector('#newList')
+const pageArchive = document.querySelector('pageArchive');
+const includeSchedule = document.querySelector('#addSchedule').value()
+const includeToDo = document.querySelector('#addToDo').value()
+const includeInspo = document.querySelector('#addInspo').value()
+const includeDump = document.querySelector('#addDump').value()
 
-let calendar = new Calendar(calendarEl, {
-  plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
-  initialView: 'dayGridMonth',
-  headerToolbar: {
-    left: 'prev,next today',
-    center: 'title',
-    right: 'dayGridMonth,timeGridWeek,listWeek'
-  }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth'
-    });
-    calendar.render();
-  });
+function pageAdd() {
+    preventDefault();
+
+
+
+}
+
+addPage.addEventListener('click', pageAdd)
