@@ -1,24 +1,29 @@
 <div class='uk-flex-inline'>
-        <div class="uk-card uk-card-default uk-card-body uk-width-1-3@s">
-            <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-                <li class="uk-active"><a href="#">New Page</a></li>
-                <li class="uk-nav-header">PAGES</li>
-                    <li><a href="#">Add a Page</a></li>
-                    <li><a href="#">New Page From Template</a></li>
-                    <li><a href="#">New Long-Term Page</a></li>
-                    <li><a href="#">View All Daily Pages</a></li>
-                    <li><a href="#">View All Long-Term Pages</a></li>
-                <li class="uk-nav-header">TEMPLATES</li>
-                    <li><a href="#">View Your Templates</a></li>
-                    <li><a href="#">Add A Template</a></li>
-                    <li><a href="#">Example Templates</a></li>
-                <li class="uk-nav-header">ACCOUNT</li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Upgrade</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
-                <li class="uk-nav-divider"></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a></li>
-            </ul>
-        </div>
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-3@s">
+        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+            <li class="uk-active"><a href="#">New Page</a></li>
+            <li class="uk-nav-header">PAGES</li>
+            <li class="uk-active newPage"><a href="#modal" uk-toggle>New Page</a></li>
+            <li class="uk-nav-header">PAGES</li>
+            <li class='newPage'><a href="#modal" uk-toggle>Add a Page</a></li>
+            <li><a href="#">New Page From Template</a></li>
+            <li id='newList'><a href="#">New Long-Term Page</a></li>
+            <li id='pageArchive'><a href="#">View All Daily Pages</a></li>
+            <li id='listArchive'><a href="#">View All Long-Term Pages</a></li>
+
+            <li class="uk-nav-header">TEMPLATES</li>
+
+            <li><a href="#">View Your Templates</a></li>
+            <li id='newTemplate'><a href="#">Add A Template</a></li>
+            <li><a href="#">Example Templates</a></li>
+            <li class="uk-nav-header">ACCOUNT</li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Upgrade</a></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="#" id='logout'><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            </li>
+        </ul>
+    </div>
     <div class="uk-container uk-flex-2">
         <h1 class="uk-heading-line uk-text-center"><span>November</span></h1>
         <table class="uk-table uk-table-middle uk-table-striped uk-table-divider">
@@ -81,6 +86,28 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<!-- Modal for template options for new page -->
+
+<div id="modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Let's add a new note! What would you like included?</h2>
+        <form>
+            <label><input class="uk-checkbox" type="checkbox" name="checkbox1" id='addSchedule'>Scheduler</label><br>
+            <label><input class="uk-checkbox" type="checkbox" name="checkbox2" id='addToDo'>To Do List</label><br>
+            <label><input class="uk-checkbox" type="checkbox" name="checkbox3" id='addInspo'>Insperational
+                Quote</label><br>
+            <label><input class="uk-checkbox" type="checkbox" name="checkbox4" id='addDump'>Brain Dump</label><br>
+        </form>
+
+
+
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button" id='confirmPageAdd'>Continue</button>
+        </p>
     </div>
 </div>
 
