@@ -32,11 +32,16 @@
     </div>
 </div>
 
+<div class='uk-align-right uk-margin-xlarge-right'>
+    <button id='saveData' class="uk-button uk-button-default">Save</button>
+    <button id='deleteNote' class="uk-button uk-button-default">Delete</button>
+</div>
+
 <div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
     <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
     <div uk-sortable="handle: .uk-card"
         class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
-        
+
         <div id="scheduler">
             {{> scheduler}}
         </div>
