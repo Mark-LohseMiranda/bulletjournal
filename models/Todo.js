@@ -13,6 +13,7 @@ Todo.init(
         },
         content: {
             type: DataTypes.STRING,
+            defaultValue: ' ',
         },
     },{
         sequelize,

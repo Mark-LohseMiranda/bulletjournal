@@ -13,6 +13,7 @@ Braindump.init(
         },
         content: {
             type: DataTypes.TEXT,
+            defaultValue: ' ',
         },
     },{
         sequelize,

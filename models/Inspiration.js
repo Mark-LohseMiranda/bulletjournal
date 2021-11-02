@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Schedule extends Model {}
+class Inspiration extends Model {}
 
-Schedule.init(
+Inspiration.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,16 +15,12 @@ Schedule.init(
             type: DataTypes.TEXT,
             defaultValue: ' ',
         },
-        time_of_day:{
-            type:DataTypes.INTEGER,
-
-        },
     },{
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'schedule',
+        modelName: 'inspriation',
     }
 );
 
-module.exports = Schedule;
+module.exports = Inspiration;

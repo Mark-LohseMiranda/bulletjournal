@@ -11,7 +11,7 @@ const moment = require('moment');
 
 addPage.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const response = await fetch('/api/note', {
+    const response = await fetch('/api/notes', {
         method: 'POST',
         body: JSON.stringify(),
         headers: {'Content-Type' : 'application/json'},
