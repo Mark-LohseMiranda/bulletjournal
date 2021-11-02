@@ -24,7 +24,6 @@ router.post("/", async (req, res) => {
   try {
     const note = await Note.create({
       user_id: req.session.user.id,
-      month_id: req.body.month_id,
     });
     res.status(200).json(note);
   } catch (err) {

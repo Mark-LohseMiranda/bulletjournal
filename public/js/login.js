@@ -1,21 +1,24 @@
-const loginHandler = async (event)=> {
-    event.preventDefault();
+const loginForm = document.querySelector(".login-form");
 
-    const email = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
+//send form info to user controller to login
 
-    if(password && email) {
-        const resp = await fetch('/api/user/login', {
-            method:'POST',
-            body: JSON.stringify({email,password}),
-            headers: {'Content-Type' : 'application/json'},
-        });
-        if(resp.ok) {
-            document.location.replace('/dashboard');
-        } else {
-            alert(resp.statusText);
-        }
+loginForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const userObj={
+        email:document.querySelector("#email").value,
+        password:document.querySelector("#password").value,
     }
-};
-
-document.querySelector('.login-form').addEventListener('submit', loginHandler);
+    fetch("/api/users/login",{
+        method:"POST",
+        body:JSON.stringify(userObj),
+        headers:{
+            "Content-Type":"application/json"
+        }
+    }).then(res=>{
+        if(res.ok){
+           location.href = "/dashboard"
+        } else {
+            alert("Wrong email and/or password")
+        }
+    })
+})
