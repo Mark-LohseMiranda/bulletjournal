@@ -21,17 +21,12 @@ todoItem.addEventListener('click', (e) => {
     li.appendChild(checkLabel)
 
     todoList.appendChild(li)
-
-})
-
-
+});
 
 // retrieves a quote and puts it on the top of the main page for now
-
 // once pages/db start to take shape this needs to be altered to
 // place the quote into a table
 const quote = document.querySelector("#randomQuote");
-
 function getQuote() {
   fetch("https://type.fit/api/quotes")
     .then(function (response) {
@@ -50,5 +45,4 @@ function getQuote() {
                 ${author} </div></div></div>`;
     });
 }
-
 getQuote();

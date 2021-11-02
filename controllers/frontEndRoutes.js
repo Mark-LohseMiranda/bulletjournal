@@ -24,4 +24,8 @@ router.get("/dashboard", (req,res)=>{
     res.render("dashboard")
 })
 
+router.get("/note", (req,res) => {
+    res.render("note")
+})
+
 module.exports = router;
