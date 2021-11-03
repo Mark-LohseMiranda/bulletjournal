@@ -20,28 +20,6 @@ router.get("/", (req, res) => {
     });
 });
 
-//get a user and there associated notes
-
-router.get("/:id", (req, res) => {
-  User.findOne({
-    where: {
-      id: req.params.id,
-    },
-    include: [Note],
-  })
-    .then((data) => {
-      if (data) {
-        res.json(data);
-      } else {
-        res.status(404).json({ err: "no such user found!" });
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({ err: "an error occurred" });
-    });
-});
-
 //create user
 
 router.post("/", (req, res) => {
@@ -106,6 +84,28 @@ router.post("/login", (req, res) => {
 router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
+});
+
+//get a user and there associated notes
+
+router.get("/:id", (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such user found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
 });
 
 //delete a user
