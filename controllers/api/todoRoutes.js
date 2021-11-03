@@ -44,7 +44,16 @@ router.post("/", (req, res) => {
     return res.status(403).json({ err: "not logged in" });
   }
   Todo.create({
-    content: req.body.content,
+    content1: req.body.content1,
+    content2: req.body.content2,
+    content3: req.body.content3,
+    content4: req.body.content4,
+    content5: req.body.content5,
+    content6: req.body.content6,
+    content7: req.body.content7,
+    content8: req.body.content8,
+    content9: req.body.content9,
+    content10: req.body.content10,
     note_id: req.body.note_id,
   })
     .then((newTodo) => {
@@ -70,7 +79,16 @@ router.put("/:id", (req, res) => {
         }
         Todo.update(
           {
-            content: req.body.content,
+            content1: req.body.content1,
+            content2: req.body.content2,
+            content3: req.body.content3,
+            content4: req.body.content4,
+            content5: req.body.content5,
+            content6: req.body.content6,
+            content7: req.body.content7,
+            content8: req.body.content8,
+            content9: req.body.content9,
+            content10: req.body.content10,
           },
           {
             where: {
