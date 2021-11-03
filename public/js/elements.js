@@ -1,4 +1,6 @@
 const todoItem = document.querySelector('#todo-item')
+const goalAdd = document.querySelector('#goal-item');
+const goalList = document.querySelector('goal-list')
 
 if (todoItem) {
 todoItem.addEventListener('click', (e) => {
@@ -22,6 +24,36 @@ todoItem.addEventListener('click', (e) => {
     todoList.appendChild(li)
 });
 }
+
+const goalAdd = document.querySelector('#goal-item');
+const goalList = document.querySelector('goal-list')
+
+if (goalAdd) {
+goalAdd.addEventListener('click', (e) => {
+  e.preventDefault();
+  const li = document.createElement('li');
+  const goalLabel = document.createElement('label');
+  const starSpan = document.createElement('span')
+  const inputField = document.createElement('input')
+
+  starSpan.setAttribute('uk-icon', "icon: star");
+
+  inputField.setAttribute('class', "uk-input uk-form-blank uk-form-width-medium");
+  inputField.setAttribute('type', 'text')
+  inputField.setAttribute('placeholder', "Enter an item...");
+
+  goalLabel.appendChild(checkInput);
+  goalLabel.appendChild(inputField)
+  li.appendChild(goalLabel)
+
+  goalList.appendChild(li)
+
+})
+}
+
+
+
+
 // retrieves a quote and puts it on the top of the main page for now
 // once pages/db start to take shape this needs to be altered to
 // place the quote into a table
