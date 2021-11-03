@@ -35,23 +35,29 @@
 
 {{!-- Theme changer pop up --}}
 <div id="theme-modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-        <h2 class="uk-modal-title">Themes</h2>
-        <div>
-            <label><input class="uk-radio" type="radio" name="radio1" id='default-theme'><span
-                    class="uk-icon uk-icon-image"
-                    style="background-image: url(images/defaulttheme.png);"></span></label>
-            <label><input class="uk-radio" type="radio" name="radio1" id='green_theme'><span
-                    class="uk-icon uk-icon-image" style="background-image: url(images/greentheme.png);"></span></label>
-            <label><input class="uk-radio" type="radio" name="radio1" id='natural-theme'><span
-                    class="uk-icon uk-icon-image"
-                    style="background-image: url(images/naturaltheme.png);"></span></label>
-            <label><input class="uk-radio" type="radio" name="radio1" id='soft-theme'><span
-                    class="uk-icon uk-icon-image" style="background-image: url(images/softtheme.png);"></span></label>
+    <div class="uk-modal-dialog uk-modal-body uk-text-center">
+        <h2 class="uk-modal-title uk-align-center">Themes</h2>
+        <div class='uk-flex uk-flex-around'>
+            <label><span class="uk-icon uk-icon-image"
+                    style="background-image: url(/images/defaulttheme.png);"></span><br><input class="uk-radio"
+                    type="radio" name="radio1" id='default-theme'>Default</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/greentheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='green_theme'>
+                Soft Green</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/naturaltheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='natural-theme'>
+                Natural</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/softtheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='soft-theme'>
+                Soft Default</label>
         </div>
+        <br><br>
 
         <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-        <button class="uk-button uk-button-primary" type="submit" id='theme-switch'>Save</button>
+        <button class="uk-button uk-button-primary uk-modal-close" type="submit" id='theme-switch'>Save</button>
         </p>
     </div>
 </div>

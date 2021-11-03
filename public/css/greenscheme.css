@@ -27,7 +27,7 @@ html {
   }
   a,
   .uk-link {
-    color: var(--lightcolor);
+    color: var(--mediumcolor);
     text-decoration: none;
     cursor: pointer;
   }
@@ -236,6 +236,12 @@ html {
     background: var(--lightcolor);
     color: #ffffff;
     text-shadow: none;
+  }
+  #sidebar {
+    background: #fafafa;
+  }
+  #sidebar .uk-nav-header {
+    color: var(--darkcolor)
   }
 
   progress {
