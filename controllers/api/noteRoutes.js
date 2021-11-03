@@ -36,11 +36,11 @@ router.post("/", async (req, res) => {
 
 //find a single note
 
-router.get("/:id", async (req, res) => {
+router.get("/:num", async (req, res) => {
   try {
   const note = await Note.findOne({
     where: {
-      id: req.params.id,
+      day: req.params.num,
     },
     include: [User, Braindump, Goal, Inspiration, Post_it, Reminder, Schedule, Todo],
   });
