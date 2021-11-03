@@ -22,9 +22,22 @@
             </li>
         </ul>
     </div>
-    {{braindump.content}}
-    {{schedule.content4pm}}
-    {{todo.content}}
-    {{inspiration.content}}
+
+
+    {{#if braindumps.[0].content}}
+        {{> pastBraindump}}
+    {{/if}}
+
+    {{#if todos.[0].content}}
+        {{> pastTodo}}
+    {{/if}}
+
+    {{#if inspirations.[0].content}}
+        {{> pastInspo}}
+    {{/if}}
+
+    {{#if scheduler.[0].content}}
+        {{> pastScheduler}}
+    {{/if}}
 </div>
 
