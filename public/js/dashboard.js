@@ -32,15 +32,15 @@ addPage.addEventListener("submit", async (event) => {
         }
       }
       if (includeToDo.checked) {
-        const responseTodo = await fetch("/api/todos", {
-          method: "POST",
-          body: JSON.stringify({ note_id }),
-          headers: { "Content-Type": "application/json" },
-        });
-        if (!responseTodo.ok) {
-          alert(responseTodo.statusText);
+          const responseTodo = await fetch("/api/todos", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responseTodo.ok) {
+            alert(responseTodo.statusText);
+          }
         }
-      }
       if (includeDump.checked) {
         const responseDump = await fetch("/api/braindumps", {
           method: "POST",
