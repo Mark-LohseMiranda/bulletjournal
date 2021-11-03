@@ -158,15 +158,42 @@ const seed = async () => {
     ])
     const todoData = await Todo.bulkCreate([
         {
-            content: "This is todo content",
+            content1: "This is todo content1",
+            content2: "This is todo content2",
+            content3: "This is todo content3",
+            content4: "This is todo content4",
+            content5: "This is todo content5",
+            content6: "This is todo content6",
+            content7: "This is todo content7",
+            content8: "This is todo content8",
+            content9: "This is todo content9",
+            content10: "This is todo content10",
             note_id: 1
         },
         {
-            content: "This is todo content",
+            content1: "This is todo content1",
+            content2: "This is todo content2",
+            content3: "This is todo content3",
+            content4: "This is todo content4",
+            content5: "This is todo content5",
+            content6: "This is todo content6",
+            content7: "This is todo content7",
+            content8: "This is todo content8",
+            content9: "This is todo content9",
+            content10: "This is todo content10",
             note_id: 2
         },
         {
-            content: "This is todo content",
+            content1: "This is todo content1",
+            content2: "This is todo content2",
+            content3: "This is todo content3",
+            content4: "This is todo content4",
+            content5: "This is todo content5",
+            content6: "This is todo content6",
+            content7: "This is todo content7",
+            content8: "This is todo content8",
+            content9: "This is todo content9",
+            content10: "This is todo content10",
             note_id: 3
         },
     ])
