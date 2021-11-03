@@ -5,7 +5,7 @@ const includeSchedule = document.querySelector("#addSchedule");
 const includeToDo = document.querySelector("#addToDo");
 const includeInspo = document.querySelector("#addInspo");
 const includeDump = document.querySelector("#addDump");
-// const moment = require('moment');
+
 
 if (addPage) {
 addPage.addEventListener("submit", async (event) => {
