@@ -13,9 +13,9 @@ const timeEighteen = document.querySelector('#timeEighteen');
 const timeTwenty = document.querySelector('#timeTwenty');
 const timeNineteen = document.querySelector('#timeNineteen');
 const braindumpText = document.querySelector('#braindumpText');
-const moment = require('moment');
 const toDoValue = document.querySelector('.toDoValue');
 const path= require('path');
+const moment = require('moment');
 const randomQuote = document.querySelector('#randomQuote')
 
 saveBtn.addEventListener('click',(event) => {
