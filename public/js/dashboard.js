@@ -10,7 +10,8 @@ const includeDump = document.querySelector("#addDump");
 addPage.addEventListener("submit", async (event) => {
   event.preventDefault();
   let note_id;
-  const day = moment().format("D");
+  const theday = moment().toObject();
+  const day = parseInt(theday.date);
   fetch("/api/notes", {
     method: "POST",
     body: JSON.stringify({ day }),
@@ -52,6 +53,16 @@ addPage.addEventListener("submit", async (event) => {
         }
       }
       //inspo quote
-      // document.location.replace('/note');
+      if (includeInspo.checked) {
+        const responseInspo = await fetch("/api/inspirations", {
+          method: "POST",
+          body: JSON.stringify({ note_id }),
+          headers: { "Content-Type": "application/json" },
+        });
+        if (!responseInspo.ok) {
+          alert(responseInspo.statusText);
+        }
+      }
+      document.location.replace('/note');
     });
 });

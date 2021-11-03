@@ -16,6 +16,7 @@ const braindumpText = document.querySelector('#braindumpText');
 const moment = require('moment');
 const toDoValue = document.querySelector('.toDoValue');
 const path= require('path');
+const randomQuote = document.querySelector('#randomQuote')
 
 saveBtn.addEventListener('click',(event) => {
     event.preventDefault();
@@ -30,6 +31,7 @@ saveBtn.addEventListener('click',(event) => {
         const scheduleId = data.schedules.id
         const braindumpId = data.braindumps.id        
         const todoId = data.todos.id
+        const inspoId = data.inspirations.id;
         
         const contentData = {
             day:day,
@@ -75,7 +77,13 @@ saveBtn.addEventListener('click',(event) => {
             method:'PUT',
             body: JSON.stringify({content1,content2,content3,content4,content5,content6,content7,content8,content9,content10,day}),
             headers:{'Content-Type' : 'application/json'},
-        }).catch(err=>console.log(err))
+        }).catch(err=>console.log(err));
+        content = randomQuote.value();
+        fetch(path.join('/api/inspirations/',inspoId), {
+            method: 'PUT',
+            body:JSON.stringify({content}),
+            headers:{'Content-Type' : 'application/json'},
+        }).catch(err=>console.log(err));
     })
 })
     
