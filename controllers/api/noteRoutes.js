@@ -44,6 +44,7 @@ router.post("/", (req, res) => {
   }
   Note.create({
     user_id: req.session.user.id,
+    day: req.body.day
   })
     .then((newNote) => {
       res.status(200).json(newNote);
@@ -57,7 +58,7 @@ router.post("/", (req, res) => {
 //find a single note
 
 router.get("/:day", (req, res) => {
-  Note.findOne({
+  Note.findAll({
     where: {
       day: req.params.day,
       user_id: req.session.user.id
