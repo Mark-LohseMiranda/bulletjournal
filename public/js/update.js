@@ -14,8 +14,6 @@ const timeTwenty = document.querySelector('#timeTwenty');
 const timeNineteen = document.querySelector('#timeNineteen');
 const braindumpText = document.querySelector('#braindumpText');
 const toDoValue = document.querySelector('.toDoValue');
-const path= require('path');
-const moment = require('moment');
 const randomQuote = document.querySelector('#randomQuote')
 
 saveBtn.addEventListener('click',(event) => {
@@ -48,14 +46,14 @@ saveBtn.addEventListener('click',(event) => {
             content7pm : timeNineteen.value(),
             content8pm : timeTwenty.value(),
         }
-        fetch(path.join('/api/schedules/',scheduleId), {
+        fetch(join('/api/schedules/',scheduleId), {
             method:'PUT',
             body: JSON.stringify(contentData),
             headers:{'Content-Type' : 'application/json'},
         }).catch(err => console.log(err))
         // update braindump
         let content = braindumpText.value();
-        fetch(path.join('/api/braindumps/',braindumpId), {
+        fetch(join('/api/braindumps/',braindumpId), {
             method:'PUT',
             body: JSON.stringify({content,day}),
             headers:{'Content-Type' : 'application/json'},
@@ -72,13 +70,13 @@ saveBtn.addEventListener('click',(event) => {
         const content8 = toDoValue[7].value() || " ";
         const content9 = toDoValue[8].value() || " ";
         const content10 = toDoValue[9].value() || " ";
-        fetch(path.join('/api/todos/',todoId), {
+        fetch(join('/api/todos/',todoId), {
             method:'PUT',
             body: JSON.stringify({content1,content2,content3,content4,content5,content6,content7,content8,content9,content10,day}),
             headers:{'Content-Type' : 'application/json'},
         }).catch(err=>console.log(err));
         content = randomQuote.value();
-        fetch(path.join('/api/inspirations/',inspoId), {
+        fetch(join('/api/inspirations/',inspoId), {
             method: 'PUT',
             body:JSON.stringify({content}),
             headers:{'Content-Type' : 'application/json'},
