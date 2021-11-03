@@ -11,12 +11,12 @@ router.get("/", (req, res) => {
       if (dbUsers.length) {
         res.json(dbUsers);
       } else {
-        res.status(404).json({ message: "No users found!" });
+        res.status(404).json({ err: "No users found!" });
       }
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ message: "an error occured", err: err });
+      res.status(500).json({ err: "an error occurred" });
     });
 });
 
@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ message: "an error occured", err: err });
+      res.status(500).json({ err: "an error occurred" });
     });
 });
 
@@ -47,25 +47,35 @@ router.post("/login", (req, res) => {
   })
     .then((foundUser) => {
       if (!foundUser) {
-        req.session.destroy();
-        res.status(401).json({ message: "incorrect email or password" });
+        return req.session.destroy(() => {
+          return res.status(401).json({ err: "invalid email or password" });
+        });
+      }
+      if (!req.body.password) {
+        return req.session.destroy(() => {
+          return res.status(401).json({ err: "invalid email or password" });
+        });
+      }
+      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+        req.session.user = {
+          id: foundUser.id,
+          email: foundUser.email,
+          username: foundUser.username,
+        };
+        return res.json({
+          id: foundUser.id,
+          username: foundUser.username,
+          email: foundUser.email,
+        });
       } else {
-        if (bcrypt.compareSync(req.body.password, foundUser.password)) {
-          req.session.user = {
-            username: foundUser.username,
-            email: foundUser.email,
-            id: foundUser.id,
-          };
-          res.json(foundUser);
-        } else {
-          req.session.destroy();
-          res.status(401).json({ message: "incorrect email or password" });
-        }
+        return req.session.destroy(() => {
+          return res.status(401).json({ err: "invalid email or password" });
+        });
       }
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json({ err: "an error occurred" });
     });
 });
 
@@ -79,13 +89,35 @@ router.get("/logout", (req, res) => {
 //delete a user
 
 router.delete("/:id", (req, res) => {
-    User.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then((delUser) => {
-      res.json(delUser);
+  if (!req.session.user) {
+    return res.status(403).json({ err: "not logged in" });
+  }
+  User.findByPk(req.params.id)
+    .then((found) => {
+      if (found.id !== req.session.user.id) {
+        return res.status(403).json({ err: "not your account" });
+      }
+      User.destroy({
+        where: {
+          id: req.params.id,
+        },
+      })
+        .then((delUser) => {
+          if (delUser) {
+            res.json(delUser);
+          } else {
+            res.status(404).json({ err: "no user found" });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json({ err: "an error occurred" });
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
     });
-  });
-  
-  module.exports = router;
+});
+
+module.exports = router;
