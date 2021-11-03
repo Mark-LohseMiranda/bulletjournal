@@ -15,6 +15,28 @@ router.get("/", (req, res) => {
     });
 });
 
+//get a schedule post and it's associated note
+
+router.get("/:id", (req, res) => {
+  Schedule.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such schedule found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
+});
+
 //create a schedule post
 
 router.post("/", (req, res) => {

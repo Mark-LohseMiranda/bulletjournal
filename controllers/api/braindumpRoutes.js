@@ -15,6 +15,28 @@ router.get("/", (req, res) => {
     });
 });
 
+//get a braindump post and it's associated note
+
+router.get("/:id", (req, res) => {
+  Braindump.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such braindump found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
+});
+
 //create a braindump post
 
 router.post("/", (req, res) => {

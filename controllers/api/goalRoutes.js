@@ -13,6 +13,28 @@ router.get("/", (req, res) => {
   })
 });
 
+//get a goal post and it's associated note
+
+router.get("/:id", (req, res) => {
+  Goal.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such goal found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
+});
+
 //create a goal post
 
 router.post("/", (req, res) => {

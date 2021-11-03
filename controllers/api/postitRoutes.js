@@ -15,6 +15,28 @@ router.get("/", (req, res) => {
     });
 });
 
+//get a post-it post and it's associated note
+
+router.get("/:id", (req, res) => {
+  Post_it.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such post-it found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
+});
+
 //create a postit post
 
 router.post("/", (req, res) => {

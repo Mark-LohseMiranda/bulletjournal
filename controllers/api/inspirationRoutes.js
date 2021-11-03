@@ -15,6 +15,28 @@ router.get("/", (req, res) => {
     });
 });
 
+//get a inspiration post and it's associated note
+
+router.get("/:id", (req, res) => {
+  Inspiration.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such inspiration found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
+});
+
 //create a inspiration post
 
 router.post("/", (req, res) => {

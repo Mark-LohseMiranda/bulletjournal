@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { User } = require("../../models");
+const { User, Note } = require("../../models");
 const bcrypt = require("bcrypt");
 
 //get all users
@@ -12,6 +12,28 @@ router.get("/", (req, res) => {
         res.json(dbUsers);
       } else {
         res.status(404).json({ err: "No users found!" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
+});
+
+//get a user and there associated notes
+
+router.get("/:id", (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Note],
+  })
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).json({ err: "no such user found!" });
       }
     })
     .catch((err) => {
