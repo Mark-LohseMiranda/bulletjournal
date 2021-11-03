@@ -36,7 +36,10 @@ router.get('/day/:num', (req, res) => {
         return res.redirect("/login")
     };
     Note.findOne({
-        where:{day: req.params.num},
+        where:{
+          day: req.params.num,
+          user_id:req.session.user.id
+        },
         include:[User, Braindump, Inspiration, Todo, Schedule]
     }).then(noteData=>{
         const hbsNote = noteData.get({plain:true});
