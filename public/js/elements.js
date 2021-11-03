@@ -12,7 +12,7 @@ todoItem.addEventListener('click', (e) => {
     checkInput.setAttribute('class',"uk-checkbox");
     checkInput.setAttribute('type','checkbox');
 
-    inputField.setAttribute('class',"uk-input uk-form-blank uk-form-width-medium" );
+    inputField.setAttribute('class',"uk-input uk-form-blank uk-form-width-medium toDoValue" );
     inputField.setAttribute('type','text')
     inputField.setAttribute('placeholder',"Enter an item...");
 
