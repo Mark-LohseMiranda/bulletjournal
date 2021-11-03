@@ -19,7 +19,7 @@ Inspiration.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'inspriation',
+        modelName: 'inspiration',
     }
 );
 
