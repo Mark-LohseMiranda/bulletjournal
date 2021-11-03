@@ -23,6 +23,8 @@ const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
+//deletes the currently displayed note
+
 deleteBtn.addEventListener('click',(event)=>{
     let result = confirm("Are you sure you wnat to delete this note?");
     if (result) {
