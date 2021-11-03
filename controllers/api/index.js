@@ -28,4 +28,7 @@ router.use("/schedules",scheduleRoutes);
 const todoRoutes = require("./todoRoutes");
 router.use("/todos",todoRoutes);
 
+const inspirationRoutes = require("./inspirationRoutes");
+router.use("/todos",inspirationRoutes);
+
 module.exports = router;

@@ -1,4 +1,4 @@
-const todoItem = document.querySelector('#todo-item')
+// const todoItem = document.querySelector('#todo-item')
 const todoList = document.querySelector('#todo-list')
 
 
