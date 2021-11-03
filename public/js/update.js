@@ -13,12 +13,14 @@ const timeEighteen = document.querySelector('#timeEighteen');
 const timeTwenty = document.querySelector('#timeTwenty');
 const timeNineteen = document.querySelector('#timeNineteen');
 const braindumpText = document.querySelector('#braindumpText');
-
-
+const moment = require('moment');
+const toDoValue = document.querySelector('.toDoValue');
 saveBtn.addEventListener('click',(event) => {
     event.preventDefault();
     //update schedule
+    const day = moment().format('D');
     const contentData = {
+     day:day,
      content8am : timeEight.value(),
      content9am : timeNine.value(),
      content10am : timeTen.value(),
@@ -42,11 +44,12 @@ saveBtn.addEventListener('click',(event) => {
     let content = braindumpText.value();
     fetch('/api/braindumps', {
         method:'PUT',
-        body: JSON.stringify({content}),
+        body: JSON.stringify({content,day}),
         headers:{'Content-Type' : 'application/json'},
     }).catch(err=>console.log(err))
     // update todos
     // multiple tables or multiple content?
+    
 })
 
 
