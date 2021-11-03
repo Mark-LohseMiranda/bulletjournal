@@ -73,19 +73,31 @@
         class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
 
         <div id="scheduler">
+            {{#if (exists schedules)}}
+            schedules
             {{> scheduler}}
+            {{/if}}
         </div>
 
         <div id="brainDump">
+            {{#if (exists braindumps)}}
+            braindump
             {{> braindump}}
+            {{/if}}
         </div>
 
         <div id="toDo">
+            {{#if (exists todos)}}
+            todo
             {{> todo}}
+            {{/if}}
         </div>
 
         <div id="inspo">
+            {{#if (exists inspirations)}}
+            inspirations
             {{> inspo}}
+            {{/if}}
         </div>
     </div>
 </div>
