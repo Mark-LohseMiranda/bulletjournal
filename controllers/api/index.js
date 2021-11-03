@@ -29,6 +29,6 @@ const todoRoutes = require("./todoRoutes");
 router.use("/todos",todoRoutes);
 
 const inspirationRoutes = require("./inspirationRoutes");
-router.use("/todos",inspirationRoutes);
+router.use("/inspirations",inspirationRoutes);
 
 module.exports = router;

@@ -171,20 +171,20 @@ const seed = async () => {
             note_id: 1
         },
         {
-            content1: "This is todo content1",
-            content2: "This is todo content2",
-            content3: "This is todo content3",
-            content4: "This is todo content4",
-            content5: "This is todo content5",
-            content6: "This is todo content6",
-            content7: "This is todo content7",
-            content8: "This is todo content8",
-            content9: "This is todo content9",
-            content10: "This is todo content10",
+            content1: "take out the dog",
+            content2: "take out the trash",
+            content3: "give mom flowers",
+            content4: "bake cookies",
+            content5: "buy dads birthday present",
+            content6: "fix the pipes",
+            content7: "call grandma",
+            content8: "homework?",
+            content9: "study???",
+            content10: "ask joe for help?????",
             note_id: 2
         },
         {
-            content1: "This is todo content1",
+            content1: "whatasd f",
             content2: "This is todo content2",
             content3: "This is todo content3",
             content4: "This is todo content4",
@@ -193,7 +193,7 @@ const seed = async () => {
             content7: "This is todo content7",
             content8: "This is todo content8",
             content9: "This is todo content9",
-            content10: "This is todo content10",
+            content10: "whatasd f0",
             note_id: 3
         },
     ])
