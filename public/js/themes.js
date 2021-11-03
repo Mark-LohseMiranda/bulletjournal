@@ -1,7 +1,7 @@
 loadTheme();
 
 document.getElementById('green_theme').onclick = function () {
-    document.getElementById('theme-css').href = '/css/greenscheme.css'
+    document.getElementById('theme-css').setAttribute('href','/css/greenscheme.css')
 }
 
 document.getElementById('default-theme').onclick = function () {
