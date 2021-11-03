@@ -1,4 +1,5 @@
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span uk-icon='icon: menu'></span></button>
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span
+        uk-icon='icon: menu'></span></button>
 
 <div id="offcanvas-nav" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar">
@@ -21,13 +22,36 @@
 
 
             <li class="uk-nav-header">ACCOUNT</li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Upgrade</a>
-            </li>
+            <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
+                    Your Theme</a></li>
             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
             <li class="uk-nav-divider"></li>
             <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
+    </div>
+</div>
+
+{{!-- Theme changer pop up --}}
+<div id="theme-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Themes</h2>
+        <div>
+            <label><input class="uk-radio" type="radio" name="radio1" id='default-theme'><span
+                    class="uk-icon uk-icon-image"
+                    style="background-image: url(images/defaulttheme.png);"></span></label>
+            <label><input class="uk-radio" type="radio" name="radio1" id='green_theme'><span
+                    class="uk-icon uk-icon-image" style="background-image: url(images/greentheme.png);"></span></label>
+            <label><input class="uk-radio" type="radio" name="radio1" id='natural-theme'><span
+                    class="uk-icon uk-icon-image"
+                    style="background-image: url(images/naturaltheme.png);"></span></label>
+            <label><input class="uk-radio" type="radio" name="radio1" id='soft-theme'><span
+                    class="uk-icon uk-icon-image" style="background-image: url(images/softtheme.png);"></span></label>
+        </div>
+
+        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+        <button class="uk-button uk-button-primary" type="submit" id='theme-switch'>Save</button>
+        </p>
     </div>
 </div>
 
@@ -61,3 +85,4 @@
 
 
 <script src="/js/update.js" defer></script>
+<script src='/js/themes.js'></script>

@@ -56,10 +56,11 @@ router.post("/", (req, res) => {
 
 //find a single note
 
-router.get("/:id", (req, res) => {
+router.get("/:day", (req, res) => {
   Note.findOne({
     where: {
-      id: req.params.id,
+      day: req.params.day,
+      user_id: req.session.user.id
     },
     include: [
       User,
