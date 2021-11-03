@@ -1,6 +1,6 @@
 const todoItem = document.querySelector('#todo-item')
 
-
+if (todoItem) {
 todoItem.addEventListener('click', (e) => {
     e.preventDefault();
     const li = document.createElement('li');
@@ -21,7 +21,7 @@ todoItem.addEventListener('click', (e) => {
 
     todoList.appendChild(li)
 });
-
+}
 // retrieves a quote and puts it on the top of the main page for now
 // once pages/db start to take shape this needs to be altered to
 // place the quote into a table

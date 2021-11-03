@@ -22,7 +22,6 @@ saveBtn.addEventListener('click',(event) => {
     event.preventDefault();
     //update schedule
     const day = moment().format('D');
-
     fetch(path.join('/api/notes/',day), {
         method: 'GET',
         headers:{'Content-Type' : 'application/json'},
