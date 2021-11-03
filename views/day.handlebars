@@ -23,12 +23,11 @@
         </ul>
     </div>
 
-
     {{#if braindumps.[0].content}}
         {{> pastBraindump}}
     {{/if}}
 
-    {{#if todos.[0].content}}
+    {{#if todos.[0]}}
         {{> pastTodo}}
     {{/if}}
 
@@ -36,7 +35,7 @@
         {{> pastInspo}}
     {{/if}}
 
-    {{#if scheduler.[0].content}}
+    {{#if schedules.[0]}}
         {{> pastScheduler}}
     {{/if}}
 </div>
