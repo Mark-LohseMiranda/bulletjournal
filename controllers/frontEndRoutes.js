@@ -33,7 +33,7 @@ router.get("/note", (req, res) => {
 
 router.get('/day/:num', (req, res) => {
     if(!req.session.user){
-        return res.redirect("/login")
+      return res.redirect("/login")
     };
     Note.findOne({
         where:{

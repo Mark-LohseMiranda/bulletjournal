@@ -66,20 +66,19 @@
     <div uk-sortable="handle: .uk-card"
         class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
 
-
-        {{#if braindumps.[0].content}}
+    {{#if braindumps.[0]}}
         {{> pastBraindump}}
         {{/if}}
 
-        {{#if todos.[0].content}}
+    {{#if todos.[0]}}
         {{> pastTodo}}
         {{/if}}
 
-        {{#if inspirations.[0].content}}
+    {{#if inspirations.[0]}}
         {{> pastInspo}}
         {{/if}}
 
-        {{#if scheduler.[0].content}}
+    {{#if schedules.[0]}}
         {{> pastScheduler}}
         {{/if}}
     </div>
