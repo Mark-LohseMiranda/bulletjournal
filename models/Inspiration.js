@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Todo extends Model {}
+class Inspiration extends Model {}
 
-Todo.init(
+Inspiration.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,15 +12,15 @@ Todo.init(
             autoIncrement: true,
         },
         content: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             defaultValue: ' ',
         },
     },{
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'todo',
+        modelName: 'inspiration',
     }
 );
 
-module.exports = Todo;
+module.exports = Inspiration;
