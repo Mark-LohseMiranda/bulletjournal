@@ -42,11 +42,8 @@ router.get('/day/:num', (req, res) => {
         const hbsNote = noteData.get({plain:true});
         res.render("day",hbsNote)
     }).catch(err => {
-        if(!noteData){
-            alert("No note for this day");
-            return;
-        }
-        res.status(500).json('internal server error')
+        console.log(err);
+        res.status(404).json('no data found!')
     })
 });
 
