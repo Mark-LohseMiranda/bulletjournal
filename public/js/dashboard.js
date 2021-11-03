@@ -11,6 +11,7 @@ addPage.addEventListener("submit", async (event) => {
   event.preventDefault();
   let note_id;
   const day = moment().format("D");
+  console.log(day);
   fetch("/api/notes", {
     method: "POST",
     body: JSON.stringify({ day }),
