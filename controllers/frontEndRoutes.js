@@ -36,13 +36,17 @@ router.get('/day/:num', (req, res) => {
         return res.redirect("/login")
     };
     Note.findOne({
-        where:{day: req.params.num},
+        where:{
+          day: req.params.num,
+          user_id:req.session.user.id
+        },
         include:[User, Braindump, Inspiration, Todo, Schedule]
     }).then(noteData=>{
         const hbsNote = noteData.get({plain:true});
         res.render("day",hbsNote)
     }).catch(err => {
-        res.status(500).json('internal server error')
+        console.log(err);
+        res.status(404).json('no data found!')
     })
 });
 

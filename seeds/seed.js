@@ -42,11 +42,11 @@ const seed = async () => {
             note_id:1            
         },
         {
-            content:"This is my content and I like it",
+            content:"Wowowow I don't like this",
             note_id:2            
         },
         {
-            content:"This is my content and I like it",
+            content:"hello helloooooo",
             note_id:3            
         },
     ])  
@@ -56,11 +56,11 @@ const seed = async () => {
             note_id: 1
         },
         {
-            content:"This is my goal and I like it",
+            content:"what is a goal",
             note_id: 2
         },
         {
-            content:"This is my goal and I like it",
+            content:"my baddd",
             note_id: 3
         },
     ])  
@@ -70,11 +70,11 @@ const seed = async () => {
            note_id: 1 
         },
         {
-           content:"This is my inspirational content",
+           content:"quotes on quotes",
            note_id: 2 
         },
         {
-           content:"This is my inspirational content",
+           content:"my inspo",
            note_id: 3
         },
     ])
@@ -124,35 +124,35 @@ const seed = async () => {
            note_id:1
         },
         {
-            content8am: "8am", 
-            content9am: "9am",
-            content10am: "10am",
-            content11am: "11am",
-            content12pm: "12pm",
-            content1pm: "1pm",
-            content2pm: "2pm",
-            content3pm: "3pm",
-            content4pm: "4pm",
-            content5pm: "5pm",
-            content6pm: "6pm",
-            content7pm: "7pm",
-            content8pm: "8pm",
+            content8am: "adsf;j", 
+            content9am: "wea w",
+            content10am: " wae",
+            content11am: " yj",
+            content12pm: "tyh",
+            content1pm: "1pmyum",
+            content2pm: "myutyu",
+            content3pm: "rytn",
+            content4pm: "rety56",
+            content5pm: "345w4",
+            content6pm: "xdfge",
+            content7pm: "sert",
+            content8pm: "4brtsh",
             note_id:2
          },
          {
-            content8am: "8am", 
-            content9am: "9am",
-            content10am: "10am",
-            content11am: "11am",
-            content12pm: "12pm",
-            content1pm: "1pm",
-            content2pm: "2pm",
-            content3pm: "3pm",
-            content4pm: "4pm",
-            content5pm: "5pm",
-            content6pm: "6pm",
-            content7pm: "7pm",
-            content8pm: "8pm",
+            content8am: "w4t", 
+            content9am: "xbrgd",
+            content10am: "erg",
+            content11am: "hret",
+            content12pm: "q324t",
+            content1pm: "q43t",
+            content2pm: "34tq",
+            content3pm: "qt34",
+            content4pm: "tq34",
+            content5pm: "t4q3",
+            content6pm: "t43q",
+            content7pm: "34",
+            content8pm: "8pqt34m",
             note_id:3
          },
     ])
