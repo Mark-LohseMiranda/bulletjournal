@@ -16,8 +16,8 @@ document.getElementById('soft-theme').onclick = function () {
     document.getElementById('theme-css').setAttribute('href','/css/softmode.css')
 }
 
-var saveBtn = document.getElementById('theme-switch')
-saveBtn.onclick = function () {
+var updateTheme = document.getElementById('theme-switch')
+updateTheme.onclick = function () {
     var currentTheme = document.getElementById('theme-css').getAttribute('href')
     console.log(currentTheme)
    
