@@ -1,0 +1,93 @@
+
+{{#each schedulers}}
+<div class="uk-margin uk-width-auto">
+    <div class="uk-card uk-card-default">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Today's Schedule</h3>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <table class='uk table uk-table-striped'>
+                <thead>
+                    <tr>
+                        <th class='uk-width-small uk-table-middle'>Time</th>
+                        <th class='uk-table-expand'>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="uk-label">8:00am</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeEight" placeholder="{{content8am}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">9:00am</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeNine" placeholder="{{content9am}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">10:00am</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeTen" placeholder="{{content10am}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">11:00am</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeEleven" placeholder="{{content11am}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">12:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeTwelve" placeholder="{{content12pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">1:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeThirteen" placeholder="{{content1pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">2:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeFourteen" placeholder="{{content2pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">3:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeFifteen" placeholder="{{content3pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">4:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeSixteen" placeholder="{{content4pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">5:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeSeventeen" placeholder="{{content5pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">6:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeEighteen" placeholder="{{content6pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">7:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeNineteen" placeholder="{{content7pm}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="uk-label">8:00pm</span></td>
+                        <td><input class="uk-input uk-form-blank uk-form-width-large uk-form-small" type="text" id="timeTwenty" placeholder="{{content8pm}}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<script src="/js/dashboard.js"></script>

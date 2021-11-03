@@ -22,18 +22,22 @@
             </li>
         </ul>
     </div>
-    {{#each braindumps.content as |braindump|}}
-    {{> braindump}}
-    {{/each}}
 
-    {{#each todos.content as |todo|}}
-    {{> todo}}
-    {{/each}}
 
-    {{#each inspirations.content as |inspo|}}
-    {{> inspo}}
-    {{/each}}
+    {{#if braindumps.[0].content}}
+        {{> pastBraindump}}
+    {{/if}}
 
-    {{> scheduler}}
+    {{#if todos.[0].content}}
+        {{> pastTodo}}
+    {{/if}}
+
+    {{#if inspirations.[0].content}}
+        {{> pastInspo}}
+    {{/if}}
+
+    {{#if scheduler.[0].content}}
+        {{> pastScheduler}}
+    {{/if}}
 </div>
 
