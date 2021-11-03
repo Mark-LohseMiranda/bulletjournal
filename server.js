@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 const hbs = exphbs.create();
 
-const {Braindump, Goal, Note, Post_it, Reminder, Schedule, Todo, User} = require('./models');
+const {Braindump, Goal, Note, Post_it, Reminder, Schedule, Todo, Inspiration, User} = require('./models');
 const routes = require("./controllers");
  
 

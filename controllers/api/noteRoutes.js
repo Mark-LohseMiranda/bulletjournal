@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { Note } = require("../../models");
+const { Note, User, Braindump, Goal, Inspiration, Post_it, Reminder, Schedule, Todo } = require("../../models");
 
 //get all note posts
 
 router.get("/", async (req, res) => {
   try {
-    const notes = await Note.findAll();
+    const notes = await Note.findAll({
+      include: [User, Braindump, Goal, Inspiration, Post_it, Reminder, Schedule, Todo],
+    });
     if (notes.length) {
       res.json(notes);
     } else {
@@ -31,6 +33,28 @@ router.post("/", async (req, res) => {
     res.status(500).json({ message: "an error occured", err: err });
   }
 });
+
+//find a single note
+
+router.get("/:id", async (req, res) => {
+  try {
+  const note = await Note.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [User, Braindump, Goal, Inspiration, Post_it, Reminder, Schedule, Todo],
+  });
+  if (note) {
+    res.json(note);
+  } else {
+    res.status(404).json({message: "User not found!"});
+  }
+} catch(err) {
+      console.log(err);
+      res.status(500).json({ message: "an error occured", err: err });
+    };
+});
+
 
 //delete one note post
 
