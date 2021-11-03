@@ -1,4 +1,5 @@
 const saveBtn = document.querySelector('#saveData');
+const deleteBtn = document.querySelector('#deleteNote');
 const timeEight = document.querySelector('#timeEight');
 const timeNine = document.querySelector('#timeNine');
 const timeTen = document.querySelector('#timeTen');
@@ -16,11 +17,32 @@ const braindumpText = document.querySelector('#braindumpText');
 const toDoValue = document.querySelector('.toDoValue');
 const randomQuote = document.querySelector('#randomQuote')
 
+//gets associated note id from url
+
+const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+
+deleteBtn.addEventListener('click',(event)=>{
+    let result = confirm("Are you sure you wnat to delete this note?");
+    if (result) {
+        fetch(`/api/notes/${id}`,{
+            method:"DELETE"
+        }).then(res=>{
+            if(res.ok){
+                location.href = "/dashboard";
+            } else {
+                alert("uh oh, delete didn't go go")
+            }
+        })
+    }
+})
+
 saveBtn.addEventListener('click',(event) => {
     event.preventDefault();
     //update schedule
-    const day = moment().format('D');
-    fetch(path.join('/api/notes/',day), {
+    // const day = moment().format('D');
+    fetch(path(`/note/${id}`), {
         method: 'GET',
         headers:{'Content-Type' : 'application/json'},
     }).then(response => response.json())
