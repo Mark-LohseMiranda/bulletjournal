@@ -61,39 +61,34 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
+<div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-align-center">
     <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
     <div uk-sortable="handle: .uk-card"
         class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
-
-        {{#if braindumps.[0]}}
-        {{> pastBraindump}}
+        {{#if schedules.[0]}}
+        {{> pastScheduler}}
         {{/if}}
 
         {{#if todos.[0]}}
         {{> pastTodo}}
+        {{/if}}
+       
+        {{#if goals.[0]}}
+        {{> pastGoals}}
+        {{/if}}
+        
+        {{#if braindumps.[0]}}
+        {{> pastBraindump}}
         {{/if}}
 
         {{#if inspirations.[0]}}
         {{> pastInspo}}
         {{/if}}
 
-        {{#if schedules.[0]}}
-        {{> pastScheduler}}
-        {{/if}}
-
-        {{#if goals.[0]}}
-        {{> pastGoals}}
-        {{/if}}
-
         {{#if post_its.[0]}}
         {{> pastPostit}}
         {{/if}}
 
-
-    {{#if post_its.[0]}}
-        {{> pastPostit}}
-    {{/if}}
     </div>
 </div>
 
