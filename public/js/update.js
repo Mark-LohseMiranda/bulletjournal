@@ -127,5 +127,14 @@ saveBtn.addEventListener("click", async (event) => {
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
+      if (data[0].post_its[0]) {
+        postitID = data[0].post_its[0].id;
+        const postitValue = document.getElementsByClassName("postitValue");
+        fetch(`/api/postits/${postitID}`, {
+          method: "PUT",
+          body: JSON.stringify({content: postitValue.value}),
+          headers: { "Content-Type": "application/json" },
+        }).catch((err) => console.log(err));
+      }
     });
 });
