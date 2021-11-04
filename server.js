@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const hbs = exphbs.create({
     helpers:{
         exists: function (item) {return item.length != 0},
-        unequals: function (item) {return item!==" " || item == undefined || item == null},
+        empty: function(item){return item!==""},
     }
 });
 
@@ -33,7 +33,7 @@ app.use(session({
      store: new SequelizeStore({
         db:sequelize
      })
-  }))
+}))
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
