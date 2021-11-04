@@ -8,9 +8,6 @@ const includeDump = document.querySelector("#addDump");
 const includeGoal = document.querySelector("#addGoal");
 const includePostit = document.querySelector("#addPostit");
 
-
-
-
 if (addPage) {
 addPage.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -102,3 +99,19 @@ addPage.addEventListener("submit", async (event) => {
   })
 });
 }
+
+fetch('/sessions', {
+  method: 'GET'
+}).then((res) => res.json())
+.then((res) => {
+  let id = res.user.id;
+  fetch("/api/users/"+id, {
+    method:'GET',
+    headers: { "Content-Type": "application/json" }
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+
+})
