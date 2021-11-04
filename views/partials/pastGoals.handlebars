@@ -1,0 +1,101 @@
+
+{{#each goals}}
+<div class="uk-margin uk-width-auto">
+    <div class="uk-card uk-card-default">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">MY GOALS</h3>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <form>
+                <ul class="uk-list" id='goals-ul'>
+                        {{#if (unequals content1)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content1}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content2)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content2}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content3)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content3}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content4)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content4}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content5)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content5}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content6)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content6}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content7)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content7}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content8)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content8}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content9)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content9}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content10)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content10}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                </ul>
+            </form>
+
+        </div>
+    </div>
+</div>
+{{/each}}

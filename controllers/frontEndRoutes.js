@@ -62,7 +62,7 @@ router.get('/day/:num', (req, res) => {
         res.render("day",hbsNote)
     }).catch(err => {
         console.log(err);
-        res.status(404).json('no data found!')
+        res.render("404")
     })
 });
 
