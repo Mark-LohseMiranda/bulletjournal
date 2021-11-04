@@ -1,5 +1,8 @@
+
+{{#each post_its}}
 <div class='uk-width-1-2 uk-height-1-2'>
     <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
-        <textarea class="uk-textarea uk-form-blank" rows="15" cols="15"
-            placeholder="POST those thoughts here..."></textarea>
+        {{content}}
+    </div>
 </div>
+{{/each}}
