@@ -361,6 +361,10 @@ background: var(--mediumcolor);
   background: #f0f0f0;
 }
 
+.uk-table span {
+  color: var(--mediumcolor)
+}
+
 /* FORM */
 .uk-form input,
 .uk-form select,
