@@ -134,7 +134,7 @@ fetch('/sessions', {
     for (let i = 0; i < userNotes.length; i++) {
       const element = userNotes[i].day;
       let dayId = document.getElementById(`${element}`);
-      dayId.setAttribute('style','display:block')
+      dayId.setAttribute('style','visibility:visible')
     }
   })
 })
