@@ -39,10 +39,19 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   Goal.create({
-      content: req.body.content,
+      content1: req.body.content1,
+      content2: req.body.content2,
+      content3: req.body.content3,
+      content4: req.body.content4,
+      content5: req.body.content5,
+      content6: req.body.content6,
+      content7: req.body.content7,
+      content8: req.body.content8,
+      content9: req.body.content9,
+      content10: req.body.content10,
       note_id: req.body.note_id,
     }).then(newGoal=>{
-      res.status(200).json(goal);
+      res.status(200).json(newGoal);
     }).catch(err=> {
       console.log(err);
       res.status(500).json({ err: "an error occurred" });
@@ -63,7 +72,16 @@ router.put("/:id", (req, res) => {
         }
         Goal.update(
           {
-            content: req.body.content,
+            content1: req.body.content1,
+            content2: req.body.content2,
+            content3: req.body.content3,
+            content4: req.body.content4,
+            content5: req.body.content5,
+            content6: req.body.content6,
+            content7: req.body.content7,
+            content8: req.body.content8,
+            content9: req.body.content9,
+            content10: req.body.content10,
           },
           {
             where: {

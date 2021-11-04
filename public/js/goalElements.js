@@ -11,7 +11,7 @@ if (goalAdd) {
     
       starSpan.setAttribute('uk-icon', "icon: star");
     
-      inputField.setAttribute('class', "uk-input uk-form-blank uk-form-width-medium");
+      inputField.setAttribute('class', "uk-input uk-form-blank uk-form-width-medium goalValue");
       inputField.setAttribute('type', 'text')
       inputField.setAttribute('placeholder', "Enter an item...");
     
