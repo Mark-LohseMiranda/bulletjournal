@@ -7,29 +7,29 @@
         <button class="uk-offcanvas-close" type="button" uk-close></button>
 
         <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <li class="uk-active"><a href="#">New Page</a></li>
+            <li class="uk-active"><a href="#modal" uk-toggle><span class="uk-margin-small-right"
+                        uk-icon="icon: plus"></span>Add Today's Page</a></li>
             <li class="uk-nav-header">PAGES</li>
-            <li><a href="#">Add a Page</a></li>
+            <li id='pageArchive'><a href="#">View All Daily Pages</a></li>
             <li><a href="#">New Page From Template</a></li>
-            <li><a href="#">New Long-Term Page</a></li>
-            <li><a href="#">View All Daily Pages</a></li>
-            <li><a href="#">View All Long-Term Pages</a></li>
+            <li id='newList'><a href="#">New Long-Term Page</a></li>
+            <li id='listArchive'><a href="#">View All Long-Term Pages</a></li>
 
             <li class="uk-nav-header">TEMPLATES</li>
 
             <li><a href="#">View Your Templates</a></li>
-            <li><a href="#">Add A Template</a></li>
             <li><a href="#">Example Templates</a></li>
-
-
             <li class="uk-nav-header">ACCOUNT</li>
             <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
                     Your Theme</a></li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
+            {{!-- <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a>
+            </li> --}}
             <li class="uk-nav-divider"></li>
-            <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            <li id='logout'><a href="/api/users/logout"><span class="uk-margin-small-right"
+                        uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
+
     </div>
 </div>
 
@@ -74,31 +74,37 @@
 
         <div id="scheduler">
             {{#if (exists schedules)}}
-                {{> scheduler}}
+            {{> scheduler}}
             {{/if}}
         </div>
 
         <div id="brainDump">
             {{#if (exists braindumps)}}
-                {{> braindump}}
+            {{> braindump}}
             {{/if}}
         </div>
 
         <div id="toDo">
             {{#if (exists todos)}}
-                {{> todo}}
+            {{> todo}}
             {{/if}}
         </div>
 
         <div id="inspo">
             {{#if (exists inspirations)}}
-                {{> inspo}}
+            {{> inspo}}
             {{/if}}
         </div>
 
         <div id="goal">
             {{#if (exists goals)}}
-                {{> goals}}
+            {{> goals}}
+            {{/if}}
+        </div>
+
+        <div id="goal">
+            {{#if (exists post_its)}}
+            {{> postit}}
             {{/if}}
         </div>
     </div>
