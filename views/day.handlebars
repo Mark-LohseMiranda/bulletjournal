@@ -61,6 +61,18 @@
     </div>
 </div>
 
+
+<div class='uk-align-right uk-margin-xlarge-right'>
+    <button uk-toggle='target:#deleteConfirm' class="uk-button uk-button-default">Delete Page</button>
+    <div id="deleteConfirm" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Are you sure you want to delete your page? This cannot be undone!</p><br><br>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button" id='deleteNote'>Delete This Page</button>
+        </div>
+    </div>
+</div>
+
 <div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-align-center">
     <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
     <div uk-sortable="handle: .uk-card"
@@ -72,11 +84,11 @@
         {{#if todos.[0]}}
         {{> pastTodo}}
         {{/if}}
-       
+
         {{#if goals.[0]}}
         {{> pastGoals}}
         {{/if}}
-        
+
         {{#if braindumps.[0]}}
         {{> pastBraindump}}
         {{/if}}
