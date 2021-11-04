@@ -119,19 +119,22 @@ addPage.addEventListener("submit", async (event) => {
     });
 });
 
-
 fetch('/sessions', {
   method: 'GET'
 }).then((res) => res.json())
 .then((res) => {
-  let id = res.user.id;
+  const id = res.user.id;
   fetch("/api/users/"+id, {
     method:'GET',
     headers: { "Content-Type": "application/json" }
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    const userNotes = data.notes.map(note => ({day:note.day}));
+    for (let i = 0; i < userNotes.length; i++) {
+      const element = userNotes[i].day;
+      let dayId = document.getElementById(`${element}`);
+      dayId.setAttribute('style','display:block')
+    }
   })
-
 })
