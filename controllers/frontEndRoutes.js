@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {User, Braindump, Inspiration, Todo, Schedule, Note, Goal} = require('../models');
+const {User, Braindump, Inspiration, Todo, Schedule, Note, Goal, Post_it} = require('../models');
 
 //render login page
 
@@ -38,7 +38,7 @@ Note.findOne({
   where:{
     id: req.params.id,
   },
-  include:[User, Braindump, Inspiration, Todo, Schedule, Goal]
+  include:[User, Braindump, Inspiration, Todo, Schedule, Goal, Post_it]
 }).then(noteData=>{
   const hbsNote = noteData.get({plain:true});
   console.log(hbsNote)
@@ -59,7 +59,7 @@ router.get('/day/:num', (req, res) => {
           day: req.params.num,
           user_id:req.session.user.id
         },
-        include:[User, Braindump, Inspiration, Todo, Schedule, Goal]
+        include:[User, Braindump, Inspiration, Todo, Schedule, Goal, Post_it]
     }).then(noteData=>{
         const hbsNote = noteData.get({plain:true});
         res.render("day",hbsNote)
