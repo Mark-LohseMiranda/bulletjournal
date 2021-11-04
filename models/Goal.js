@@ -11,8 +11,45 @@ Goal.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        content: {
-            type: DataTypes.TEXT,
+        content1: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content2: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content3: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content4: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content5: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content6: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content7: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content8: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content9: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
+        },
+        content10: {
+            type: DataTypes.STRING,
+            defaultValue: ' ',
         },
     },{
         sequelize,

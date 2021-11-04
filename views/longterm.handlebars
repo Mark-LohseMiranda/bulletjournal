@@ -1,5 +1,4 @@
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span
-        uk-icon='icon: menu'></span></button>
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span uk-icon='icon: menu'></span></button>
 
 {{!-- side bar for navigating the site --}}
 <div id="offcanvas-nav" uk-offcanvas="overlay: true">
@@ -67,22 +66,9 @@
     <div uk-sortable="handle: .uk-card"
         class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
 
-    {{#if braindumps.[0]}}
-        {{> pastBraindump}}
-    {{/if}}
+        {{#if goals.[0]}}
+            {{> pastGoals}}
+        {{/if}}
 
-    {{#if todos.[0]}}
-        {{> pastTodo}}
-    {{/if}}
-
-    {{#if inspirations.[0]}}
-        {{> pastInspo}}
-    {{/if}}
-
-    {{#if schedules.[0]}}
-        {{> pastScheduler}}
-    {{/if}}
     </div>
 </div>
-
-<script src='/js/themes.js'></script>
