@@ -520,6 +520,15 @@ html {
     width: 500px;
   }
 
+  .uk-card-primary {
+    background: var(--darkcolor);
+  }
+  
+  #postit-note:hover {
+    background: var(--darkcolor);
+  }
+  
+
   /* BUTTONS */
 
   .uk-navbar-container .uk-navbar-right .uk-icon-button {

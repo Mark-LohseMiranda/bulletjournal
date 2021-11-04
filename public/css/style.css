@@ -257,6 +257,15 @@ iframe {
   }
 }
 
+.uk-card-primary {
+  background: var(--darkcolor);
+}
+
+#postit-note:hover {
+  background: var(--darkcolor);
+}
+
+
 .uk-list {
   padding: 0;
   list-style: none;
