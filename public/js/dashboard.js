@@ -6,13 +6,17 @@ const includeToDo = document.querySelector("#addToDo");
 const includeInspo = document.querySelector("#addInspo");
 const includeDump = document.querySelector("#addDump");
 const includeGoal = document.querySelector("#addGoal");
+const includePostit = document.querySelector("#addPostit");
+
+
+
 
 if (addPage) {
 addPage.addEventListener("submit", async (event) => {
   event.preventDefault();
   let note_id;
-  const theday = moment().toObject();
-  const day = parseInt(theday.date);
+  const d = new Date()
+  const day = d.getDate()
   await fetch(`/api/notes/${day}`, {
     method:"GET",
     headers:{'Content-Type':'application/json'}
@@ -79,6 +83,16 @@ addPage.addEventListener("submit", async (event) => {
             });
             if (!responseGoal.ok) {
               alert(responseGoal.statusText);
+            }
+          }
+          if (includePostit.checked) {
+            const responsePostit = await fetch("/api/postits", {
+              method: "POST",
+              body: JSON.stringify({ note_id }),
+              headers: { "Content-Type": "application/json" },
+            });
+            if (!responsePostit.ok) {
+              alert(responsePostit.statusText);
             }
           }
           document.location.replace(`/note/${note_id}`);

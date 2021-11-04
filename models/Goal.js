@@ -13,43 +13,43 @@ Goal.init(
         },
         content1: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content2: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content3: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content4: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content5: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content6: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content7: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content8: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content9: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
         content10: {
             type: DataTypes.STRING,
-            defaultValue: ' ',
+            defaultValue: '',
         },
     },{
         sequelize,
