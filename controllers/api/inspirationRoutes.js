@@ -7,7 +7,7 @@ const { Inspiration, Note } = require("../../models");
 router.get("/", (req, res) => {
   Inspiration.findAll()
     .then((inspirationData) => {
-      res.json(inspiration);
+      res.json(inspirationData);
     })
     .catch((err) => {
       console.log(err);

@@ -1,5 +1,6 @@
 const goalAdd = document.querySelector('#goal-item');
-const goalList = document.querySelector('goal-list')
+const goalList = document.querySelector('#goals-ul')
+let goalValue
 
 if (goalAdd) {
     goalAdd.addEventListener('click', (e) => {
@@ -15,11 +16,15 @@ if (goalAdd) {
       inputField.setAttribute('type', 'text')
       inputField.setAttribute('placeholder', "Enter an item...");
     
-      goalLabel.appendChild(checkInput);
+      goalLabel.appendChild(starSpan);
       goalLabel.appendChild(inputField)
       li.appendChild(goalLabel)
     
       goalList.appendChild(li)
+      goalValue = document.getElementsByClassName('goalValue');
+        if (goalValue.length === 10){
+            goalAdd.style.display = 'none';
+        }
     
     })
     }
