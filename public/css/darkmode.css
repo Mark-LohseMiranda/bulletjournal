@@ -528,6 +528,11 @@ html {
 
   /* BUTTONS */
 
+  .uk-navbar-container .uk-navbar-right .uk-icon-button {
+    background: var(--lightcolor);
+    color: white;
+  }
+
   .uk-button::-moz-focus-inner {
     border: 0;
     padding: 0;
