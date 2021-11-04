@@ -357,6 +357,10 @@ html {
     background: #f0f0f0;
   }
 
+  .uk-table span {
+    color: var(--darkcolor)
+  }
+
   /* FORM */
   .uk-form input,
   .uk-form select,
