@@ -30,8 +30,6 @@ const id = window.location.toString().split("/")[
 //deletes the currently displayed note
 
 deleteBtn.addEventListener("click", (event) => {
-  let result = confirm("Are you sure you want to delete this note?");
-  if (result) {
     fetch(`/api/notes/${id}`, {
       method: "DELETE",
     }).then((res) => {
@@ -41,7 +39,6 @@ deleteBtn.addEventListener("click", (event) => {
         alert("uh oh, delete didn't go go");
       }
     });
-  }
 });
 
 //updates note elements if they exist

@@ -64,7 +64,14 @@
 
 <div class='uk-align-right uk-margin-xlarge-right'>
     <button id='saveData' class="uk-button uk-button-default">Save</button>
-    <button id='deleteNote' class="uk-button uk-button-default">Delete</button>
+    <button uk-toggle='target:#deleteConfirm' class="uk-button uk-button-default">Delete</button>
+    <div id="deleteConfirm" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Are you sure you want to delete your page? This cannot be undone!</p><br><br>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button" id='deleteNote'>Delete This Page</button>
+        </div>
+    </div>
 </div>
 
 <div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
