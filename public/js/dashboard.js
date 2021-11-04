@@ -5,7 +5,7 @@ const includeSchedule = document.querySelector("#addSchedule");
 const includeToDo = document.querySelector("#addToDo");
 const includeInspo = document.querySelector("#addInspo");
 const includeDump = document.querySelector("#addDump");
-// const includeGoal = document.querySelector("#addGoal");
+const includeGoal = document.querySelector("#addGoal");
 
 if (addPage) {
 addPage.addEventListener("submit", async (event) => {
@@ -71,17 +71,16 @@ addPage.addEventListener("submit", async (event) => {
               alert(responseInspo.statusText);
             }
           }
-
-          // if (includeGoal.checked) {
-          //   const responseGoal = await fetch("/api/goals", {
-          //     method: "POST",
-          //     body: JSON.stringify({ note_id }),
-          //     headers: { "Content-Type": "application/json" },
-          //   });
-          //   if (!responseGoal.ok) {
-          //     alert(responseGoal.statusText);
-          //   }
-          // }
+          if (includeGoal.checked) {
+            const responseGoal = await fetch("/api/goals", {
+              method: "POST",
+              body: JSON.stringify({ note_id }),
+              headers: { "Content-Type": "application/json" },
+            });
+            if (!responseGoal.ok) {
+              alert(responseGoal.statusText);
+            }
+          }
           document.location.replace(`/note/${note_id}`);
         });
 

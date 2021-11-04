@@ -74,25 +74,31 @@
 
         <div id="scheduler">
             {{#if (exists schedules)}}
-            {{> scheduler}}
+                {{> scheduler}}
             {{/if}}
         </div>
 
         <div id="brainDump">
             {{#if (exists braindumps)}}
-            {{> braindump}}
+                {{> braindump}}
             {{/if}}
         </div>
 
         <div id="toDo">
             {{#if (exists todos)}}
-            {{> todo}}
+                {{> todo}}
             {{/if}}
         </div>
 
         <div id="inspo">
             {{#if (exists inspirations)}}
-            {{> inspo}}
+                {{> inspo}}
+            {{/if}}
+        </div>
+
+        <div id="goal">
+            {{#if (exists goals)}}
+                {{> goals}}
             {{/if}}
         </div>
     </div>

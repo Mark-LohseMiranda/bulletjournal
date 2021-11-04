@@ -12,25 +12,87 @@
         <div class="uk-card-body">
             <form>
                 <ul class="uk-list" id='goals-ul'>
+                        {{#if (unequals content1)}}
                     <li>
                         <label>
                             <span uk-icon="icon: star"></span>
-                            <input class="uk-input uk-form-blank uk-form-width-medium goalValue" type="text"
-                                placeholder="Enter an item...">
+                            <span>{{content1}}</span>
                         </label>
                     </li>
+                        {{/if}}
+                        {{#if (unequals content2)}}
                     <li>
-                        <label><span uk-icon="icon: star"></span><input
-                                class="uk-input uk-form-blank uk-form-width-medium goalValue" type="text"
-                                placeholder="Enter an item..."></label>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content2}}</span>
+                        </label>
                     </li>
+                        {{/if}}
+                        {{#if (unequals content3)}}
                     <li>
-                        <label><span uk-icon="icon: star"></span><input
-                                class="uk-input uk-form-blank uk-form-width-medium goalValue" type="text"
-                                placeholder="Enter an item..."></label>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content3}}</span>
+                        </label>
                     </li>
+                        {{/if}}
+                        {{#if (unequals content4)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content4}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content5)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content5}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content6)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content6}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content7)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content7}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content8)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content8}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content9)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content9}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
+                        {{#if (unequals content10)}}
+                    <li>
+                        <label>
+                            <span uk-icon="icon: star"></span>
+                            <span>{{content10}}</span>
+                        </label>
+                    </li>
+                        {{/if}}
                 </ul>
-                <a id='goal-item' href="#">More Goals? Click to add...</a>
             </form>
 
         </div>
