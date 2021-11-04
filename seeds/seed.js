@@ -52,15 +52,15 @@ const seed = async () => {
     ])  
     const goalData = await Goal.bulkCreate([
         {
-            content:"This is my goal and I like it",
+            content1:"This is my goal and I like it",
             note_id: 1
         },
         {
-            content:"what is a goal",
+            content1:"what is a goal",
             note_id: 2
         },
         {
-            content:"my baddd",
+            content1:"my baddd",
             note_id: 3
         },
     ])  
