@@ -15,7 +15,8 @@ const timeTwenty = document.querySelector('#timeTwenty');
 const timeNineteen = document.querySelector('#timeNineteen');
 const braindumpText = document.querySelector('#braindumpText');
 const toDoValue = document.querySelector('.toDoValue');
-const randomQuote = document.querySelector('#randomQuote')
+const randomQuote = document.querySelector('#randomQuote');
+const goalValue = document.querySelector('.goalValue');
 
 //gets associated note id from url
 
@@ -84,16 +85,16 @@ saveBtn.addEventListener('click',(event) => {
         }).catch(err=>console.log(err))
         // update todos
         // multiple tables or multiple content?
-        const content1 = toDoValue[0].value() || " ";
-        const content2 = toDoValue[1].value() || " ";
-        const content3 = toDoValue[2].value() || " ";
-        const content4 = toDoValue[3].value() || " ";
-        const content5 = toDoValue[4].value() || " ";
-        const content6 = toDoValue[5].value() || " ";
-        const content7 = toDoValue[6].value() || " ";
-        const content8 = toDoValue[7].value() || " ";
-        const content9 = toDoValue[8].value() || " ";
-        const content10 = toDoValue[9].value() || " ";
+        let content1 = toDoValue[0].value() || " ";
+        let content2 = toDoValue[1].value() || " ";
+        let content3 = toDoValue[2].value() || " ";
+        let content4 = toDoValue[3].value() || " ";
+        let content5 = toDoValue[4].value() || " ";
+        let content6 = toDoValue[5].value() || " ";
+        let content7 = toDoValue[6].value() || " ";
+        let content8 = toDoValue[7].value() || " ";
+        let content9 = toDoValue[8].value() || " ";
+        let content10 = toDoValue[9].value() || " ";
         fetch(join('/api/todos/',todoId), {
             method:'PUT',
             body: JSON.stringify({content1,content2,content3,content4,content5,content6,content7,content8,content9,content10,day}),
@@ -103,6 +104,21 @@ saveBtn.addEventListener('click',(event) => {
         fetch(join('/api/inspirations/',inspoId), {
             method: 'PUT',
             body:JSON.stringify({content}),
+            headers:{'Content-Type' : 'application/json'},
+        }).catch(err=>console.log(err));
+        content1 = goalValue[0].value() || " ";
+        content2 = goalValue[1].value() || " ";
+        content3 = goalValue[2].value() || " ";
+        content4 = goalValue[3].value() || " ";
+        content5 = goalValue[4].value() || " ";
+        content6 = goalValue[5].value() || " ";
+        content7 = goalValue[6].value() || " ";
+        content8 = goalValue[7].value() || " ";
+        content9 = goalValue[8].value() || " ";
+        content10 = goalValue[9].value() || " ";
+        fetch(join('/api/goals/',todoId), {
+            method:'PUT',
+            body: JSON.stringify({content1,content2,content3,content4,content5,content6,content7,content8,content9,content10,day}),
             headers:{'Content-Type' : 'application/json'},
         }).catch(err=>console.log(err));
     })
