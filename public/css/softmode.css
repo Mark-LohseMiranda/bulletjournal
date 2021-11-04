@@ -914,3 +914,19 @@ html {
   .uk-label {
       background-color: var(--mediumcolor);
   }
+
+  #menu-button {
+    display:none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    
+    #sidebar {
+      display:none
+    }
+  
+    #menu-button {
+      display:inline-block;
+    }
+    
+  }
