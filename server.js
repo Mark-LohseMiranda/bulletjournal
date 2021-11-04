@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const hbs = exphbs.create({
     helpers:{
         exists: function (item) {return item.length != 0},
-        unequals: function (item) {return item!==" " || item == undefined || item == null},
+        unequals: function (item) {return item!==" " || item!==""}
     }
 });
 
