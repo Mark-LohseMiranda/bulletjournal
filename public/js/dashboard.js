@@ -8,12 +8,15 @@ const includeDump = document.querySelector("#addDump");
 const includeGoal = document.querySelector("#addGoal");
 const includePostit = document.querySelector("#addPostit");
 
+
+
+
 if (addPage) {
 addPage.addEventListener("submit", async (event) => {
   event.preventDefault();
   let note_id;
-  const theday = moment().toObject();
-  const day = parseInt(theday.date);
+  const d = new Date()
+  const day = d.getDate()
   await fetch(`/api/notes/${day}`, {
     method:"GET",
     headers:{'Content-Type':'application/json'}
