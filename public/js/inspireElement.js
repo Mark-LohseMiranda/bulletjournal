@@ -16,8 +16,8 @@ function getQuote() {
         author = data[randomQuote].author;
       }
       quote.innerHTML =
-        `<div class="quote pure-u-1"><div style="font-style:italic;width:100%;height:auto;"> ${data[randomQuote].text} <div style="margin-left:40%;font-style:normal;"> -
-                ${author} </div></div></div>`;
+        `<div class="quote pure-u-1"><div id="quoteText" style="font-style:italic;width:100%;height:auto;"> ${data[randomQuote].text} </div><div id="quoteAuthor" style="margin-left:40%;font-style:normal;">
+                ${author} </div></div>`;
     });
 }
 getQuote();
