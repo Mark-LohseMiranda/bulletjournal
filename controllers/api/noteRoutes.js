@@ -58,6 +58,9 @@ router.post("/", (req, res) => {
 //find a single note
 
 router.get("/:day", (req, res) => {
+  if (!req.session.user) {
+    return res.status(403).json({ err: "not logged in" });
+  }
   Note.findAll({
     where: {
       day: req.params.day,
