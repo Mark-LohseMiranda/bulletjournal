@@ -94,15 +94,15 @@
                 {{> pastBraindump}}
             {{/if}}
 
+            {{#if post_its.[0]}}
+                {{> pastPostit}}
+            {{/if}}
+
             {{#if inspirations.[0]}}
                 {{> pastInspo}}
             {{/if}}
 
-            {{#if post_its.[0]}}
-                {{> pastPostit}}
-            {{/if}}
     </div>
 </div>
 
 <script src='/js/themes.js'></script>
-<script src="/js/mobile.js"></script>
