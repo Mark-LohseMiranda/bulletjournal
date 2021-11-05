@@ -71,6 +71,7 @@ router.put("/:id", (req, res) => {
         Reminder.update(
           {
             content: req.body.content,
+            css: req.body.css
           },
           {
             where: {

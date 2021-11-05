@@ -82,6 +82,7 @@ router.put("/:id", (req, res) => {
             content8: req.body.content8,
             content9: req.body.content9,
             content10: req.body.content10,
+            css: req.body.css
           },
           {
             where: {
