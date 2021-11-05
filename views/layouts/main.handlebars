@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bullet Journal Squared</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="/css/style.css" id='theme-css'>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click">
+    <div class="uk-navbar-left">
+        <a href="" class="uk-navbar-item uk-logo"></a>
+        <ul class="uk-navbar-nav">
+            <li class="uk-active">
+                <a href="/">Home</a>
+            </li>
+            <li class="uk-active">
+                <a href="/dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">More</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="#ex-templates" uk-toggle>Templates</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#development-modal" uk-toggle>Development</a></li>
+                        <div id="development-modal" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body">
+                                <h2 class="uk-modal-title">Development</h2>
+                                <a href="https://github.com/lindsfitz"><h4>Lindsay Fitzgerald - Project Manager</h4></a>
+                                <a href="https://github.com/Mark-LohseMiranda"><h4>Mark Lohse-Miranda - Git Coordinator</h4></a>
+                                <a href="https://github.com/axumdzn"><h4>Kenneth Felix - Back-End Engineer</h4></a>
+                                <a href="https://github.com/kelliekumasaka"><h4>Kellie Kumasaka - Front-End Developer</h4></a>
+                                <p class="uk-text-right">
+                                    <button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
+                                </p>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class='uk-navbar-right'>
+        <a href="#" class="uk-icon-button uk-margin-small-right" id='user-icon' style='visibility:hidden;'></a>
+        <div uk-dropdown="mode: click" id="welcomeUser"></div>
+    </div>
+</nav>
+<div id="content">
+    {{{body}}}
+</div>
+
+<script src='/js/themes.js'></script>
+<script src='/js/usericon.js'></script>
+</body>

@@ -1,0 +1,74 @@
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span uk-icon='icon: menu'></span></button>
+
+{{!-- side bar for navigating the site --}}
+<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+            <li class="uk-active"><a href="#">New Page</a></li>
+            <li class="uk-nav-header">PAGES</li>
+            <li><a href="#">Add a Page</a></li>
+            <li><a href="#">New Page From Template</a></li>
+            <li><a href="#">New Long-Term Page</a></li>
+            <li><a href="#">View All Daily Pages</a></li>
+            <li><a href="#">View All Long-Term Pages</a></li>
+
+            <li class="uk-nav-header">TEMPLATES</li>
+
+            <li><a href="#">View Your Templates</a></li>
+            <li><a href="#">Add A Template</a></li>
+            <li><a href="#">Example Templates</a></li>
+
+
+            <li class="uk-nav-header">ACCOUNT</li>
+            <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
+                    Your Theme</a></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
+            <li class="uk-nav-divider"></li>
+            <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{{!-- Theme changer pop up --}}
+<div id="theme-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-text-center">
+        <h2 class="uk-modal-title uk-align-center">Themes</h2>
+        <div class='uk-flex uk-flex-around'>
+            <label><span class="uk-icon uk-icon-image"
+                    style="background-image: url(/images/defaulttheme.png);"></span><br><input class="uk-radio"
+                    type="radio" name="radio1" id='default-theme'>Default</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/greentheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='green_theme'>
+                Soft Green</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/naturaltheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='natural-theme'>
+                Natural</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/softtheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='soft-theme'>
+                Soft Default</label>
+        </div>
+        <br><br>
+
+        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+        <button class="uk-button uk-button-primary uk-modal-close" type="submit" id='theme-switch'>Save</button>
+        </p>
+    </div>
+</div>
+
+<div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
+    <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
+    <div uk-sortable="handle: .uk-card"
+        class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
+
+        {{#if goals.[0]}}
+            {{> pastGoals}}
+        {{/if}}
+
+    </div>
+</div>
