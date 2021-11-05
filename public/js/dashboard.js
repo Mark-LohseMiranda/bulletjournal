@@ -31,8 +31,6 @@ function checkForNote() {
 }
 
 //gets all notes for user and places icon on calendar showing which days
-//have notes
-
 function getIcon() {
   fetch("/sessions", {
     method: "GET",
