@@ -1,4 +1,5 @@
 const iconLink = document.getElementById('user-icon')
+const hello = document.querySelector('#welcomeUser')
 
 fetch('/sessions', {
     method: 'GET'
@@ -7,6 +8,7 @@ fetch('/sessions', {
     if (res.user) {
         let username = res.user.username;
         iconLink.innerHTML = username.charAt(0)
-        iconLink.setAttribute('style', 'visibility:visible;')
+        iconLink.setAttribute('style', 'visibility:visible;');
+        hello.innerHTML = `Welcome back, ${username}`
     } 
 })
