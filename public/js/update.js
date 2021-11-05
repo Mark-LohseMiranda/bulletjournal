@@ -99,11 +99,8 @@ saveBtn.addEventListener("click", async (event) => {
       }
       if (data[0].inspirations[0]) {
         inspoId = data[0].inspirations[0].id;
-        const quoteText = document.getElementById("quoteText").textContent;
-        const quoteAuthor = document
-          .getElementById("quoteAuthor")
-          .textContent.trim();
-        content = quoteText.concat(quoteAuthor);
+        const quote = document.querySelector(".quote");
+        content = quote.innerHTML;
 
         fetch(`/api/inspirations/${inspoId}`, {
           method: "PUT",
