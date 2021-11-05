@@ -1,9 +1,11 @@
 <div class="uk-margin uk-height-medium uk-width-large">
     <div class="uk-card uk-card-small uk-card-default uk-card-body">
+        {{#each braindumps}}
         <form>
-            <input class="uk-input uk-form-blank uk-form-width-medium" id="braindumpTitle" type="text" placeholder="Brain Dump">
-            <textarea class="uk-textarea uk-form-blank" rows="5" id="braindumpText"placeholder="Dump those thoughts here!"></textarea>
+            <label for="braindumpTitle">Title:</label><textarea class="uk-textarea uk-form-blank" rows="1" id="braindumpTitle" type="text">{{title}}</textarea>
+            <label for="braindumpText">Content:</label><textarea class="uk-textarea uk-form-blank" rows="5" id="braindumpText">{{content}}</textarea>
         </form>
+        {{/each}}
     </div>
 
 </div>
