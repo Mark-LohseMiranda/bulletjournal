@@ -16,6 +16,10 @@ document.getElementById('soft-theme').onclick = function () {
     document.getElementById('theme-css').setAttribute('href','/css/softmode.css')
 }
 
+document.getElementById('dark-mode').onclick = function () {
+    document.getElementById('theme-css').setAttribute('href','/css/darkmode.css')
+}
+
 var updateTheme = document.getElementById('theme-switch')
 updateTheme.onclick = function () {
     var currentTheme = document.getElementById('theme-css').getAttribute('href')
