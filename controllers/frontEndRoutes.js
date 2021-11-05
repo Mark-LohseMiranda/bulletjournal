@@ -6,7 +6,7 @@ const {User, Braindump, Inspiration, Todo, Schedule, Note, Goal, Post_it} = requ
 
 router.get("/login", (req, res) => {
   if (req.session.user) {
-    res.redirect("/dashboard");
+    return res.redirect("/dashboard");
   }
   res.render("login");
 });
