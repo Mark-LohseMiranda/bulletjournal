@@ -62,6 +62,7 @@ router.get('/day/:num', (req, res) => {
         include:[User, Braindump, Inspiration, Todo, Schedule, Goal, Post_it]
     }).then(noteData=>{
         const hbsNote = noteData.get({plain:true});
+        console.log(hbsNote)
         res.render("day",hbsNote)
     }).catch(err => {
         console.log(err);
