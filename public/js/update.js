@@ -14,6 +14,7 @@ const timeEighteen = document.querySelector("#timeEighteen");
 const timeTwenty = document.querySelector("#timeTwenty");
 const timeNineteen = document.querySelector("#timeNineteen");
 const braindumpText = document.querySelector("#braindumpText");
+const braindumpTitle = document.querySelector("#braindumpTitle");
 
 let scheduleId;
 let braindumpId;
@@ -80,7 +81,7 @@ saveBtn.addEventListener("click", async (event) => {
         braindumpId = data[0].braindumps[0].id;
         fetch(`/api/braindumps/${braindumpId}`, {
           method: "PUT",
-          body: JSON.stringify({ content: braindumpText.value }),
+          body: JSON.stringify({ title: braindumpTitle.value, content: braindumpText.value }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
