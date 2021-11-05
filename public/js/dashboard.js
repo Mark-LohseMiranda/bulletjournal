@@ -10,8 +10,10 @@ const includePostit = document.querySelector("#addPostit");
 const d = new Date();
 const day = d.getDate();
 
-async function checkForNote() {
-  await fetch(`/api/notes/${day}`, {
+//check if current day's note exists and if does then change add note to see note
+
+function checkForNote() {
+  fetch(`/api/notes/${day}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   })
@@ -28,113 +30,115 @@ async function checkForNote() {
     });
 }
 
-window.onload = checkForNote;
+//gets all notes for user and places icon on calendar showing which days
+//have notes
 
-addPage.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  let note_id;
-  await fetch(`/api/notes/${day}`, {
+function getIcon() {
+  fetch("/sessions", {
     method: "GET",
-    headers: { "Content-Type": "application/json" },
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.length != 0) {
-        console.log("note already exists");
-      } else {
-        fetch("/api/notes", {
-          method: "POST",
-          body: JSON.stringify({ day }),
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((response) => response.json())
-          .then(async (notes) => {
-            note_id = notes.id;
-            console.log(notes);
-
-            if (includeSchedule.checked) {
-              const responseSch = await fetch("/api/schedules", {
-                method: "POST",
-                body: JSON.stringify({ note_id }),
-                headers: { "Content-Type": "application/json" },
-              });
-              if (!responseSch.ok) {
-                alert(responseSch.statusText);
-              }
+    .then((res) => res.json())
+    .then(async (res) => {
+      const id = res.user.id;
+      fetch("/api/users/" + id, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const userNotes = data.notes.map((note) => ({ day: note.day }));
+          for (let i = 0; i < userNotes.length; i++) {
+            const element = userNotes[i].day;
+            let dayId = document.getElementById(`${element}`);
+            if (dayId) {
+              dayId.setAttribute("style", "visibility:visible");
             }
-            if (includeToDo.checked) {
-              const responseTodo = await fetch("/api/todos", {
-                method: "POST",
-                body: JSON.stringify({ note_id }),
-                headers: { "Content-Type": "application/json" },
-              });
-              if (!responseTodo.ok) {
-                alert(responseTodo.statusText);
-              }
-            }
-            if (includeDump.checked) {
-              const responseDump = await fetch("/api/braindumps", {
-                method: "POST",
-                body: JSON.stringify({ note_id }),
-                headers: { "Content-Type": "application/json" },
-              });
-              if (!responseDump.ok) {
-                alert(responseDump.statusText);
-              }
-            }
-            //inspo quote
-            if (includeInspo.checked) {
-              const responseInspo = await fetch("/api/inspirations", {
-                method: "POST",
-                body: JSON.stringify({ note_id }),
-                headers: { "Content-Type": "application/json" },
-              });
-              if (!responseInspo.ok) {
-                alert(responseInspo.statusText);
-              }
-            }
-            if (includeGoal.checked) {
-              const responseGoal = await fetch("/api/goals", {
-                method: "POST",
-                body: JSON.stringify({ note_id }),
-                headers: { "Content-Type": "application/json" },
-              });
-              if (!responseGoal.ok) {
-                alert(responseGoal.statusText);
-              }
-            }
-            if (includePostit.checked) {
-              const responsePostit = await fetch("/api/postits", {
-                method: "POST",
-                body: JSON.stringify({ note_id }),
-                headers: { "Content-Type": "application/json" },
-              });
-              if (!responsePostit.ok) {
-                alert(responsePostit.statusText);
-              }
-            }
-            document.location.replace(`/note/${note_id}`);
-          });
-      }
+          }
+        });
     });
-});
+}
 
-fetch('/sessions', {
-  method: 'GET'
-}).then((res) => res.json())
-.then((res) => {
-  const id = res.user.id;
-  fetch("/api/users/"+id, {
-    method:'GET',
-    headers: { "Content-Type": "application/json" }
-  })
-  .then((response) => response.json())
-  .then((data) => {
-    const userNotes = data.notes.map(note => ({day:note.day}));
-    for (let i = 0; i < userNotes.length; i++) {
-      const element = userNotes[i].day;
-      let dayId = document.getElementById(`${element}`);
-      dayId.setAttribute('style','visibility:visible')
-    }
-  })
-})
+checkForNote();
+getIcon();
+
+//
+
+if (addPage) {
+  addPage.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    let note_id;
+    await fetch("/api/notes", {
+      method: "POST",
+      body: JSON.stringify({ day }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then(async (notes) => {
+        note_id = notes.id;
+        console.log(notes);
+
+        if (includeSchedule.checked) {
+          const responseSch = await fetch("/api/schedules", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responseSch.ok) {
+            alert(responseSch.statusText);
+          }
+        }
+        if (includeToDo.checked) {
+          const responseTodo = await fetch("/api/todos", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responseTodo.ok) {
+            alert(responseTodo.statusText);
+          }
+        }
+        if (includeDump.checked) {
+          const responseDump = await fetch("/api/braindumps", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responseDump.ok) {
+            alert(responseDump.statusText);
+          }
+        }
+        //inspo quote
+        if (includeInspo.checked) {
+          const responseInspo = await fetch("/api/inspirations", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responseInspo.ok) {
+            alert(responseInspo.statusText);
+          }
+        }
+        if (includeGoal.checked) {
+          const responseGoal = await fetch("/api/goals", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responseGoal.ok) {
+            alert(responseGoal.statusText);
+          }
+        }
+        if (includePostit.checked) {
+          const responsePostit = await fetch("/api/postits", {
+            method: "POST",
+            body: JSON.stringify({ note_id }),
+            headers: { "Content-Type": "application/json" },
+          });
+          if (!responsePostit.ok) {
+            alert(responsePostit.statusText);
+          }
+        }
+        location.href = `/note/${note_id}`;
+      });
+  });
+}
