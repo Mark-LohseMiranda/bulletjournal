@@ -30,15 +30,15 @@ const id = window.location.toString().split("/")[
 //deletes the currently displayed note
 
 deleteBtn.addEventListener("click", (event) => {
-    fetch(`/api/notes/${id}`, {
-      method: "DELETE",
-    }).then((res) => {
-      if (res.ok) {
-        location.href = "/dashboard";
-      } else {
-        alert("uh oh, delete didn't go go");
-      }
-    });
+  fetch(`/api/notes/${id}`, {
+    method: "DELETE",
+  }).then((res) => {
+    if (res.ok) {
+      location.href = "/dashboard";
+    } else {
+      alert("uh oh, delete didn't go go");
+    }
+  });
 });
 
 //updates note elements if they exist
@@ -100,11 +100,11 @@ saveBtn.addEventListener("click", async (event) => {
       if (data[0].inspirations[0]) {
         inspoId = data[0].inspirations[0].id;
         const quoteText = document.getElementById("quoteText").textContent;
-        const quoteAuthor = document.getElementById("quoteAuthor").textContent.trim();
+        const quoteAuthor = document
+          .getElementById("quoteAuthor")
+          .textContent.trim();
         content = quoteText.concat(quoteAuthor);
-        console.log(quoteText)
-        console.log(quoteAuthor)
-        
+
         fetch(`/api/inspirations/${inspoId}`, {
           method: "PUT",
           body: JSON.stringify({ content }),
@@ -129,9 +129,10 @@ saveBtn.addEventListener("click", async (event) => {
         const postitValue = document.getElementsByClassName("postitValue");
         fetch(`/api/postits/${postitID}`, {
           method: "PUT",
-          body: JSON.stringify({content: postitValue.value}),
+          body: JSON.stringify({ content: postitValue.value }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
+      location.href = "/dashboard";
     });
 });
