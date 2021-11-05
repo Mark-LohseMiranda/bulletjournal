@@ -14,6 +14,9 @@ const timeEighteen = document.querySelector("#timeEighteen");
 const timeTwenty = document.querySelector("#timeTwenty");
 const timeNineteen = document.querySelector("#timeNineteen");
 const braindumpText = document.querySelector("#braindumpText");
+const braindumpTitle = document.querySelector("#braindumpTitle");
+const postitValue = document.getElementsByClassName("postitValue");
+const postitTitle = document.querySelector("#postitTitle");
 
 let scheduleId;
 let braindumpId;
@@ -80,7 +83,7 @@ saveBtn.addEventListener("click", async (event) => {
         braindumpId = data[0].braindumps[0].id;
         fetch(`/api/braindumps/${braindumpId}`, {
           method: "PUT",
-          body: JSON.stringify({ content: braindumpText.value }),
+          body: JSON.stringify({ title: braindumpTitle.value, content: braindumpText.value }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
@@ -123,10 +126,10 @@ saveBtn.addEventListener("click", async (event) => {
       }
       if (data[0].post_its[0]) {
         postitID = data[0].post_its[0].id;
-        const postitValue = document.getElementsByClassName("postitValue");
+        
         fetch(`/api/postits/${postitID}`, {
           method: "PUT",
-          body: JSON.stringify({ content: postitValue.value }),
+          body: JSON.stringify({ title: postitTitle.value, content: postitValue.value }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
