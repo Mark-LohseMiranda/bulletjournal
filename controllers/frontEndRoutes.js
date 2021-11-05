@@ -8,17 +8,15 @@ router.get("/login", (req, res) => {
   if (!req.session.user) {
     res.render("login");
   }
-  res.redirect("/dashboard");
+  res.render("/dashboard");
 });
 
 //render sign up page
-
 router.get("/signup", (req, res) => {
     res.render("signup");
 });
 
 //render home page
-
 router.get("/", (req, res) => {
   res.render("home");
 });
