@@ -14,6 +14,10 @@ Post_it.init(
         content: {
             type: DataTypes.TEXT,
         },
+        css: {
+            type: DataTypes.STRING,
+            defaultValue: 'position: absolute;',
+        }
     },{
         sequelize,
         freezeTableName: true,

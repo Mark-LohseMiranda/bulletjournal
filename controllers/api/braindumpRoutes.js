@@ -71,6 +71,8 @@ router.put("/:id", (req, res) => {
         Braindump.update(
           {
             content: req.body.content,
+            css: req.body.css,
+            title: req.body.title
           },
           {
             where: {

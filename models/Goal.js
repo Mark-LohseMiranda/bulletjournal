@@ -51,6 +51,10 @@ Goal.init(
             type: DataTypes.STRING,
             defaultValue: '',
         },
+        css: {
+            type: DataTypes.STRING,
+            defaultValue: 'position: absolute;',
+        }
     },{
         sequelize,
         freezeTableName: true,

@@ -15,6 +15,14 @@ Braindump.init(
             type: DataTypes.TEXT,
             defaultValue: ' ',
         },
+        title: {
+            type: DataTypes.STRING,
+            defaultValue: 'BrainDump'
+        },
+        css: {
+            type: DataTypes.STRING,
+            defaultValue: 'position: absolute;',
+        }
     },{
         sequelize,
         freezeTableName: true,

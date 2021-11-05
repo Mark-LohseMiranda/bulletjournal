@@ -95,6 +95,7 @@ router.put("/:id", (req, res) => {
             content6pm: req.body.content6pm,
             content7pm: req.body.content7pm,
             content8pm: req.body.content8pm,
+            css: req.body.css
           },
           {
             where: {
