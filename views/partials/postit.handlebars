@@ -1,13 +1,11 @@
-<div class='uk-width-1-2 uk-height-1-2'>
+<div class='uk-width-1-1 uk-height-1-1 uk-margin'>
     <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light uk-width-large uk-height-large"
         id="postit-note">
-        <input class="uk-input uk-form-blank uk-form-width-medium" id="postitTitle" type="text" placeholder="Add a title or caption!">
-        <button>Text</button>
-        <button>Image</button>
+        <input class="uk-input uk-form-blank" id="postitTitle" type="text" placeholder="Add a title or caption!">
+        {{!-- <button class="uk-inline-block">Text</button>
+        <button class="uk-inline-block">Image</button> --}}
         {{!-- textbox if text is selected --}}
-        <textarea style='display:none' class="uk-textarea uk-form-blank" rows="15" cols="15"
-            placeholder="POST those thoughts here..."></textarea>
-
+        <textarea style='display:none' class="uk-textarea uk-form-blank" rows="15" cols="15" placeholder="POST those thoughts here..."></textarea>
         {{!-- upload element if image is selected --}}
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="files[]" multiple>
