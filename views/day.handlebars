@@ -56,6 +56,10 @@
                 <span class="uk-icon uk-icon-image" style="background-image: url(/images/darkmode.png);"></span><br>
                 <input class="uk-radio" type="radio" name="radio1" id='dark-mode'>
                 Default Dark</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/darkmono.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='dark-mono'>
+                Classic Dark Mode</label>
             
         </div>
         <br><br>
@@ -68,6 +72,7 @@
 
 
 <div class='uk-align-right uk-margin-xlarge-right'>
+    <button style="visibility:hidden" id="editPage" class="uk-button uk-button-default">Edit Page</button>
     <button uk-toggle='target:#deleteConfirm' class="uk-button uk-button-default">Delete Page</button>
     <div id="deleteConfirm" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">

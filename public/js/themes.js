@@ -20,6 +20,10 @@ document.getElementById('dark-mode').onclick = function () {
     document.getElementById('theme-css').setAttribute('href','/css/darkmode.css')
 }
 
+document.getElementById('dark-mono').onclick = function () {
+    document.getElementById('theme-css').setAttribute('href','/css/darkmono.css')
+}
+
 var updateTheme = document.getElementById('theme-switch')
 updateTheme.onclick = function () {
     var currentTheme = document.getElementById('theme-css').getAttribute('href')
