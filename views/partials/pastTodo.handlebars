@@ -7,17 +7,17 @@
                 <h3 class="uk-card-title uk-margin-remove-bottom">TO DO LIST</h3>
             </div>
         </div>
-        <div class="uk-card-body">
-            <p>{{content1}}</p>
-            <p>{{content2}}</p>
-            <p>{{content3}}</p> 
-            <p>{{content4}}</p>
-            <p>{{content5}}</p>
-            <p>{{content6}}</p>
-            <p>{{content7}}</p>
-            <p>{{content8}}</p>
-            <p>{{content9}}</p>
-            <p>{{content10}}</p>
+        <div class="checker uk-card-body">
+            <p{{#if content1IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content1IsChecked'>{{content1}}</p>
+            <p{{#if content2IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content2IsChecked'>{{content2}}</p> 
+            <p{{#if content3IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content3IsChecked'>{{content3}}</p>
+            <p{{#if content4IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content4IsChecked'>{{content4}}</p>
+            <p{{#if content5IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content5IsChecked'>{{content5}}</p>
+            <p{{#if content6IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content6IsChecked'>{{content6}}</p>
+            <p{{#if content7IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content7IsChecked'>{{content7}}</p>
+            <p{{#if content8IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content8IsChecked'>{{content8}}</p>
+            <p{{#if content9IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content9IsChecked'>{{content9}}</p>
+            <p{{#if content10IsChecked}} uk-icon="icon: check"{{/if}} data-todoId={{id}} data-todoItem='content10IsChecked'>{{content10}}</p>
         </div>
     </div>
 </div>
