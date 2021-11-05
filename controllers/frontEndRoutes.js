@@ -30,6 +30,13 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
+router.get("/alldailynotes", (req, res)=> {
+  if(!req.session.user){
+    return res.redirect("/login")
+  };
+  res.render("alldailynotes")
+})
+
 router.get("/note/:id", (req, res) => {
   if(!req.session.user){
     return res.redirect("/login")
