@@ -18,7 +18,7 @@ router.post("/cloud",(req,res)=> {
     res.status(400).send('No files were uploaded.');
     return;
   }
-  var imagePath = req.files.path;
+  var imagePath = req.files.image.path;
 
   cloudinary.uploader.upload(imagePath, { tags: 'post_it' })
     .then(function (image) {
