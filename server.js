@@ -22,7 +22,6 @@ const routes = require("./controllers");
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('trust proxy', true)
 app.use(express.static("public"));
 
 app.use(session({
