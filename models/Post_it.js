@@ -14,6 +14,10 @@ Post_it.init(
         content: {
             type: DataTypes.TEXT,
         },
+        title: {
+            type: DataTypes.STRING,
+            defaultValue: 'Add a title or caption!'
+        },
         css: {
             type: DataTypes.STRING,
             defaultValue: 'position: absolute;',
