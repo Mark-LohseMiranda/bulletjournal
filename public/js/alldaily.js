@@ -14,10 +14,10 @@ function getDay(){
             const userNotes = data.notes.map((note) => ({ day: note.day }));
             for(let i = 0; i < userNotes.length; i++) {
                 const element = userNotes[i].day;
-                const li = document.createElement('li')
+                const li = document.createElement('li');
                 console.log(element);
                 notesList.append(li);
-                li.innerHTML = `<li><a href='/day/${element}'>Day ${element}</a></li>`
+                li.innerHTML = `<li><a href='/day/${element}'>Note for Day ${element}</a></li>`
             }
         })
     })
