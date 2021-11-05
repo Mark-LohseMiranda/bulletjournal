@@ -1,5 +1,19 @@
 <div class='uk-width-1-2 uk-height-1-2'>
-    <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light uk-width-large uk-height-large" id="postit-note">
-        <textarea class="uk-textarea uk-form-blank" rows="15" cols="15"
+    <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light uk-width-large uk-height-large"
+        id="postit-note">
+        <button>Text</button>
+        <button>Image</button>
+        <textarea style='display:none' class="uk-textarea uk-form-blank" rows="15" cols="15"
             placeholder="POST those thoughts here..."></textarea>
-</div>
+        <div class="js-upload uk-placeholder uk-text-center">
+            <span uk-icon="icon: cloud-upload"></span>
+            <span class="uk-text-middle">Attach binaries by dropping them here or</span>
+            <div uk-form-custom>
+                <input type="file" multiple>
+                <span class="uk-link">selecting one</span>
+            </div>
+        </div>
+
+        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+
+    </div>
