@@ -302,6 +302,10 @@ html {
     border-top: 1px solid var(--mediumcolor);
   }
 
+  .uk-label {
+    background: var(--mediumcolor);
+    }
+
 
 /* table */
 
