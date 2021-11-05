@@ -10,19 +10,19 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit-icons.min.js"></script>
 </head>
 <body>
-<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click">
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" id='topnav'>
     <div class="uk-navbar-left">
         <a href="" class="uk-navbar-item uk-logo"></a>
         <ul class="uk-navbar-nav">
-            <li class="uk-active">
-                <a href="/">Home</a>
+            <li class="uk-active" >
+                <a href="/" id='active-navlink'>Home</a>
             </li>
             <li class="uk-active">
-                <a href="/dashboard">Dashboard</a>
+                <a href="/dashboard" id='dash-navlink'>Dashboard</a>
             </li>
             <li>
-                <a href="#">More</a>
-                <div class="uk-navbar-dropdown">
+                <a href="#" id='more-navlink'>More</a>
+                <div class="uk-navbar-dropdown" id='dropdown'>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="#ex-templates" uk-toggle>Templates</a></li>
                         <li><a href="#">About</a></li>
