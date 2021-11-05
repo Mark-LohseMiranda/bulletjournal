@@ -1,5 +1,10 @@
 
-
+:root {
+  --bg:#112031;
+  --lightcolor:#D4ECDD;
+  --mediumcolor:#345B63;
+  --darkcolor:#152D35;
+}
 
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
