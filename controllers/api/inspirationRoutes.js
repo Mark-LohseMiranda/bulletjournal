@@ -71,6 +71,7 @@ router.put("/:id", (req, res) => {
         Inspiration.update(
           {
             content: req.body.content,
+            css: req.body.css
           },
           {
             where: {

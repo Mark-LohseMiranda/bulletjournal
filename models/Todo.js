@@ -101,6 +101,10 @@ Todo.init(
             allowNull: false,
             defaultValue: 0
         },
+        css: {
+            type: DataTypes.STRING,
+            defaultValue: 'position: absolute;',
+        }
     },{
         sequelize,
         freezeTableName: true,
