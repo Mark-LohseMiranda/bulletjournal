@@ -1,19 +1,23 @@
 <div class='uk-width-1-2 uk-height-1-2'>
     <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light uk-width-large uk-height-large"
         id="postit-note">
+        <input class="uk-input uk-form-blank uk-form-width-medium" type="text" placeholder="Add a title or caption!">
         <button>Text</button>
         <button>Image</button>
+        {{!-- textbox if text is selected --}}
         <textarea style='display:none' class="uk-textarea uk-form-blank" rows="15" cols="15"
             placeholder="POST those thoughts here..."></textarea>
-        <div class="js-upload uk-placeholder uk-text-center">
-            <span uk-icon="icon: cloud-upload"></span>
-            <span class="uk-text-middle">Attach binaries by dropping them here or</span>
-            <div uk-form-custom>
-                <input type="file" multiple>
-                <span class="uk-link">selecting one</span>
-            </div>
-        </div>
 
-        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+        {{!-- upload element if image is selected --}}
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="files[]" multiple>
+            <input type="submit" value="Upload Files" name="submit">
+        </form>
+
+        <p id="data"></p>
+
+            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
 
     </div>
+
+    <script src='/js/postit.js'></script>
