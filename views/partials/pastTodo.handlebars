@@ -1,23 +1,25 @@
 
 {{#each todos}}
-<div class="uk-margin-bottom uk-width-1-4">
+<div data-thing="todos" data-id={{id}} id="todoMoving"class="uk-margin-bottom uk-width-1-4@l uk-width-1-3@m uk-width-1-1@s widgets">
     <div class="uk-card uk-card-default">
         <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <h3 class="uk-card-title uk-margin-remove-bottom">TO DO LIST</h3>
             </div>
         </div>
-        <div class="uk-card-body">
-            <p>{{content1}}</p>
-            <p>{{content2}}</p>
-            <p>{{content3}}</p> 
-            <p>{{content4}}</p>
-            <p>{{content5}}</p>
-            <p>{{content6}}</p>
-            <p>{{content7}}</p>
-            <p>{{content8}}</p>
-            <p>{{content9}}</p>
-            <p>{{content10}}</p>
+        <div class="checker uk-card-body">
+            <ul class="uk-list" id='todo-list'>
+            {{#if (used content1)}}<li><label><input class="uk-checkbox" {{#if content1IsChecked}}checked{{/if}} type="checkbox" name="checkbox1" data-todoId={{id}} data-todoItem='content1IsChecked' id='checkbox1'> {{content1}}</label></li>{{/if}}
+            {{#if (used content2)}}<li><label><input class="uk-checkbox" {{#if content2IsChecked}}checked{{/if}} type="checkbox" name="checkbox2" data-todoId={{id}} data-todoItem='content2IsChecked' id='checkbox2'> {{content2}}</label></li>{{/if}}
+            {{#if (used content3)}}<li><label><input class="uk-checkbox" {{#if content3IsChecked}}checked{{/if}} type="checkbox" name="checkbox3" data-todoId={{id}} data-todoItem='content3IsChecked' id='checkbox3'> {{content3}}</label></li>{{/if}}
+            {{#if (used content4)}}<li><label><input class="uk-checkbox" {{#if content4IsChecked}}checked{{/if}} type="checkbox" name="checkbox4" data-todoId={{id}} data-todoItem='content4IsChecked' id='checkbox4'> {{content4}}</label></li>{{/if}}
+            {{#if (used content5)}}<li><label><input class="uk-checkbox" {{#if content5IsChecked}}checked{{/if}} type="checkbox" name="checkbox5" data-todoId={{id}} data-todoItem='content5IsChecked' id='checkbox5'> {{content5}}</label></li>{{/if}}
+            {{#if (used content6)}}<li><label><input class="uk-checkbox" {{#if content6IsChecked}}checked{{/if}} type="checkbox" name="checkbox6" data-todoId={{id}} data-todoItem='content6IsChecked' id='checkbox6'> {{content6}}</label></li>{{/if}}
+            {{#if (used content7)}}<li><label><input class="uk-checkbox" {{#if content7IsChecked}}checked{{/if}} type="checkbox" name="checkbox7" data-todoId={{id}} data-todoItem='content7IsChecked' id='checkbox7'> {{content7}}</label></li>{{/if}}
+            {{#if (used content8)}}<li><label><input class="uk-checkbox" {{#if content8IsChecked}}checked{{/if}} type="checkbox" name="checkbox8" data-todoId={{id}} data-todoItem='content8IsChecked' id='checkbox8'> {{content8}}</label></li>{{/if}}
+            {{#if (used content9)}}<li><label><input class="uk-checkbox" {{#if content9IsChecked}}checked{{/if}} type="checkbox" name="checkbox9" data-todoId={{id}} data-todoItem='content9IsChecked' id='checkbox9'> {{content9}}</label></li>{{/if}}
+            {{#if (used content10)}}<li><label><input class="uk-checkbox" {{#if content10IsChecked}}checked{{/if}} type="checkbox" name="checkbox10" data-todoId={{id}} data-todoItem='content10IsChecked' id='checkbox10'>{{content10}}</label></li>{{/if}}
+            </ul>
         </div>
     </div>
 </div>

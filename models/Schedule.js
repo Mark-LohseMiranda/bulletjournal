@@ -63,6 +63,10 @@ Schedule.init(
             type: DataTypes.TEXT,
             defaultValue: ' ',
         },
+        css: {
+            type: DataTypes.STRING,
+            defaultValue: 'position: absolute;',
+        }
     },{
         sequelize,
         freezeTableName: true,

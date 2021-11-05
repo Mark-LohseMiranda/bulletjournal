@@ -89,6 +89,17 @@ router.put("/:id", (req, res) => {
             content8: req.body.content8,
             content9: req.body.content9,
             content10: req.body.content10,
+            content1IsChecked: req.body.content1IsChecked,
+            content2IsChecked: req.body.content2IsChecked,
+            content3IsChecked: req.body.content3IsChecked,
+            content4IsChecked: req.body.content4IsChecked,
+            content5IsChecked: req.body.content5IsChecked,
+            content6IsChecked: req.body.content6IsChecked,
+            content7IsChecked: req.body.content7IsChecked,
+            content8IsChecked: req.body.content8IsChecked,
+            content9IsChecked: req.body.content9IsChecked,
+            content10IsChecked: req.body.content10IsChecked,
+            css: req.body.css
           },
           {
             where: {
