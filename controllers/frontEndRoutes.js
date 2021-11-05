@@ -5,10 +5,10 @@ const {User, Braindump, Inspiration, Todo, Schedule, Note, Goal, Post_it} = requ
 //render login page
 
 router.get("/login", (req, res) => {
-  if (!req.session.user) {
-    res.render("login");
+  if (req.session.user) {
+    res.redirect("/dashboard");
   }
-  res.render("/dashboard");
+  res.render("login");
 });
 
 //render sign up page
