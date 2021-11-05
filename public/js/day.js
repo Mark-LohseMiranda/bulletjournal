@@ -1,11 +1,30 @@
+const editPage = document.querySelector("#editPage");
 const deleteBtn = document.querySelector("#deleteNote");
 const todoList = document.querySelector(".checker");
 let screenWidth = 0;
+const d = new Date();
 //get the day from the URL
 
 const day = window.location.toString().split("/")[
   window.location.toString().split("/").length - 1
 ];
+
+if (day == d.getDate()) {
+  editPage.removeAttribute("style")
+}
+
+//if edit button is clicked move to edit page
+
+editPage.addEventListener("click", async (event) => {
+  await fetch(`/api/notes/${day}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      location.href = `/note/${data[0].id}`;
+    });
+});
 
 //if delete button is clicked use the day to find the note.id then delete the note
 
