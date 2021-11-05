@@ -25,20 +25,8 @@
                 <div class="uk-navbar-dropdown" id='dropdown'>
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="#ex-templates" uk-toggle>Templates</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#development-modal" uk-toggle>Development</a></li>
-                        <div id="development-modal" uk-modal>
-                            <div class="uk-modal-dialog uk-modal-body">
-                                <h2 class="uk-modal-title">Development</h2>
-                                <a href="https://github.com/lindsfitz"><h4>Lindsay Fitzgerald - Project Manager</h4></a>
-                                <a href="https://github.com/Mark-LohseMiranda"><h4>Mark Lohse-Miranda - Git Coordinator</h4></a>
-                                <a href="https://github.com/axumdzn"><h4>Kenneth Felix - Back-End Engineer</h4></a>
-                                <a href="https://github.com/kelliekumasaka"><h4>Kellie Kumasaka - Front-End Developer</h4></a>
-                                <p class="uk-text-right">
-                                    <button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
-                                </p>
-                            </div>
-                        </div>
+                        <li><a  uk-toggle="target:#about">About</a></li>
+                        <li><a uk-toggle="target: #development-modal">Development</a></li>
                     </ul>
                 </div>
             </li>
@@ -49,6 +37,27 @@
         <div uk-dropdown="mode: click" id="welcomeUser"></div>
     </div>
 </nav>
+
+<div id="development-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">Development</h2>
+        <h4>Meet the team!</h4>
+        <a href="https://github.com/lindsfitz"><p>Lindsay Fitzgerald - Project Manager</p></a>
+        <a href="https://github.com/Mark-LohseMiranda"><p>Mark Lohse-Miranda - Git Coordinator</p></a>
+        <a href="https://github.com/axumdzn"><p>Kenneth Felix - Back-End Engineer</p></a>
+        <a href="https://github.com/kelliekumasaka"><p>Kellie Kumasaka - Front-End Developer</p></a>
+    </div>
+</div>
+
+<div id="about" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">About</h2>
+        <p>Bullet Journaling Squared was inspired by bullet journaling, a way to keep track of your daily activities in a fun and personalized way. We wanted to make an online version of this, so that people can view their journals from anywhere, and jot down any thoughts they might have at any moment. Hope you enjoy!</p>
+    </div>
+</div>
+
 <div id="content">
     {{{body}}}
 </div>
