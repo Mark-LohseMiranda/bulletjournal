@@ -31,7 +31,7 @@ a,
 }
 a:hover,
 .uk-link:hover {
-  color: #345b63;
+  color: #152D35;
   text-decoration: underline;
 }
 abbr[title] {
@@ -372,6 +372,10 @@ iframe {
   border-top: 1px solid #345b63;
 }
 
+.uk-input {
+  overflow: hidden;
+}
+
 /* CARDS */
 
 .uk-card{
@@ -413,10 +417,11 @@ iframe {
   border-bottom: 1px solid #345b63;
 }
 .uk-table th {
-  text-align: left;
+  text-align: center;
 }
 .uk-table td {
   vertical-align: top;
+  text-align: center;
 }
 .uk-table thead th {
   vertical-align: bottom;
