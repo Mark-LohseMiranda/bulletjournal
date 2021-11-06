@@ -69,8 +69,6 @@ router.get("/note/:id", (req, res) => {
     include:[User, Braindump, Inspiration, Todo, Schedule, Goal, Post_it]
   }).then(noteData=>{
     const hbsNote = noteData.get({plain:true});
-    console.log(hbsNote)
-    console.log(hbsNote.todos.length)
     res.render("note",hbsNote)
   }).catch(err => {
     console.log(err);
@@ -90,7 +88,6 @@ router.get('/day/:num', (req, res) => {
         include:[User, Braindump, Inspiration, Todo, Schedule, Goal, Post_it]
     }).then(noteData=>{
         const hbsNote = noteData.get({plain:true});
-        console.log(hbsNote)
         res.render("day",hbsNote)
     }).catch(err => {
         console.log(err);

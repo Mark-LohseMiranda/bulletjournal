@@ -209,7 +209,6 @@ async function movingToTheGroovin() {
 
 window.addEventListener("resize", (e) => {
   screenWidth = document.documentElement.clientWidth;
-  console.log(screenWidth);
   if (screenWidth > 767) {
     movingToTheGroovin();
   } else {

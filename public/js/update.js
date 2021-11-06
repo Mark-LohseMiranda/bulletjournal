@@ -55,7 +55,6 @@ saveBtn.addEventListener("click", async (event) => {
   })
     .then((response) => response.json())
     .then(async (data) => {
-      console.log(data);
       if (data[0].schedules[0]) {
         scheduleId = data[0].schedules[0].id;
         const contentData = {
