@@ -74,39 +74,40 @@
     {{#each lists}}
     <li>
         <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <button class="uk-button uk-button-default uk-align-right" type="button"><span uk-icon="icon:  minus-circle"></span></button>
             <h3>{{title}}</h3>
             {{#if (empty content1)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content1}}</span>
                 </label>
             {{/if}}
             {{#if (empty content2)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content2}}</span>
                 </label>
             {{/if}}
             {{#if (empty content3)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content3}}</span>
                 </label>
             {{/if}}
             {{#if (empty content4)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content4}}</span>
                 </label>
             {{/if}}
             {{#if (empty content5)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content5}}</span>
                 </label>
             {{/if}}
             {{#if (empty content6)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content6}}</span>
                 </label>
@@ -118,19 +119,19 @@
                 </label>
             {{/if}}
             {{#if (empty content8)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content8}}</span>
                 </label>
             {{/if}}
             {{#if (empty content9)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content9}}</span>
                 </label>
             {{/if}}
             {{#if (empty content10)}}
-                <label>
+                <label style="display: block;">
                     <span uk-icon="icon:  chevron-double-right"></span>
                     <span>{{content10}}</span>
                 </label>
@@ -234,14 +235,3 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
-    <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
-    <div uk-sortable="handle: .uk-card"
-        class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
-
-        {{#if goals.[0]}}
-        {{> pastGoals}}
-        {{/if}}
-
-    </div>
-</div>
