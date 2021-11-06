@@ -1,6 +1,6 @@
-# Bullet Journaling Squared<br>
+# Bullet Journal Squared<br>
 ## About
-Bullet Journaling Squared is a website that allows users to create an account, write journal entries, and view their past thoughts and feelings. 
+Bullet Journal Squared is a website that allows users to create an account, write journal entries, and view their past thoughts and feelings. 
 
 
 ## Table of Contents

@@ -31,4 +31,7 @@ router.use("/todos",todoRoutes);
 const inspirationRoutes = require("./inspirationRoutes");
 router.use("/inspirations",inspirationRoutes);
 
+const listRoutes = require('./listRoutes');
+router.use('/lists', listRoutes)
+
 module.exports = router;

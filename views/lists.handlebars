@@ -1,4 +1,5 @@
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span uk-icon='icon: menu'></span></button>
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span
+        uk-icon='icon: menu'></span></button>
 
 {{!-- side bar for navigating the site --}}
 <div id="offcanvas-nav" uk-offcanvas="overlay: true">
@@ -6,27 +7,26 @@
         <button class="uk-offcanvas-close" type="button" uk-close></button>
 
         <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <li class="uk-active"><a href="#">New Page</a></li>
+            <li class="uk-active"><a href="#modal" uk-toggle><span class="uk-margin-small-right"
+                        uk-icon="icon: plus"></span>Add Today's Page</a></li>
             <li class="uk-nav-header">PAGES</li>
-            <li><a href="#">Add a Page</a></li>
+            <li id='pageArchive'><a href="/alldailynotes">View All Daily Pages</a></li>
             <li><a href="#">New Page From Template</a></li>
-            <li><a href="#">New Long-Term Page</a></li>
-            <li><a href="#">View All Daily Pages</a></li>
-            <li><a href="#">View All Long-Term Pages</a></li>
+            <li id='newList'><a href="#">New Long-Term Page</a></li>
+            <li id='listArchive'><a href="/longterm">View All Long-Term Pages</a></li>
 
             <li class="uk-nav-header">TEMPLATES</li>
 
             <li><a href="#">View Your Templates</a></li>
-            <li><a href="#">Add A Template</a></li>
             <li><a href="#">Example Templates</a></li>
-
-
             <li class="uk-nav-header">ACCOUNT</li>
             <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
                     Your Theme</a></li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
+            {{!-- <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a>
+            </li> --}}
             <li class="uk-nav-divider"></li>
-            <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            <li id='logout'><a href="/api/users/logout"><span class="uk-margin-small-right"
+                        uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
     </div>
@@ -41,6 +41,10 @@
                     style="background-image: url(/images/defaulttheme.png);"></span><br><input class="uk-radio"
                     type="radio" name="radio1" id='default-theme'>Default</label>
             <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/softtheme.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='soft-theme'>
+                Soft Default</label>
+            <label>
                 <span class="uk-icon uk-icon-image" style="background-image: url(/images/greentheme.png);"></span><br>
                 <input class="uk-radio" type="radio" name="radio1" id='green_theme'>
                 Soft Green</label>
@@ -49,10 +53,6 @@
                 <input class="uk-radio" type="radio" name="radio1" id='natural-theme'>
                 Natural</label>
             <label>
-                <span class="uk-icon uk-icon-image" style="background-image: url(/images/softtheme.png);"></span><br>
-                <input class="uk-radio" type="radio" name="radio1" id='soft-theme'>
-                Soft Default</label>
-            <label>
                 <span class="uk-icon uk-icon-image" style="background-image: url(/images/darkmode.png);"></span><br>
                 <input class="uk-radio" type="radio" name="radio1" id='dark-mode'>
                 Default Dark</label>
@@ -60,6 +60,7 @@
                 <span class="uk-icon uk-icon-image" style="background-image: url(/images/darkmono.png);"></span><br>
                 <input class="uk-radio" type="radio" name="radio1" id='dark-mono'>
                 Classic Dark Mode</label>
+            
         </div>
         <br><br>
 
@@ -69,23 +70,18 @@
     </div>
 </div>
 
-{{#each lists}}
-<div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
-    <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
-    <div uk-sortable="handle: .uk-card"
-        class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
-        <p>{{content1}}</p>
-        <p>{{content2}}</p>
-        <p>{{content3}}</p>
-        <p>{{content4}}</p>
-        <p>{{content5}}</p>
-        <p>{{content6}}</p>
-        <p>{{content7}}</p>
-        <p>{{content8}}</p>
-        <p>{{content9}}</p>
-        <p>{{content10}}</p>
+
+<div class='uk-align-right uk-margin-xlarge-right'>
+    <button style="visibility:hidden" id="editPage" class="uk-button uk-button-default">Edit Page</button>
+    <button uk-toggle='target:#deleteConfirm' class="uk-button uk-button-default">Delete Page</button>
+    <div id="deleteConfirm" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Are you sure you want to delete your page? This cannot be undone!</p><br><br>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button" id='deleteNote'>Delete This Page</button>
+        </div>
     </div>
 </div>
-{{/each}}
 
+<script src="/js/lists.js"></script>
 <script src="/js/themes.js"></script>

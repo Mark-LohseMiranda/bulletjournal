@@ -7,7 +7,8 @@ const Post_it = require('./Post_it');
 const Reminder = require('./Reminder');
 const Schedule = require('./Schedule');
 const Todo = require('./Todo');
-const Inspiration = require('./Inspiration')
+const Inspiration = require('./Inspiration');
+const List = require('./List');
 
 // User.hasMany(Month, {
 //     foreignKey: 'user_id',
@@ -17,6 +18,15 @@ const Inspiration = require('./Inspiration')
 // Month.belongsTo(User, {
 //     foreignKey:'user_id'
 // });
+
+User.hasMany(List, {
+    foreignKey:'user_id',
+    onDelete:'CASCADE'
+});
+
+List.belongsTo(User, {
+    foreignKey:'user_id'
+})
 
 User.hasMany(Note, {
     foreignKey: 'user_id',
@@ -98,4 +108,4 @@ Inspiration.belongsTo(Note, {
     foreignKey:'note_id'
 });
 
-module.exports = {User,Note,Schedule,Reminder,Todo,Post_it,Goal, Braindump,Inspiration};
+module.exports = {User,Note,Schedule,Reminder,Todo,Post_it,Goal, Braindump,Inspiration, List};
