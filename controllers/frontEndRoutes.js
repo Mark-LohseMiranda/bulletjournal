@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {User, Braindump, Inspiration, Todo, Schedule, Note, Goal, Post_it} = require('../models');
+const {User, Braindump, Inspiration, Todo, Schedule, Note, Goal, Post_it, List} = require('../models');
 
 //render login page
 
@@ -33,7 +33,30 @@ router.get("/alldailynotes", (req, res)=> {
     return res.redirect("/login")
   };
   res.render("alldailynotes")
-})
+});
+
+router.get("/lists", (req, res)=> {
+  if(!req.session.user){
+    return res.redirect("/login")
+  };
+  res.render("lists")
+});
+
+router.get("/longterm", (req,res) => {
+  if(!req.session.user){
+    return res.redirect("/login")
+  };
+  List.findAll({
+    where:{
+      user_id:req.session.user.id
+    }
+  }).then(listData => {
+    const hbsList = listData.map(list=>list.get({plain:true}))
+    res.render("longterm", {lists:hbsList})
+  }).catch(err => {
+    res.render("404");
+  })
+});
 
 router.get("/note/:id", (req, res) => {
   if(!req.session.user){
