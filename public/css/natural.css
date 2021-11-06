@@ -228,13 +228,13 @@ html {
     border-radius: 3px;
   }
   ::-moz-selection {
-    background: var(--lightcolor);
-    color: #ffffff;
+    background: #562349;
+    color: #562349;
     text-shadow: none;
   }
   ::selection {
-    background: var(--lightcolor);
-    color: #ffffff;
+    background: #562349;
+    color: #562349;
     text-shadow: none;
   }
 
@@ -263,6 +263,16 @@ html {
     @-ms-viewport {
       width: device-width;
     }
+  }
+
+  /* NAVBARS */
+
+  #topnav {
+    background: #FEF5ED;
+  }
+
+  #sidebar {
+    background: #FEF5ED;
   }
 
   .uk-list {
@@ -310,12 +320,19 @@ html {
 
 
 /* table */
+.uk-container h1 {
+  color: #1F1D36
+} 
+
 
 .uk-table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     margin-bottom: 15px;
+    background: rgba(255,245,218,0.7);
+    /* background: #FFD2A5; */
+    border: 1px white solid;
   }
   * + .uk-table {
     margin-top: 15px;
@@ -323,7 +340,7 @@ html {
   .uk-table th,
   .uk-table td {
     padding: 8px 8px;
-    border-bottom: 1px solid var(--darkcolor);
+    border-bottom: 1px solid white;
   }
   .uk-table th {
     text-align: center;
@@ -345,14 +362,16 @@ html {
     color: #999999;
   }
   .uk-table tbody tr.uk-active {
-    background: var(--lightcolor);
+    
+    background: #F4C7AB;
   }
   .uk-table-middle,
   .uk-table-middle td {
     vertical-align: middle !important;
   }
   .uk-table-striped tbody tr:nth-of-type(odd) {
-    background: var(--lightcolor);
+    /* background: #F6D7A7; */
+    background: rgba(246, 215, 167, 0.5)
   }
   .uk-table-condensed td {
     padding: 4px 8px;
@@ -526,6 +545,9 @@ html {
   }
   .uk-form-width-large {
     width: 500px;
+  }
+  .uk-input {
+    overflow: hidden;
   }
 
   .uk-card-primary {
@@ -792,94 +814,6 @@ html {
 }
 
 
-/* DATEPICKER */
-
-.uk-datepicker {
-    z-index: 1050;
-    width: auto;
-    -webkit-animation: uk-fade 0.2s ease-in-out;
-    animation: uk-fade 0.2s ease-in-out;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-  }
-  .uk-datepicker-nav {
-    margin-bottom: 15px;
-    text-align: center;
-    line-height: 20px;
-  }
-  .uk-datepicker-nav:before,
-  .uk-datepicker-nav:after {
-    content: "";
-    display: table;
-  }
-  .uk-datepicker-nav:after {
-    clear: both;
-  }
-  .uk-datepicker-nav a {
-    color: #444444;
-    text-decoration: none;
-  }
-  .uk-datepicker-nav a:hover {
-    color: #444444;
-  }
-  .uk-datepicker-previous {
-    float: left;
-  }
-  .uk-datepicker-next {
-    float: right;
-  }
-  .uk-datepicker-previous:after,
-  .uk-datepicker-next:after {
-    width: 20px;
-    font-family: FontAwesome;
-  }
-  .uk-datepicker-previous:after {
-    content: "\f053";
-  }
-  .uk-datepicker-next:after {
-    content: "\f054";
-  }
-  .uk-datepicker-table {
-    width: 100%;
-  }
-  .uk-datepicker-table th,
-  .uk-datepicker-table td {
-    padding: 2px;
-  }
-  .uk-datepicker-table th {
-    font-size: 12px;
-  }
-  .uk-datepicker-table a {
-    display: block;
-    width: 26px;
-    line-height: 24px;
-    text-align: center;
-    color: #444444;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-  }
-  a.uk-datepicker-table-muted {
-    color: #999999;
-  }
-  .uk-datepicker-table a:hover,
-  .uk-datepicker-table a:focus {
-    background-color: #fafafa;
-    color: #444444;
-    outline: none;
-    border-color: rgba(0, 0, 0, 0.16);
-    text-shadow: 0 1px 0 #ffffff;
-  }
-  .uk-datepicker-table a:active {
-    background-color: var(--bg);
-    color: #444444;
-  }
-  .uk-datepicker-table a.uk-active {
-    background: var(--mediumcolor);
-    color: #ffffff;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-  }
 
   .uk-section {
       background-color: var(--bg);

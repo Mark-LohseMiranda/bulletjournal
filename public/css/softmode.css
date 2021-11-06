@@ -533,6 +533,12 @@ html {
     width: 500px;
   }
 
+  .uk-input {
+    overflow: hidden;
+  }
+
+  /* CARD SETTINGS */
+
   .uk-card-primary {
     background: var(--darkcolor);
   }

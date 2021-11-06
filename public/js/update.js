@@ -15,7 +15,7 @@ const timeTwenty = document.querySelector("#timeTwenty");
 const timeNineteen = document.querySelector("#timeNineteen");
 const braindumpText = document.querySelector("#braindumpText");
 const braindumpTitle = document.querySelector("#braindumpTitle");
-const postitValue = document.getElementsByClassName("postitValue");
+const postitValue = document.querySelector("#postitValue");
 const postitTitle = document.querySelector("#postitTitle");
 
 let scheduleId;
@@ -126,7 +126,6 @@ saveBtn.addEventListener("click", async (event) => {
       }
       if (data[0].post_its[0]) {
         postitID = data[0].post_its[0].id;
-        
         fetch(`/api/postits/${postitID}`, {
           method: "PUT",
           body: JSON.stringify({ title: postitTitle.value, content: postitValue.value }),

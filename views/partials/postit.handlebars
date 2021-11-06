@@ -16,7 +16,7 @@
         <input class="uk-input uk-form-blank" id="postitTitle" type="text" placeholder="Add a title or caption!">
 
         {{!-- textbox if text is selected --}}
-        <textarea class="uk-textarea uk-form-blank postitValue" rows="15" cols="15"
+        <textarea class="uk-textarea uk-form-blank" rows="15" cols="15"
             placeholder="POST those thoughts here..." id='postitTextarea'></textarea>
 
         {{!-- upload widget if image is selected --}}
@@ -26,8 +26,8 @@
 
         {{!-- div for uploaded image and button to remove that image --}}
         <div style='visibility:hidden' id='image-div'>
-            <div class='postitValue' id='image-content'>
-                <img id='display-img' src="" alt="user-image" class='uk-width-2-3 uk-height-2-3 uk-align-center'>
+            <div id='postitValue'>
+                <img id='display-img' src="" alt="user-image" style='max-width:380px; max-height:290px;' class='uk-align-center'>
             </div>
             <br>
 
