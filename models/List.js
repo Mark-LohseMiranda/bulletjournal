@@ -11,6 +11,10 @@ List.init(
             primaryKey:true,
             autoIncrement:true
         },
+        title:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
         content1: {
             type: DataTypes.STRING,
             allowNull:true

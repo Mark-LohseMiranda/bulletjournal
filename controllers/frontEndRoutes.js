@@ -51,8 +51,8 @@ router.get("/longterm", (req,res) => {
       user_id:req.session.user.id
     }
   }).then(listData => {
-    const hbsList = listData.get({plain:true});
-    res.render("longterm", hbsList)
+    const hbsList = listData.map(list=>list.get({plain:true}))
+    res.render("longterm", {lists:hbsList})
   }).catch(err => {
     res.render("404");
   })

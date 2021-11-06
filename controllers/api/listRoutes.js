@@ -26,6 +26,7 @@ router.post("/", (req, res) => {
     }
     List.create({
       user_id: req.session.user.id,
+      title:req.body.title,
       content1: req.body.content1,
       content2: req.body.content2,
       content3: req.body.content3,
