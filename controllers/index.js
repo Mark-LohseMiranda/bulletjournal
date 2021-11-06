@@ -10,7 +10,5 @@ router.use("/api",apiRoutes);
 const sessionRoutes = require("./sessionsRoutes")
 router.use("/sessions",sessionRoutes)
 
-const cloudinaryRoutes = require("./cloudinary");
-router.use(cloudinaryRoutes)
 
 module.exports = router;

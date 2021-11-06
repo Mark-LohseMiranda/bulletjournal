@@ -18,7 +18,7 @@
             <li class="uk-nav-header">TEMPLATES</li>
 
             <li><a href="#">View Your Templates</a></li>
-            <li><a href="#ex-templates" uk-toggle>Example Templates</a></li>
+            <li><a href="#template-slideshow" uk-toggle>Example Templates</a></li>
             <li class="uk-nav-header">ACCOUNT</li>
             <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
                     Your Theme</a></li>
@@ -67,6 +67,77 @@
         <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
         <button class="uk-button uk-button-primary uk-modal-close" type="submit" id='theme-switch'>Save</button>
         </p>
+    </div>
+</div>
+
+{{!-- EXAMPLE THEMES SLIDESHOW MODAL --}}
+
+<div id="template-slideshow" class="uk-modal-container" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: slide; finite: true">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <img src="/images/addnew.png" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                        <h3 class="uk-margin-remove">Customize Your Daily Page!</h3>
+                        <p class="uk-margin-remove">Make your pages fit your lifestyle by including elements that work
+                            for your day. You can select any combination by checking the boxes on our 'Add Today's Page'
+                            builder, or base your selection on one of our pre-made example templates. To look back at
+                            your favorite templates later, click the heart icon at the bottom of the slideshow.
+                            Favorited templates can be viewed via the 'View My Templates' link on your dashboard. Scroll
+                            for inspiration!</p><br>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/defaultfullday.png" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                        <h3 class="uk-margin-remove">Full Day</h3>
+                        <p class="uk-margin-remove">This template shows all of our available elements on one page. If
+                            you have a full day ahead of you, this option offers the most opportunity for organization
+                            and planning. To create this page in our Daily Page builder, make sure all of those boxes
+                            are checked!</p>
+                        <a href="" class="uk-icon-button" uk-icon="heart"></a>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/creatingday.png" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                        <h3 class="uk-margin-remove">Lists</h3>
+                        <p class="uk-margin-remove">To create this page in our Daily Page builder, you'll want to check
+                            the boxes next to To Do List and Goals.</p>
+                        <a href="" class="uk-icon-button" uk-icon="heart"></a>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/defaultacnhday.png" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                        <h3 class="uk-margin-remove">Overlay Bottom</h3>
+                        <p class="uk-margin-remove">To achieve this simple layout, select Brain Dump and Post-It Note in
+                            our Daily Page builder.</p>
+                        <a href="" class="uk-icon-button" uk-icon="heart"></a>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/defaultthreeday.png" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                        <h3 class="uk-margin-remove">Overlay Bottom</h3>
+                        <p class="uk-margin-remove">Do you have a busy day ahead of you but you can't seem to find the
+                            motivation to get started? Include an Inspiration on the page builder and an inspirational
+                            quote will automatically be included to give you that boost you need to take on the day.
+                            This layout can be achived by selecting To Do List, Goals, and Inspiration in that daily
+                            builder.</p>
+                        <a href="" class="uk-icon-button" uk-icon="heart"></a>
+                    </div>
+                </li>
+            </ul>
+            <div class="uk-light">
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                    uk-slideshow-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                    uk-slideshow-item="next"></a>
+            </div>
+        </div>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
     </div>
 </div>
 

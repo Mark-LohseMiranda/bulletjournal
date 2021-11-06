@@ -12,7 +12,7 @@ document.getElementById('postit-imageBtn').onclick = function () {
 
 document.getElementById('remove-image').onclick = function () {
     document.getElementById('display-img').setAttribute('src','');
-    document.getElementById('display-img').setAttribute('style','visibility:hidden')
+    document.getElementById('image-div').setAttribute('style','visibility:hidden')
     document.getElementById('content-buttons').setAttribute('style','display:flex');
     document.getElementById('postitImageUpload').setAttribute('style','visibility:visible');
 }
@@ -29,13 +29,13 @@ var myWidget = cloudinary.createUploadWidget({
             menuIcons: "#FFFFFF",
             textDark: "#000000",
             textLight: "#FFFFFF",
-            link: "#003638",
+            link: "#055052",
             action: "#FF620C",
-            inactiveTabIcon: "#003638",
+            inactiveTabIcon: "#345B63",
             error: "#F44235",
-            inProgress: "#003638",
+            inProgress: "#D4ECDD",
             complete: "#20B832",
-            sourceBg: "#FFFFFF"
+            sourceBg: "#000000"
         },
     }
 }, (error, result) => {
@@ -44,7 +44,7 @@ var myWidget = cloudinary.createUploadWidget({
         
         document.getElementById('display-img').setAttribute('src',result.info.url)
         document.getElementById('image-div').setAttribute('style','visibility:visible;')
-        document.getElementById('image-content').setAttribute('style','visibility:visible')
+        document.getElementById('postitValue').setAttribute('style','visibility:visible')
         document.getElementById('postitImageUpload').setAttribute('style','visibility:hidden')
         document.getElementById('content-buttons').setAttribute('style','display:none')
         

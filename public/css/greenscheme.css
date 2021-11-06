@@ -526,6 +526,10 @@ html {
     width: 500px;
   }
 
+  .uk-input {
+    overflow: hidden;
+  }
+
   .uk-card-primary {
     background: var(--darkcolor);
   }

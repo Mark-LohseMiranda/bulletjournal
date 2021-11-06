@@ -387,6 +387,10 @@ iframe {
   color: white;
 }
 
+.uk-input {
+  overflow: hidden;
+}
+
 .uk-card-primary {
   background: rgba(52, 91, 99,0.4);
 }
@@ -412,10 +416,11 @@ iframe {
   border-bottom: 1px solid var(--mediumcolor);
 }
 .uk-table th {
-  text-align: left;
+  text-align: center;
 }
 .uk-table td {
   vertical-align: top;
+  text-align: center;
 }
 .uk-table thead th {
   vertical-align: bottom;

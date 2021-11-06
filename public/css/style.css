@@ -528,6 +528,10 @@ select.uk-form-width-mini {
   width: 500px;
 }
 
+.uk-input {
+  overflow: hidden;
+}
+
 /* BUTTONS */
 
 .uk-navbar-container .uk-navbar-right .uk-icon-button {
