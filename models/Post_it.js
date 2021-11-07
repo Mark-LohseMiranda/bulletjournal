@@ -11,7 +11,10 @@ Post_it.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        content: {
+        text_content: {
+            type: DataTypes.TEXT,
+        },
+        image_content: {
             type: DataTypes.TEXT,
         },
         title: {
