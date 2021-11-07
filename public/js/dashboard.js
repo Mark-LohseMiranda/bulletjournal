@@ -51,12 +51,8 @@ function getIcon() {
             let dayId = document.getElementById(`${element}`);
             if (dayId) {
               let old = dayId.innerHTML;
-              let newhtml = `<a href="day/${element}">${old}</a>`;
+              let newhtml = `<a class="uk-icon-button calendar-note" href="day/${element}">${old}</a>`;
               dayId.innerHTML = newhtml;
-              dayId.setAttribute(
-                "class",
-                "notePresent"
-              );
             }
           }
         });

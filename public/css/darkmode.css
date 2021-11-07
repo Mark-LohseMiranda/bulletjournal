@@ -6,10 +6,6 @@
   --darkcolor:#152D35;
 }
 
-.notePresent {
-  background: radial-gradient(circle, rgba(21,45,53,1) 20%, rgba(212,236,221,0) 59%);
-}
-
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -29,7 +25,7 @@ a:hover {
 }
 a,
 .uk-link {
-  color: var(--lightcolor);
+  color: var(--darkcolor);
   text-decoration: none;
   cursor: pointer;
 }
@@ -413,7 +409,6 @@ iframe {
 }
 .uk-table th,
 .uk-table td {
-  padding: 8px 8px;
   border-bottom: 1px solid #345b63;
 }
 .uk-table th {
@@ -684,7 +679,7 @@ select.uk-form-width-mini {
 
 /* BUTTONS */
 
-.uk-navbar-container .uk-navbar-right .uk-icon-button {
+.uk-navbar-container .uk-navbar-right .uk-icon-button, .uk-text-bold .uk-icon-button {
   background: var(--lightcolor);
   color: white;
 }

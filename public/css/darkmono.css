@@ -5,10 +5,6 @@
   --lightcolor:#C6C6C8;
 }
 
-.notePresent {
-  background: radial-gradient(circle, rgba(198,198,200,1) 20%, rgba(95,103,105,0) 59%);
-}
-
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -28,13 +24,13 @@ a:hover {
 }
 a,
 .uk-link {
-  color: var(--bg);
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
 a:hover,
 .uk-link:hover {
-  color: var(--lightcolor);
+  color: var(--mediumcolor);
   text-decoration: underline;
 }
 abbr[title] {
@@ -375,7 +371,6 @@ iframe {
   border-top: 1px solid var(--mediumcolor);
 }
 
-
 /* CARDS */
 
 .uk-card{
@@ -384,7 +379,11 @@ iframe {
   color:#ffffff;
 }
 
-.uk-card-header, .uk-card-title, .uk-card-default .uk-card-title {
+.uk-card-title {
+  color:var(--lightcolor)
+}
+
+.uk-card-header .uk-card-title {
   color: white;
 }
 
@@ -413,7 +412,6 @@ iframe {
 }
 .uk-table th,
 .uk-table td {
-  padding: 8px 8px;
   border-bottom: 1px solid var(--mediumcolor);
 }
 .uk-table th {
@@ -684,7 +682,7 @@ select.uk-form-width-mini {
 
 /* BUTTONS */
 
-.uk-navbar-container .uk-navbar-right .uk-icon-button {
+.uk-navbar-container .uk-navbar-right .uk-icon-button,  .uk-text-bold .uk-icon-button {
   background: var(--lightcolor);
   color: white;
 }
