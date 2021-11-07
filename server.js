@@ -11,7 +11,7 @@ const hbs = exphbs.create({
     helpers:{
         exists: function (item) {return item.length != 0},
         empty: function(item){return item!==""},
-        used: function (item) {return item.trim().length > 0}
+        used: function (item) {return item.length > 1}
     }
 });
 
