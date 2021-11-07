@@ -34,7 +34,7 @@ a,
 }
 a:hover,
 .uk-link:hover {
-  color: var(--mediumcolor);
+  color: var(--lightcolor);
   text-decoration: underline;
 }
 abbr[title] {
@@ -375,6 +375,7 @@ iframe {
   border-top: 1px solid var(--mediumcolor);
 }
 
+
 /* CARDS */
 
 .uk-card{
@@ -383,11 +384,7 @@ iframe {
   color:#ffffff;
 }
 
-.uk-card-title {
-  color:var(--lightcolor)
-}
-
-.uk-card-header .uk-card-title {
+.uk-card-header, .uk-card-title, .uk-card-default .uk-card-title {
   color: white;
 }
 

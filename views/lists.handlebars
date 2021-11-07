@@ -4,13 +4,10 @@
 <div id="offcanvas-nav" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
-
         <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <li class="uk-active"><a href="#modal" uk-toggle><span class="uk-margin-small-right"
-                        uk-icon="icon: plus"></span>Add Today's Page</a></li>
+            <li class="uk-active"><a href="/note" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: plus"></span>Add Today's Page</a></li>
             <li class="uk-nav-header">PAGES</li>
             <li id='pageArchive'><a href="/alldailynotes">View All Daily Pages</a></li>
-            <li><a href="#">New Page From Template</a></li>
             <li id='newList'><a href="/lists">New Long-Term Page</a></li>
             <li id='listArchive'><a href="/longterm">View All Long-Term Pages</a></li>
 
@@ -19,13 +16,9 @@
             <li><a href="#">View Your Templates</a></li>
             <li><a href="#">Example Templates</a></li>
             <li class="uk-nav-header">ACCOUNT</li>
-            <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
-                    Your Theme</a></li>
-            {{!-- <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a>
-            </li> --}}
+            <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change Your Theme</a></li>
             <li class="uk-nav-divider"></li>
-            <li id='logout'><a href="/api/users/logout"><span class="uk-margin-small-right"
-                        uk-icon="icon: sign-out"></span> Log Out</a>
+            <li id='logout'><a href="/api/users/logout"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
     </div>
@@ -83,18 +76,18 @@
 
 <form class="uk-margin-auto uk-width-5-6">
     <label for="listTitle">Title:</label>
-    <textarea class="uk-textarea uk-form-blank" rows="1" id="listTitle" type="text">{{title}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" id="listTitle" type="text" placeholder="My Monthly Movies to Watch...">{{title}}</textarea>
     <label for="listText1">Content:</label>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText1">{{content1}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText2">{{content2}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText3">{{content3}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText4">{{content4}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText5">{{content5}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText6">{{content6}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText7">{{content7}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText8">{{content8}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText9">{{content9}}</textarea>
-    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" id="listText10">{{content10}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText1">{{content1}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText2">{{content2}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText3">{{content3}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText4">{{content4}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText5">{{content5}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText6">{{content6}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText7">{{content7}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText8">{{content8}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText9">{{content9}}</textarea>
+    <textarea class="uk-textarea uk-form-blank" rows="1" type="text" placeholder="your movie here"id="listText10">{{content10}}</textarea>
 </form>
 
 <script src="/js/lists.js"></script>
