@@ -17,6 +17,8 @@ const braindumpText = document.querySelector("#braindumpText");
 const braindumpTitle = document.querySelector("#braindumpTitle");
 const postitValue = document.querySelector("#postitValue");
 const postitTitle = document.querySelector("#postitTitle");
+const postitText = document.querySelector('#postitTextarea')
+const postitImg = document.querySelector("#postitImage")
 
 let scheduleId;
 let braindumpId;
@@ -125,9 +127,15 @@ saveBtn.addEventListener("click", async (event) => {
       }
       if (data[0].post_its[0]) {
         postitID = data[0].post_its[0].id;
+        var postitValue;
+        if (postitText.value){
+          postitValue = postitText.value;
+        } else {
+          postitValue = postitImg.value;
+        }
         fetch(`/api/postits/${postitID}`, {
           method: "PUT",
-          body: JSON.stringify({ title: postitTitle.value, content: postitValue.value }),
+          body: JSON.stringify({ title: postitTitle.value, content: postitValue }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
