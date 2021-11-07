@@ -17,7 +17,7 @@ Inspiration.init(
         },
         css: {
             type: DataTypes.STRING,
-            defaultValue: 'position: absolute;',
+            defaultValue: 'position:absolute;top:51.64319248826291vw; left:59.53051643192488vw;',
         }
     },{
         sequelize,

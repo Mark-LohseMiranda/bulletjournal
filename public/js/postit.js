@@ -44,7 +44,7 @@ var myWidget = cloudinary.createUploadWidget({
         
         document.getElementById('display-img').setAttribute('src',result.info.url)
         document.getElementById('image-div').setAttribute('style','visibility:visible;')
-        document.getElementById('postitValue').setAttribute('style','visibility:visible')
+        // document.getElementById('postitValue').setAttribute('style','visibility:visible')
         document.getElementById('postitImageUpload').setAttribute('style','visibility:hidden')
         document.getElementById('content-buttons').setAttribute('style','display:none')
         

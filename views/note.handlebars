@@ -89,7 +89,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/defaultfullday.png" alt="" uk-cover>
+                    <img src="/images/defaultfullday.png" alt="" uk-cover>
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                         <h3 class="uk-margin-remove">Full Day</h3>
                         <p class="uk-margin-remove">This template shows all of our available elements on one page. If
@@ -109,7 +109,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/defaultacnhday.png" alt="" uk-cover>
+                    <img src="/images/defaultacnhday.png" alt="" uk-cover>
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                         <h3 class="uk-margin-remove">Overlay Bottom</h3>
                         <p class="uk-margin-remove">To achieve this simple layout, select Brain Dump and Post-It Note in
@@ -118,7 +118,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/defaultthreeday.png" alt="" uk-cover>
+                    <img src="/images/defaultthreeday.png" alt="" uk-cover>
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                         <h3 class="uk-margin-remove">Overlay Bottom</h3>
                         <p class="uk-margin-remove">Do you have a busy day ahead of you but you can't seem to find the
@@ -142,6 +142,31 @@
 </div>
 
 <div class='uk-align-right uk-margin-xlarge-right'>
+    <button uk-toggle='target:#addConfirm' id="addWidget" class="uk-button uk-button-default">Add Widget</button>
+    <div id="addConfirm" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Which would you like to add</p><br><br>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            {{#unless (exists schedules)}} 
+            <button class="uk-button uk-button-primary" type="button" id='addSchedule'>Add Schedule</button>
+            {{/unless}}
+            {{#unless (exists braindumps)}} 
+            <button class="uk-button uk-button-primary" type="button" id='addBraindump'>Add Braindump</button>
+            {{/unless}}
+            {{#unless (exists todos)}} 
+            <button class="uk-button uk-button-primary" type="button" id='addTodos'>Add Todo Lis</button>
+            {{/unless}}
+            {{#unless (exists inspirations)}} 
+            <button class="uk-button uk-button-primary" type="button" id='addInspiration'>Add Inspiration</button>
+            {{/unless}}
+            {{#unless (exists goals)}} 
+            <button class="uk-button uk-button-primary" type="button" id='addGoals'>Add Goals</button>
+            {{/unless}}
+            {{#unless (exists post_its)}} 
+            <button class="uk-button uk-button-primary" type="button" id='addPostits'>Add Post It Note</button>
+            {{/unless}}
+        </div>
+    </div>
     <button id='saveData' class="uk-button uk-button-default">Save</button>
     <button uk-toggle='target:#deleteConfirm' class="uk-button uk-button-default">Delete</button>
     <div id="deleteConfirm" uk-modal>

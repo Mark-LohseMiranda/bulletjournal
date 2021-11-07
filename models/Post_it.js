@@ -23,7 +23,7 @@ Post_it.init(
         },
         css: {
             type: DataTypes.STRING,
-            defaultValue: 'position: absolute;',
+            defaultValue: 'position:absolute;top:19.074074074074073vw; left:58.7962962962963vw;',
         }
     },{
         sequelize,

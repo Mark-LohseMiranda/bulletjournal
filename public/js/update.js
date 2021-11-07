@@ -18,6 +18,13 @@ const braindumpTitle = document.querySelector("#braindumpTitle");
 const postitTitle = document.querySelector("#postitTitle");
 const postitText = document.querySelector('#postitTextarea')
 const postitImg = document.querySelector("#display-img")
+const addSchedule = document.querySelector("#addSchedule")
+const addBraindump = document.querySelector("#addBraindump")
+const addTodos = document.querySelector("#addTodos")
+const addInspiration = document.querySelector("#addInspiration")
+const addGoals = document.querySelector("#addGoals")
+const addPostits = document.querySelector("#addPostits")
+
 
 let scheduleId;
 let braindumpId;
@@ -49,8 +56,98 @@ deleteBtn.addEventListener("click", (event) => {
 
 saveBtn.addEventListener("click", async (event) => {
   event.preventDefault();
+  await save();
+  location.href = "/dashboard";
+})
+
+if (!addSchedule && !addBraindump && !addTodos && !addInspiration && !addGoals && !addPostits) {
+  document.querySelector("#addWidget").setAttribute("style", "visibility:hidden")
+}
+
+
+if (addSchedule) {
+  addSchedule.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/schedules", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addBraindump) {
+  addBraindump.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/braindumps", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addTodos) {
+  addTodos.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/todos", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addInspiration) {
+  addInspiration.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/inspirations", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addPostits) {
+  addPostits.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/postits", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addGoals) {
+  addGoals.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/goals", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+
+async function save () {
   const d = new Date();
-  await fetch(`/api/notes/${d.getDate()}`, {
+  const date = "" + (d.getMonth()+1) + d.getDate() + d.getFullYear();
+  await fetch(`/api/notes/${date}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   })
@@ -135,6 +232,8 @@ saveBtn.addEventListener("click", async (event) => {
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
-      location.href = "/dashboard";
+      
     });
-});
+};
+
+
