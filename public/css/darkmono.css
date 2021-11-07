@@ -5,6 +5,10 @@
   --lightcolor:#C6C6C8;
 }
 
+.notePresent {
+  background: radial-gradient(circle, rgba(198,198,200,1) 20%, rgba(95,103,105,0) 59%);
+}
+
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -24,7 +28,7 @@ a:hover {
 }
 a,
 .uk-link {
-  color: var(--lightcolor);
+  color: var(--bg);
   text-decoration: none;
   cursor: pointer;
 }

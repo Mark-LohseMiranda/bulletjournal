@@ -1,6 +1,5 @@
-// retrieves a quote and puts it on the top of the main page for now
-// once pages/db start to take shape this needs to be altered to
-// place the quote into a table
+// retrieves a quote and puts it in a card
+
 const quote = document.querySelector("#randomQuote");
 function getQuote() {
   fetch("https://type.fit/api/quotes")

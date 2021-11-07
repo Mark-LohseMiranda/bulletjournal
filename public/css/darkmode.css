@@ -6,6 +6,10 @@
   --darkcolor:#152D35;
 }
 
+.notePresent {
+  background: radial-gradient(circle, rgba(21,45,53,1) 20%, rgba(212,236,221,0) 59%);
+}
+
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -25,13 +29,13 @@ a:hover {
 }
 a,
 .uk-link {
-  color: #d4ecdd;
+  color: var(--lightcolor);
   text-decoration: none;
   cursor: pointer;
 }
 a:hover,
 .uk-link:hover {
-  color: #152D35;
+  color: var(--bg);
   text-decoration: underline;
 }
 abbr[title] {

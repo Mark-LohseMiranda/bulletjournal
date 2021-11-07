@@ -21,7 +21,7 @@ Braindump.init(
         },
         css: {
             type: DataTypes.STRING,
-            defaultValue: 'position: absolute;',
+            defaultValue: 'position:absolute;top:42.159624413145536vw; left:59.624413145539904vw;',
         }
     },{
         sequelize,

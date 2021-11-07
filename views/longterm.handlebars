@@ -7,7 +7,8 @@
         <button class="uk-offcanvas-close" type="button" uk-close></button>
 
         <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <li class="uk-active"><a href="/note">New Page</a></li>
+            <li class="newnote uk-active"><a href="#modal" uk-toggle><span class="uk-margin-small-right"
+                        uk-icon="icon: plus"></span>Add Today's Page</a></li>
             <li class="uk-nav-header">PAGES</li>
             <li><a href="#">New Page From Template</a></li>
             <li><a href="/lists">New Long-Term Page</a></li>
@@ -24,7 +25,6 @@
             <li class="uk-nav-header">ACCOUNT</li>
             <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
                     Your Theme</a></li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
             <li class="uk-nav-divider"></li>
             <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
@@ -75,7 +75,7 @@
     {{#each lists}}
     <li>
         <div class="uk-card uk-card-default uk-card-body uk-text-center">
-            <button class="uk-button uk-button-default uk-align-right" type="button"><span uk-icon="icon:  minus-circle"></span></button>
+            <button data-id={{id}} class="deletebtn uk-button uk-button-default uk-align-right" type="button"><span data-id={{id}} uk-icon="icon:  minus-circle"></span></button>
             <h3>{{title}}</h3>
             {{#if (empty content1)}}
                 <label style="display: block;">
@@ -184,7 +184,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/defaultfullday.png" alt="" uk-cover>
+                    <img src="/images/defaultfullday.png" alt="" uk-cover>
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                         <h3 class="uk-margin-remove">Full Day</h3>
                         <p class="uk-margin-remove">This template shows all of our available elements on one page. If
@@ -204,7 +204,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/defaultacnhday.png" alt="" uk-cover>
+                    <img src="/images/defaultacnhday.png" alt="" uk-cover>
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                         <h3 class="uk-margin-remove">Overlay Bottom</h3>
                         <p class="uk-margin-remove">To achieve this simple layout, select Brain Dump and Post-It Note in
@@ -213,7 +213,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/defaultthreeday.png" alt="" uk-cover>
+                    <img src="/images/defaultthreeday.png" alt="" uk-cover>
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                         <h3 class="uk-margin-remove">Overlay Bottom</h3>
                         <p class="uk-margin-remove">Do you have a busy day ahead of you but you can't seem to find the
@@ -236,3 +236,4 @@
     </div>
 </div>
 
+<script src="/js/longterm.js"></script>

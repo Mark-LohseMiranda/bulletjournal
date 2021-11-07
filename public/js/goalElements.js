@@ -2,10 +2,14 @@ const goalAdd = document.querySelector("#goal-item");
 const goalList = document.querySelector("#goals-ul");
 let goalValue;
 
+// hides add goal button if there are 10
+
 goalValue = document.getElementsByClassName("goalValue");
 if (goalValue.length === 10) {
   goalAdd.style.display = "none";
 }
+
+// creates a new goal and adds it to the list
 
 if (goalAdd) {
   goalAdd.addEventListener("click", (e) => {

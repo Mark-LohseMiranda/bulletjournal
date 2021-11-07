@@ -12,14 +12,18 @@ router.get("/login", (req, res) => {
 });
 
 //render sign up page
+
 router.get("/signup", (req, res) => {
     res.render("signup");
 });
 
 //render home page
+
 router.get("/", (req, res) => {
   res.render("home");
 });
+
+//render dashboard
 
 router.get("/dashboard", (req, res) => {
   if(!req.session.user){
@@ -28,6 +32,8 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
+//render all notes
+
 router.get("/alldailynotes", (req, res)=> {
   if(!req.session.user){
     return res.redirect("/login")
@@ -35,12 +41,16 @@ router.get("/alldailynotes", (req, res)=> {
   res.render("alldailynotes")
 });
 
+//render lists
+
 router.get("/lists", (req, res)=> {
   if(!req.session.user){
     return res.redirect("/login")
   };
   res.render("lists")
 });
+
+//render longterm items
 
 router.get("/longterm", (req,res) => {
   if(!req.session.user){
@@ -57,6 +67,8 @@ router.get("/longterm", (req,res) => {
     res.render("404");
   })
 });
+
+//get a note by id
 
 router.get("/note/:id", (req, res) => {
   if(!req.session.user){
@@ -75,6 +87,8 @@ router.get("/note/:id", (req, res) => {
     res.status(404).json('no data found!')
   })
 });
+
+//get note by date mmdyyyy
 
 router.get('/day/:num', (req, res) => {
     if(!req.session.user){

@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { List, User } = require("../../models");
 
+//show all lists
+
 router.get("/",(req, res) => {
     List.findAll({
         where: {
@@ -19,6 +21,8 @@ router.get("/",(req, res) => {
         res.status(500).json({ err: "an error occurred" });
     });
 })
+
+//create a list
 
 router.post("/", (req, res) => {
     if (!req.session.user) {
@@ -45,6 +49,38 @@ router.post("/", (req, res) => {
         console.log(err);
         res.status(500).json({ err: "an error occurred" });
       });
+});
+
+//check if logged in user is list owner and if true then delete
+
+router.delete("/:id", (req, res) => {
+  if (!req.session.user) {
+    return res.status(403).json({ err: "not logged in" });
+  }
+  List.findByPk(req.params.id)
+    .then((found) => {
+      if (req.session.user.id !== found.user_id) {
+        return res.status(403).json({ err: "not your list" });
+      }
+      List.destroy({
+        where: {
+          id: req.params.id,
+        },
+      })
+        .then((deleted) => {
+          if (deleted) {
+            res.status(200).json(deleted);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json({ err: "an error occurred" });
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ err: "an error occurred" });
+    });
 });
 
 module.exports = router;

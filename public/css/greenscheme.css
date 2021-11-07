@@ -5,7 +5,9 @@
     --darkcolor:#99A799;
 }
 
-
+.notePresent {
+  background: radial-gradient(circle, rgba(173,194,169,1) 20%, rgba(153,167,153,0) 59%);
+}
 
 
 html {
@@ -27,7 +29,7 @@ html {
   }
   a,
   .uk-link {
-    color: var(--mediumcolor);
+    color: var(--bg);
     text-decoration: none;
     cursor: pointer;
   }

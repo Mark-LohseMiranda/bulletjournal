@@ -1,4 +1,7 @@
 const saveList = document.querySelector('#savePage');
+const deleteBtn = document.querySelector("#deleteList");
+
+// save the list
 
 saveList.addEventListener("click", (event) => {
     event.preventDefault();
@@ -28,3 +31,9 @@ saveList.addEventListener("click", (event) => {
       }
     });
 });
+
+// close the form
+
+deleteBtn.addEventListener("click", (event) => {
+  location.href = "/dashboard"
+})

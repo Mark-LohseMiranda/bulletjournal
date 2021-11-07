@@ -5,7 +5,9 @@
   --darkcolor:#003638;
 }
 
-
+.notePresent {
+  background: radial-gradient(circle, rgba(83,184,187,1) 20%, rgba(5,80,82,0) 59%);
+}
 
 
 html {
@@ -27,7 +29,7 @@ a:hover {
 }
 a,
 .uk-link {
-  color: var(--lightcolor);
+  color: var(--bg);
   text-decoration: none;
   cursor: pointer;
 }
