@@ -17,7 +17,7 @@ if (todoItem) {
         inputField.setAttribute('type','text')
         inputField.setAttribute('placeholder',"Enter an item...");
         
-        checkLabel.appendChild(checkInput);
+        // checkLabel.appendChild(checkInput);
         checkLabel.appendChild(inputField)
         li.appendChild(checkLabel)
         

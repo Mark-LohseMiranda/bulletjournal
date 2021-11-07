@@ -10,21 +10,78 @@
         <div class="uk-card-body">
             <form>
                 <ul class="uk-list" id='todo-list'>
-                    <li>
-                        <label><input class="uk-checkbox" type="checkbox"><input
+                    {{#each todos}}
+                        {{#if (used content1)}}
+                        <li>
+                        <label><textarea
                                 class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
-                                placeholder="Enter an item..."></label>
+                                placeholder="Enter an item...">{{content1}}</textarea></label>
                     </li>
-                    <li>
-                        <label><input class="uk-checkbox " type="checkbox"><input
+                    {{/if}}
+                    {{#if (used content2)}}
+                        <li>
+                        <label><textarea
                                 class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
-                                placeholder="Enter an item..."></label>
+                                placeholder="Enter an item...">{{content2}}</textarea></label>
                     </li>
-                    <li>
-                        <label><input class="uk-checkbox" type="checkbox"><input
+                    {{/if}}
+                    {{#if (used content3)}}
+                        <li>
+                        <label><textarea
                                 class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
-                                placeholder="Enter an item..."></label>
+                                placeholder="Enter an item...">{{content3}}</textarea></label>
                     </li>
+                    {{/if}}
+                    {{#if (used content4)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content4}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{#if (used content5)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content5}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{#if (used content6)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content6}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{#if (used content7)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content7}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{#if (used content8)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content8}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{#if (used content9)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content9}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{#if (used content10)}}
+                        <li>
+                        <label><textarea
+                                class="uk-input uk-form-blank uk-form-width-medium toDoValue" type="text"
+                                placeholder="Enter an item...">{{content10}}</textarea></label>
+                    </li>
+                    {{/if}}
+                    {{/each}}
                 </ul>
                         <a id='todo-item' href="#">Add Another Item</a>
             </form>
