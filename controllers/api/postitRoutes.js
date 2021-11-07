@@ -44,15 +44,16 @@ router.post("/", (req, res) => {
     return res.status(403).json({ err: "not logged in" });
   }
   Post_it.create({
-      content: req.body.content,
-      note_id: req.body.note_id,
-    })
-    .then(newPostit=>{
+    text_content: req.body.text_content,
+    image_content: req.body.image_content,
+    note_id: req.body.note_id,
+  })
+    .then(newPostit => {
       res.status(200).json(newPostit);
-    }).catch(err=> {
+    }).catch(err => {
       console.log(err);
       res.status(500).json({ err: "an error occurred" });
-    }) 
+    })
 });
 
 //update a postit post
@@ -69,7 +70,8 @@ router.put("/:id", (req, res) => {
         }
         Post_it.update(
           {
-            content: req.body.content,
+            text_content: req.body.text_content,
+            image_content: req.body.image_content,
             css: req.body.css,
             title: req.body.title
           },
