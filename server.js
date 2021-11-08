@@ -18,8 +18,6 @@ const hbs = exphbs.create({
 const {Braindump, Goal, Note, Post_it, Schedule, Todo, Inspiration, User, List} = require('./models');
 const routes = require("./controllers");
 
- 
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static("public"));

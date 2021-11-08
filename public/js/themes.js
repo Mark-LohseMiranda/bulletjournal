@@ -142,3 +142,5 @@ function myLogo() {
     }
   }
 }
+
+myLogo()
