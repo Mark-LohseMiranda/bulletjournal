@@ -7,7 +7,7 @@
 }
 
 html {
-  font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
+  font: normal 14px / 20px 'Montserrat', sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   background: #112031;
@@ -45,7 +45,7 @@ strong {
 :not(pre) > kbd,
 :not(pre) > samp {
   font-size: 12px;
-  font-family: Consolas, monospace, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #dd0055;
   white-space: nowrap;
   padding: 0 4px;
@@ -148,7 +148,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   color: #ffffff;
   text-transform: none;
@@ -163,7 +163,7 @@ h6 {
 }
 h1,
 .uk-h1 {
-  font-size: 36px;
+  font-size: 42px;
   line-height: 42px;
 }
 h2,
@@ -227,7 +227,7 @@ blockquote {
 pre {
   padding: 10px;
   background: #fafafa;
-  font: 12px / 18px Consolas, monospace, serif;
+  font: 12px / 18px 'Montserrat', sans-serif;
   color: #ffffff;
   -moz-tab-size: 4;
   tab-size: 4;
@@ -279,7 +279,7 @@ iframe {
 
 /* NAVBAR STUFF */
 
-#topnav {
+.topnav, #topnav {
   background: var(--darkcolor);
 }
 

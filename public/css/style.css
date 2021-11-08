@@ -45,7 +45,7 @@ strong {
 :not(pre) > kbd,
 :not(pre) > samp {
   font-size: 12px;
-  font-family: Consolas, monospace, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #dd0055;
   white-space: nowrap;
   padding: 0 4px;
@@ -138,7 +138,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   color: #444444;
   text-transform: none;
@@ -217,7 +217,7 @@ blockquote {
 pre {
   padding: 10px;
   background: #fafafa;
-  font: 12px / 18px Consolas, monospace, serif;
+  font: 12px / 18px 'Montserrat', sans-serif;
   color: #444444;
   -moz-tab-size: 4;
   tab-size: 4;
@@ -534,6 +534,10 @@ select.uk-form-width-mini {
 .uk-navbar-container .uk-navbar-right .uk-icon-button,  .uk-text-bold .uk-icon-button {
   background: var(--lightcolor);
   color: white;
+}
+
+.topnav, #topnav{
+  background: #f8f8f8;
 }
 
 .uk-button::-moz-focus-inner {

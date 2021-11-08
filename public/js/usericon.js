@@ -11,4 +11,4 @@ fetch('/sessions', {
         iconLink.setAttribute('style', 'visibility:visible;');
         hello.innerHTML = `Welcome back, ${username}`
     } 
-})
+});
