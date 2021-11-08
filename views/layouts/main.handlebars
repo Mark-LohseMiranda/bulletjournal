@@ -5,27 +5,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/css/uikit.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" id='theme-css'>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit-icons.min.js"></script>
     
 </head>
 <body>
-<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" id='topnav'>
-    <div class="uk-navbar-left">
-        <a href="" class="uk-navbar-item uk-logo"></a>
-        <ul class="uk-navbar-nav">
-            <li class="main-navlink" >
+<nav class="uk-navbar-container uk-margin topnav" uk-navbar="mode: click" id="topnav">
+    <div class="uk-navbar-left topnav">
+        <ul class="uk-navbar-nav topnav">
+            <li>
+                <a href="" class="uk-navbar-item uk-logo"><img src="/images/logoWhite.png" width="30px" height="30px" alt="bullet journal squared logo"></a>
+            </li>
+            <li class="main-navlink uk-width-auto" >
                 <a href="/" id='active-navlink'>Home</a>
             </li>
-            <li class="main-navlink">
+            <li class="main-navlink uk-width-auto">
                 <a href="/dashboard" id='dash-navlink'>Dashboard</a>
             </li>
-            <li class="main-navlink"><a  uk-toggle="target:#about">About</a></li>
-            <li class="main-navlink"><a  uk-toggle="target: #development-modal">Development</a></li>
+            <li class="main-navlink uk-width-auto"><a  uk-toggle="target:#about">About</a></li>
+            <li class="main-navlink uk-width-auto"><a  uk-toggle="target: #development-modal">Development</a></li>
         </ul>
     </div>
-    <div class='uk-navbar-right'>
+    <div class='uk-navbar-right topnav'>
         <a href="#" class="uk-icon-button uk-margin-small-right" id='user-icon' style='visibility:hidden;'></a>
         <div uk-dropdown="mode: click" id="welcomeUser"></div>
     </div>
