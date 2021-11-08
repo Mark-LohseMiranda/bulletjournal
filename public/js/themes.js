@@ -8,32 +8,68 @@ if (document.getElementById("green_theme")) {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/greenscheme.css");
+      if(largeLogo){
+        largeLogo.setAttribute("src", "/images/logoLongDark.png");
+        smallLogo.setAttribute("src", "/images/logoDark.png")
+      }else{
+        smallLogo.setAttribute("src", "/images/logoDark.png")
+      }
   };
 
   document.getElementById("default-theme").onclick = function () {
     document.getElementById("theme-css").setAttribute("href", "/css/style.css");
+    if(largeLogo){
+      largeLogo.setAttribute("src", "/images/logoLongDark.png");
+      smallLogo.setAttribute("src", "/images/logoDark.png")
+    }else{
+      smallLogo.setAttribute("src", "/images/logoDark.png")
+    }
   };
 
   document.getElementById("natural-theme").onclick = function () {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/natural.css");
+      if(largeLogo){
+        largeLogo.setAttribute("src", "/images/logoLongDark.png");
+        smallLogo.setAttribute("src", "/images/logoDark.png")
+      }else{
+        smallLogo.setAttribute("src", "/images/logoDark.png")
+      }
   };
 
   document.getElementById("soft-theme").onclick = function () {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/softmode.css");
+      if(largeLogo){
+        largeLogo.setAttribute("src", "/images/logoLongDark.png");
+        smallLogo.setAttribute("src", "/images/logoDark.png")
+      }else{
+        smallLogo.setAttribute("src", "/images/logoDark.png")
+      }
   };
 
   document.getElementById("dark-mode").onclick = function () {
     document.getElementById("theme-css").setAttribute("href", "/css/darkmode.css");
+    if(largeLogo){
+      largeLogo.setAttribute("src", "/images/logoLongWhite.png");
+      smallLogo.setAttribute("src", "/images/logoWhite.png")
+    }else{
+      smallLogo.setAttribute("src", "/images/logoWhite.png")
+    }
   };
 
   document.getElementById("dark-mono").onclick = function () {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/darkmono.css");
+      if(largeLogo){
+        largeLogo.setAttribute("src", "/images/logoLongWhite.png");
+        smallLogo.setAttribute("src", "/images/logoWhite.png")
+      }else{
+        smallLogo.setAttribute("src", "/images/logoWhite.png")
+      }
   };
 
   var updateTheme = document.getElementById("theme-switch");
@@ -102,5 +138,3 @@ function myLogo(){
     }
   }
 }
-
-myLogo();
