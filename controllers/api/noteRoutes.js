@@ -7,7 +7,6 @@ const {
   Goal,
   Inspiration,
   Post_it,
-  Reminder,
   Schedule,
   Todo,
 } = require("../../models");
@@ -22,7 +21,6 @@ router.get("/", (req, res) => {
       Goal,
       Inspiration,
       Post_it,
-      Reminder,
       Schedule,
       Todo,
     ],
@@ -72,7 +70,6 @@ router.get("/:day", (req, res) => {
       Goal,
       Inspiration,
       Post_it,
-      Reminder,
       Schedule,
       Todo,
     ],

@@ -16,15 +16,14 @@ const timeNineteen = document.querySelector("#timeNineteen");
 const braindumpText = document.querySelector("#braindumpText");
 const braindumpTitle = document.querySelector("#braindumpTitle");
 const postitTitle = document.querySelector("#postitTitle");
-const postitText = document.querySelector('#postitTextarea')
-const postitImg = document.querySelector("#display-img")
-const addSchedule = document.querySelector("#addSchedule")
-const addBraindump = document.querySelector("#addBraindump")
-const addTodos = document.querySelector("#addTodos")
-const addInspiration = document.querySelector("#addInspiration")
-const addGoals = document.querySelector("#addGoals")
-const addPostits = document.querySelector("#addPostits")
-
+const postitText = document.querySelector("#postitTextarea");
+const postitImg = document.querySelector("#display-img");
+const addSchedule = document.querySelector("#addSchedule");
+const addBraindump = document.querySelector("#addBraindump");
+const addTodos = document.querySelector("#addTodos");
+const addInspiration = document.querySelector("#addInspiration");
+const addGoals = document.querySelector("#addGoals");
+const addPostits = document.querySelector("#addPostits");
 
 let scheduleId;
 let braindumpId;
@@ -58,12 +57,20 @@ saveBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   await save();
   location.href = "/dashboard";
-})
+});
 
-if (!addSchedule && !addBraindump && !addTodos && !addInspiration && !addGoals && !addPostits) {
-  document.querySelector("#addWidget").setAttribute("style", "visibility:hidden")
+if (
+  !addSchedule &&
+  !addBraindump &&
+  !addTodos &&
+  !addInspiration &&
+  !addGoals &&
+  !addPostits
+) {
+  document
+    .querySelector("#addWidget")
+    .setAttribute("style", "visibility:hidden");
 }
-
 
 if (addSchedule) {
   addSchedule.addEventListener("click", async (event) => {
@@ -75,7 +82,7 @@ if (addSchedule) {
       headers: { "Content-Type": "application/json" },
     });
     location.reload();
-  })
+  });
 }
 
 if (addBraindump) {
@@ -88,7 +95,7 @@ if (addBraindump) {
       headers: { "Content-Type": "application/json" },
     });
     location.reload();
-  })
+  });
 }
 
 if (addTodos) {
@@ -101,7 +108,7 @@ if (addTodos) {
       headers: { "Content-Type": "application/json" },
     });
     location.reload();
-  })
+  });
 }
 
 if (addInspiration) {
@@ -114,7 +121,7 @@ if (addInspiration) {
       headers: { "Content-Type": "application/json" },
     });
     location.reload();
-  })
+  });
 }
 
 if (addPostits) {
@@ -127,7 +134,7 @@ if (addPostits) {
       headers: { "Content-Type": "application/json" },
     });
     location.reload();
-  })
+  });
 }
 
 if (addGoals) {
@@ -140,13 +147,13 @@ if (addGoals) {
       headers: { "Content-Type": "application/json" },
     });
     location.reload();
-  })
+  });
 }
 
-
-async function save () {
+async function save() {
   const d = new Date();
-  const date = "" + (d.getMonth()+1) + d.getDate() + d.getFullYear();
+  const date = "" + (d.getMonth() + 1) + d.getDate() + d.getFullYear();
+
   await fetch(`/api/notes/${date}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -180,7 +187,10 @@ async function save () {
         braindumpId = data[0].braindumps[0].id;
         fetch(`/api/braindumps/${braindumpId}`, {
           method: "PUT",
-          body: JSON.stringify({ title: braindumpTitle.value, content: braindumpText.value }),
+          body: JSON.stringify({
+            title: braindumpTitle.value,
+            content: braindumpText.value,
+          }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
@@ -225,15 +235,13 @@ async function save () {
         postitID = data[0].post_its[0].id;
         fetch(`/api/postits/${postitID}`, {
           method: "PUT",
-          body: JSON.stringify({ 
-            title: postitTitle.value, 
+          body: JSON.stringify({
+            title: postitTitle.value,
             text_content: postitText.value,
-            image_content: postitImg.getAttribute('src')  }),
+            image_content: postitImg.getAttribute("src"),
+          }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
-      
     });
-};
-
-
+}

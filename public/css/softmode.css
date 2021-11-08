@@ -854,6 +854,18 @@ html {
     display:none;
   }
   
+  /* MODALS */
+
+#modal .uk-modal-body, #deleteConfirm .uk-modal-body, #development-modal .uk-modal-body, #addConfirm .uk-modal-body, #about .uk-modal-body, #welcomeUser {
+  background: var(--lightcolor);
+  color: white;
+}
+
+#theme-modal .uk-modal-body {
+  background: var(--mediumcolor);
+  color:white;
+}
+
   @media screen and (max-width: 768px) {
     
     #sidebar {
