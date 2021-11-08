@@ -46,12 +46,14 @@ function getIcon() {
         .then((response) => response.json())
         .then((data) => {
           const userNotes = data.notes.map((note) => ({ day: note.day }));
+          console.log(userNotes);
           for (let i = 0; i < userNotes.length; i++) {
             const element = userNotes[i].day;
             let dayId = document.getElementById(`${element}`);
             if (dayId) {
               let old = dayId.innerHTML;
               let newhtml = `<a class="uk-icon-button calendar-note" href="day/${element}">${old}</a>`;
+              console.log(newhtml);
               dayId.innerHTML = newhtml;
             }
           }

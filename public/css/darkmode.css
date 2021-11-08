@@ -7,7 +7,7 @@
 }
 
 html {
-  font: normal 14px / 20px 'Montserrat', sans-serif;
+  font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   background: #112031;
@@ -679,7 +679,7 @@ select.uk-form-width-mini {
 
 /* BUTTONS */
 
-.uk-navbar-container .uk-navbar-right .uk-icon-button, .uk-text-bold .uk-icon-button {
+.uk-navbar-container .uk-navbar-right .uk-icon-button, .uk-text-bold .uk-icon-button, .calendar-note {
   background: var(--lightcolor);
   color: white;
 }
