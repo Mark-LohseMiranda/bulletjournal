@@ -306,29 +306,16 @@ iframe {
   color: white;
 }
 
-/* MODAL FOR NEW NOTE */
+/* MODALS */
 
-#modal .uk-modal-body {
-  background: var(--mediumcolor)
+#modal .uk-modal-body, #deleteConfirm .uk-modal-body, #development-modal .uk-modal-body, #addConfirm .uk-modal-body, #about .uk-modal-body, #welcomeUser {
+  background: var(--lightcolor);
+  color: white;
 }
-
-/* MODAL FOR THEMES */
 
 #theme-modal .uk-modal-body {
   background: var(--mediumcolor);
-}
-
-/* MODAL FOR DELETE CONFIRM */
-
-#deleteConfirm .uk-modal-body {
-  background: var(--mediumcolor);
-}
-
-/* MODAL FOR DEVELOPERS IN NAV */
-
-#development-modal .uk-modal-body, #about .uk-modal-body, #welcomeUser{
-  background: var(--mediumcolor);
-  color: white;
+  color:white;
 }
 
 

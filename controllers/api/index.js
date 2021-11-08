@@ -10,17 +10,11 @@ router.use("/braindumps",braindumpRoutes);
 const noteRoutes = require("./noteRoutes");
 router.use("/notes",noteRoutes);
 
-const monthRoutes = require("./monthRoutes");
-router.use("/months",monthRoutes);
-
 const goalRoutes = require("./goalRoutes");
 router.use("/goals",goalRoutes);
 
 const postitRoutes = require("./postitRoutes");
 router.use("/postits",postitRoutes);
-
-const reminderRoutes = require("./reminderRoutes");
-router.use("/reminders",reminderRoutes);
 
 const scheduleRoutes = require("./scheduleRoutes");
 router.use("/schedules",scheduleRoutes);

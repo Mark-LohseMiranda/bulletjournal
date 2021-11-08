@@ -1,5 +1,5 @@
-var largeLogo = document.querySelector('#largeLogo');
-var smallLogo = document.querySelector('#smallLogo');
+var largeLogo = document.querySelector("#largeLogo");
+var smallLogo = document.querySelector("#smallLogo");
 
 loadTheme();
 
@@ -8,21 +8,21 @@ if (document.getElementById("green_theme")) {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/greenscheme.css");
-      if(largeLogo){
-        largeLogo.setAttribute("src", "/images/logoLongDark.png");
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }
+    if (largeLogo) {
+      largeLogo.setAttribute("src", "/images/logoLongDark.png");
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    } else {
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    }
   };
 
   document.getElementById("default-theme").onclick = function () {
     document.getElementById("theme-css").setAttribute("href", "/css/style.css");
-    if(largeLogo){
+    if (largeLogo) {
       largeLogo.setAttribute("src", "/images/logoLongDark.png");
-      smallLogo.setAttribute("src", "/images/logoDark.png")
-    }else{
-      smallLogo.setAttribute("src", "/images/logoDark.png")
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    } else {
+      smallLogo.setAttribute("src", "/images/logoDark.png");
     }
   };
 
@@ -30,33 +30,35 @@ if (document.getElementById("green_theme")) {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/natural.css");
-      if(largeLogo){
-        largeLogo.setAttribute("src", "/images/logoLongDark.png");
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }
+    if (largeLogo) {
+      largeLogo.setAttribute("src", "/images/logoLongDark.png");
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    } else {
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    }
   };
 
   document.getElementById("soft-theme").onclick = function () {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/softmode.css");
-      if(largeLogo){
-        largeLogo.setAttribute("src", "/images/logoLongDark.png");
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }
+    if (largeLogo) {
+      largeLogo.setAttribute("src", "/images/logoLongDark.png");
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    } else {
+      smallLogo.setAttribute("src", "/images/logoDark.png");
+    }
   };
 
   document.getElementById("dark-mode").onclick = function () {
-    document.getElementById("theme-css").setAttribute("href", "/css/darkmode.css");
-    if(largeLogo){
+    document
+      .getElementById("theme-css")
+      .setAttribute("href", "/css/darkmode.css");
+    if (largeLogo) {
       largeLogo.setAttribute("src", "/images/logoLongWhite.png");
-      smallLogo.setAttribute("src", "/images/logoWhite.png")
-    }else{
-      smallLogo.setAttribute("src", "/images/logoWhite.png")
+      smallLogo.setAttribute("src", "/images/logoWhite.png");
+    } else {
+      smallLogo.setAttribute("src", "/images/logoWhite.png");
     }
   };
 
@@ -64,12 +66,12 @@ if (document.getElementById("green_theme")) {
     document
       .getElementById("theme-css")
       .setAttribute("href", "/css/darkmono.css");
-      if(largeLogo){
-        largeLogo.setAttribute("src", "/images/logoLongWhite.png");
-        smallLogo.setAttribute("src", "/images/logoWhite.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoWhite.png")
-      }
+    if (largeLogo) {
+      largeLogo.setAttribute("src", "/images/logoLongWhite.png");
+      smallLogo.setAttribute("src", "/images/logoWhite.png");
+    } else {
+      smallLogo.setAttribute("src", "/images/logoWhite.png");
+    }
   };
 
   var updateTheme = document.getElementById("theme-switch");
@@ -92,48 +94,50 @@ if (document.getElementById("green_theme")) {
 function loadTheme() {
   var currentTheme = JSON.parse(localStorage.getItem("theme")) || [];
 
-  console.log(currentTheme);
   if (currentTheme === null) {
     return;
   } else {
     document.getElementById("theme-css").href = currentTheme;
   }
-};
+}
 
-function myLogo(){
-  var storedTheme = JSON.parse(localStorage.getItem("theme")); 
-  var currentTheme = document.getElementById('theme-css').href;
+function myLogo() {
+  var storedTheme = JSON.parse(localStorage.getItem("theme"));
+  var currentTheme = document.getElementById("theme-css").href;
   console.log(currentTheme);
-  if(currentTheme){
-    if(currentTheme.includes("darkmono") || currentTheme.includes("darkmode")){
-      if(largeLogo){
+  if (currentTheme) {
+    if (
+      currentTheme.includes("darkmono") ||
+      currentTheme.includes("darkmode")
+    ) {
+      if (largeLogo) {
         largeLogo.setAttribute("src", "/images/logoLongWhite.png");
-        smallLogo.setAttribute("src", "/images/logoWhite.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoWhite.png")
+        smallLogo.setAttribute("src", "/images/logoWhite.png");
+      } else {
+        smallLogo.setAttribute("src", "/images/logoWhite.png");
       }
-    }else{
-      if(largeLogo){
+    } else {
+      if (largeLogo) {
         largeLogo.setAttribute("src", "/images/logoLongDark.png");
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoDark.png")
+        smallLogo.setAttribute("src", "/images/logoDark.png");
+      } else {
+        smallLogo.setAttribute("src", "/images/logoDark.png");
       }
     }
-  }else if (storedTheme){
-    if(storedTheme.includes("darkmono") || storedTheme.includes("darkmode")){
-      if(largeLogo){
+  } else if (storedTheme) {
+    if (storedTheme.includes("darkmono") || storedTheme.includes("darkmode")) {
+      if (largeLogo) {
         largeLogo.setAttribute("src", "/images/logoLongWhite.png");
-        smallLogo.setAttribute("src", "/images/logoWhite.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoWhite.png")
+        smallLogo.setAttribute("src", "/images/logoWhite.png");
+      } else {
+        smallLogo.setAttribute("src", "/images/logoWhite.png");
       }
-    }else{
-      if(largeLogo){
+    } else {
+      if (largeLogo) {
         largeLogo.setAttribute("src", "/images/logoLongDark.png");
-        smallLogo.setAttribute("src", "/images/logoDark.png")
-      }else{
-        smallLogo.setAttribute("src", "/images/logoDark.png")
+        smallLogo.setAttribute("src", "/images/logoDark.png");
+      } else {
+        smallLogo.setAttribute("src", "/images/logoDark.png");
       }
     }
   }

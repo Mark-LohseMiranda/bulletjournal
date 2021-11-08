@@ -16,7 +16,7 @@
             <br>
             <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">TEMPLATES</li>
-            <li><a href="#template-slideshow">Example Templates</a></li>
+            <li><a href="#template-slideshow" uk-toggle>Example Templates</a></li>
             <br>
             <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">ACCOUNT</li>
@@ -45,7 +45,7 @@
             <br>
             <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">TEMPLATES</li>
-            <li><a href="#template-slideshow">Example Templates</a></li>
+            <li><a href="#template-slideshow" uk-toggle>Example Templates</a></li>
             <br>
             <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">ACCOUNT</li>
@@ -102,6 +102,29 @@
     </div>
 </div>
 
+    <!-- Modal for template options for new page -->
+
+    <div id="modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Let's add a new note! What would you like included?</h2>
+            <form id="noteCreate">
+                <label><input class="uk-checkbox" type="checkbox" name="checkbox1" id='addSchedule'>
+                    Scheduler</label><br>
+                <label><input class="uk-checkbox" type="checkbox" name="checkbox2" id='addToDo'> To Do List</label><br>
+                <label><input class="uk-checkbox" type="checkbox" name="checkbox3" id='addInspo'> Inspirational
+                    Quote</label><br>
+                <label><input class="uk-checkbox" type="checkbox" name="checkbox4" id='addDump'> Brain Dump</label><br>
+                <label><input class="uk-checkbox" type="checkbox" name="checkbox5" id='addGoal'> Goals</label><br>
+                <label><input class="uk-checkbox" type="checkbox" name="checkbox6" id='addPostit'> Post It
+                    Note</label><br>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="submit" id='confirmPageAdd'>Continue</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
 {{!-- EXAMPLE THEMES SLIDESHOW MODAL --}}
 
    <div id="template-slideshow" class="uk-modal-container" uk-modal>
@@ -116,7 +139,7 @@
                         </div>
                     </li>
                     <li>
-                        <img src="images/defaultfullday.png" alt="" uk-cover>
+                        <img src="/images/defaultfullday.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Full Day</h3>
                             <p class="uk-margin-remove">This template shows all of our available elements on one page. If you have a full day ahead of you, this option offers the most opportunity for organization and planning. To create this page in our Daily Page builder, make sure all of those boxes are checked!</p>
@@ -130,7 +153,7 @@
                         </div>
                     </li> 
                     <li>
-                        <img src="images/defaultacnhday.png" alt="" uk-cover>
+                        <img src="/images/defaultacnhday.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Keep Track of Big Events</h3>
                             <p class="uk-margin-remove">Hold onto memories of important events - like Animal Crossing 2.0! To achieve this simple layout, select Brain Dump and Post-It Note in our Daily Page builder.</p>
@@ -138,42 +161,42 @@
                         </div>
                     </li> 
                     <li>
-                        <img src="images/defaultthreedaytemp.png" alt="" uk-cover>
+                        <img src="/images/defaultthreedaytemp.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Add Inspiration</h3>
                             <p class="uk-margin-remove">Do you have a busy day ahead of you but you can't seem to find the motivation to get started? Include an Inspiration on the page builder and an inspirational quote will automatically be included to give you that boost you need to take on the day.</p>
                         </div>
                     </li> 
                     <li>
-                        <img src="images/fouritemtemp.png" alt="" uk-cover>
+                        <img src="/images/fouritemtemp.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Make It Personal</h3>
                             <p class="uk-margin-remove">description</p>
                         </div>
                     </li>
                     <li>
-                        <img src="images/tododetailstemp.png" alt="" uk-cover>
+                        <img src="/images/tododetailstemp.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Go Into Detail</h3>
                             <p class="uk-margin-remove">If the to-do's in your day are too long to fit on one line, add in a brain dump so you don't forget those extra details.</p>
                         </div>
                     </li> 
                     <li>
-                        <img src="images/inspodumptemp.png" alt="" uk-cover>
+                        <img src="/images/inspodumptemp.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Do Some Reflecting</h3>
                             <p class="uk-margin-remove">Use the brain dump widget in tandem with some Inspiration as a moment to reflect on what the selected quote means to you.</p>
                         </div>
                     </li> 
                     <li>
-                        <img src="images/memorydumptemp.png" alt="" uk-cover>
+                        <img src="/images/memorydumptemp.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Capture Your Life's Big Moments</h3>
                             <p class="uk-margin-remove">Use the sticky note and brain dump widgets to keep track of important memories and jot down those crucial details!</p>
                         </div>
                     </li> 
                     <li>
-                        <img src="images/addwidget.png" alt="" uk-cover>
+                        <img src="/images/addwidget.png" alt="" uk-cover>
                         <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
                             <h3 class="uk-margin-remove">Forget to add an element?</h3>
                             <p class="uk-margin-remove">If your created template isn't meeting the requirements for your day, don't worry! You can add additional widgets into your daily page easily in the top right corner of your note.</p>
@@ -192,3 +215,4 @@
     </div>
 
 <script src="/js/alldaily.js"></script>
+<script src="/js/addPage.js"></script>

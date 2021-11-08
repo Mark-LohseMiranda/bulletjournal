@@ -15,7 +15,7 @@ const hbs = exphbs.create({
     }
 });
 
-const {Braindump, Goal, Note, Post_it, Reminder, Schedule, Todo, Inspiration, User, List} = require('./models');
+const {Braindump, Goal, Note, Post_it, Schedule, Todo, Inspiration, User, List} = require('./models');
 const routes = require("./controllers");
 
  

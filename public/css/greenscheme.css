@@ -930,6 +930,30 @@ html {
 
   #menu-button {
     display:none;
+
+  }
+
+/* MODAL FOR NEW NOTE */
+
+#modal .uk-modal-body {
+  background: var(--mediumcolor)
+}
+
+/* MODAL FOR THEMES */
+
+#theme-modal .uk-modal-body {
+  background: var(--mediumcolor);
+}
+
+/* MODAL FOR DELETE CONFIRM */
+
+#deleteConfirm .uk-modal-body {
+  background: var(--mediumcolor);
+}
+
+  #development-modal .uk-modal-body, #addConfirm .uk-modal-body, #about .uk-modal-body, #welcomeUser {
+    background: var(--mediumcolor);
+    color: white;
   }
   
   @media screen and (max-width: 768px) {
@@ -943,3 +967,4 @@ html {
     }
     
   }
+
