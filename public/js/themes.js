@@ -1,3 +1,6 @@
+var largeLogo = document.querySelector('#largeLogo');
+var smallLogo = document.querySelector('#smallLogo');
+
 loadTheme();
 
 if (document.getElementById("green_theme")) {
@@ -24,9 +27,7 @@ if (document.getElementById("green_theme")) {
   };
 
   document.getElementById("dark-mode").onclick = function () {
-    document
-      .getElementById("theme-css")
-      .setAttribute("href", "/css/darkmode.css");
+    document.getElementById("theme-css").setAttribute("href", "/css/darkmode.css");
   };
 
   document.getElementById("dark-mono").onclick = function () {
@@ -41,7 +42,6 @@ if (document.getElementById("green_theme")) {
       .getElementById("theme-css")
       .getAttribute("href");
     console.log(currentTheme);
-
     localStorage.setItem("theme", JSON.stringify(currentTheme));
   };
 
@@ -49,17 +49,26 @@ if (document.getElementById("green_theme")) {
     var currentTheme = document
       .getElementById("theme-css")
       .getAttribute("href");
-
     localStorage.setItem("theme", JSON.stringify(currentTheme));
   }
 }
-  function loadTheme() {
-    var currentTheme = JSON.parse(localStorage.getItem("theme")) || [];
-    console.log(currentTheme);
-    if (currentTheme === null) {
-      return;
-    } else {
-      document.getElementById("theme-css").href = currentTheme;
+
+function loadTheme() {
+  var currentTheme = JSON.parse(localStorage.getItem("theme")) || [];
+
+  console.log(currentTheme);
+  if (currentTheme === null) {
+    return;
+  } else {
+    document.getElementById("theme-css").href = currentTheme;
+    if(currentTheme === "/css/darkmono.css" || currentTheme === "/css/darkmode.css"){
+      if(largeLogo){
+        largeLogo.setAttribute("src", "/images/logoLongWhite.png");
+        smallLogo.setAttribute("src", "/images/logoWhite.png")
+      }else{
+        smallLogo.setAttribute("src", "/images/logoWhite.png")
+      }
     }
   }
+}
 
