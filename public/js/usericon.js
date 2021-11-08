@@ -1,5 +1,5 @@
-const iconLink = document.getElementById('user-icon')
-const hello = document.querySelector('#welcomeUser')
+const iconLink = document.getElementById('user-icon');
+const hello = document.querySelector('#welcomeUser');
 
 fetch('/sessions', {
     method: 'GET'
