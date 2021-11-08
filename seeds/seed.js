@@ -23,15 +23,27 @@ const seed = async () => {
     })
     const noteData = await Note.bulkCreate([
         {
-            day:1,
+            day:1112021,
             user_id:1
         },
         {
-            day:15,
+            day:11152021,
             user_id:2
         },
         {
-            day:30,
+            day:11302021,
+            user_id:3
+        },
+        {
+            day:1012021,
+            user_id:1
+        },
+        {
+            day:1012021,
+            user_id:2
+        },
+        {
+            day:1012021,
             user_id:3
         },
         

@@ -2,8 +2,8 @@
     <div class="uk-card uk-card-small uk-card-default uk-card-body">
         {{#each braindumps}}
         <form>
-            <label for="braindumpTitle">Title:</label><textarea class="uk-textarea uk-form-blank" rows="1" id="braindumpTitle" type="text">{{title}}</textarea>
-            <label for="braindumpText">Content:</label><textarea class="uk-textarea uk-form-blank" rows="5" id="braindumpText">{{content}}</textarea>
+            <label for="braindumpTitle">Add a title here:</label><textarea class="uk-textarea uk-form-blank" rows="1" id="braindumpTitle" type="text">{{title}}</textarea>
+            <label for="braindumpText"></label><textarea class="uk-textarea uk-form-blank" rows="5" id="braindumpText" placeholder="Dump your thoughts!">{{content}}</textarea>
         </form>
         {{/each}}
     </div>

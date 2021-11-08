@@ -11,18 +11,17 @@ const hbs = exphbs.create({
     helpers:{
         exists: function (item) {return item.length != 0},
         empty: function(item){return item!==""},
-        used: function (item) {return item.trim().length > 0}
+        used: function (item) {return item.length > 1}
     }
 });
 
-const {Braindump, Goal, Note, Post_it, Reminder, Schedule, Todo, Inspiration, User} = require('./models');
+const {Braindump, Goal, Note, Post_it, Reminder, Schedule, Todo, Inspiration, User, List} = require('./models');
 const routes = require("./controllers");
 
  
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('trust proxy', true)
 app.use(express.static("public"));
 
 app.use(session({

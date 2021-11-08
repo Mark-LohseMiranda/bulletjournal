@@ -15,8 +15,16 @@ const timeTwenty = document.querySelector("#timeTwenty");
 const timeNineteen = document.querySelector("#timeNineteen");
 const braindumpText = document.querySelector("#braindumpText");
 const braindumpTitle = document.querySelector("#braindumpTitle");
-const postitValue = document.getElementsByClassName("postitValue");
 const postitTitle = document.querySelector("#postitTitle");
+const postitText = document.querySelector('#postitTextarea')
+const postitImg = document.querySelector("#display-img")
+const addSchedule = document.querySelector("#addSchedule")
+const addBraindump = document.querySelector("#addBraindump")
+const addTodos = document.querySelector("#addTodos")
+const addInspiration = document.querySelector("#addInspiration")
+const addGoals = document.querySelector("#addGoals")
+const addPostits = document.querySelector("#addPostits")
+
 
 let scheduleId;
 let braindumpId;
@@ -48,14 +56,103 @@ deleteBtn.addEventListener("click", (event) => {
 
 saveBtn.addEventListener("click", async (event) => {
   event.preventDefault();
+  await save();
+  location.href = "/dashboard";
+})
+
+if (!addSchedule && !addBraindump && !addTodos && !addInspiration && !addGoals && !addPostits) {
+  document.querySelector("#addWidget").setAttribute("style", "visibility:hidden")
+}
+
+
+if (addSchedule) {
+  addSchedule.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/schedules", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addBraindump) {
+  addBraindump.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/braindumps", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addTodos) {
+  addTodos.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/todos", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addInspiration) {
+  addInspiration.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/inspirations", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addPostits) {
+  addPostits.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/postits", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+if (addGoals) {
+  addGoals.addEventListener("click", async (event) => {
+    event.preventDefault();
+    await save();
+    await fetch("/api/goals", {
+      method: "POST",
+      body: JSON.stringify({ note_id: id }),
+      headers: { "Content-Type": "application/json" },
+    });
+    location.reload();
+  })
+}
+
+
+async function save () {
   const d = new Date();
-  await fetch(`/api/notes/${d.getDate()}`, {
+  const date = "" + (d.getMonth()+1) + d.getDate() + d.getFullYear();
+  await fetch(`/api/notes/${date}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   })
     .then((response) => response.json())
     .then(async (data) => {
-      console.log(data);
       if (data[0].schedules[0]) {
         scheduleId = data[0].schedules[0].id;
         const contentData = {
@@ -126,13 +223,17 @@ saveBtn.addEventListener("click", async (event) => {
       }
       if (data[0].post_its[0]) {
         postitID = data[0].post_its[0].id;
-        
         fetch(`/api/postits/${postitID}`, {
           method: "PUT",
-          body: JSON.stringify({ title: postitTitle.value, content: postitValue.value }),
+          body: JSON.stringify({ 
+            title: postitTitle.value, 
+            text_content: postitText.value,
+            image_content: postitImg.getAttribute('src')  }),
           headers: { "Content-Type": "application/json" },
         }).catch((err) => console.log(err));
       }
-      location.href = "/dashboard";
+      
     });
-});
+};
+
+

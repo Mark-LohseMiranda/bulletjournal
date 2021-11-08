@@ -1,23 +1,38 @@
-<div class='uk-width-1-2 uk-height-1-2'>
+<div class='uk-width-1-1 uk-height-1-1 uk-margin'>
     <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light uk-width-large uk-height-large"
         id="postit-note">
-        <input class="uk-input uk-form-blank uk-form-width-medium" id="postitTitle" type="text" placeholder="Add a title or caption!">
-        <button>Text</button>
-        <button>Image</button>
+
+        <ul uk-tab class='uk-flex-right' id='content-buttons'>
+            <li class="uk-active"><a href="#postitTextarea" id='postit-textBtn'>TEXT</a></li>
+            <li><a href="#postitImageUpload" id='postit-imageBtn'>IMAGE</a></li>
+        </ul>
+
+
+        <input class="uk-input uk-form-blank" id="postitTitle" type="text" placeholder="Add a title or caption!">
+
         {{!-- textbox if text is selected --}}
-        <textarea style='display:none' class="uk-textarea uk-form-blank" rows="15" cols="15"
-            placeholder="POST those thoughts here..."></textarea>
+        <textarea class="uk-textarea uk-form-blank" rows="15" cols="15"
+            placeholder="POST those thoughts here..." id='postitTextarea'></textarea>
 
-        {{!-- upload element if image is selected --}}
-        <form method="post" enctype="multipart/form-data">
-            <input type="file" name="files[]" multiple>
-            <input type="submit" value="Upload Files" name="submit">
-        </form>
+        {{!-- upload widget if image is selected --}}
+        <div style='visibility:hidden' id='postitImageUpload' class='uk-flex uk-flex-center uk-flex-middle'>
+            <button id="upload_widget" class="cloudinary-button uk-button uk-button-primary">Upload files</button>
+        </div>
 
-        <p id="data"></p>
+        {{!-- div for uploaded image and button to remove that image --}}
+        <div style='visibility:hidden' id='image-div'>
+            <div id='postitImage'>
+                <img id='display-img' src="" alt="user-image" style='max-width:380px; max-height:290px;' class='uk-align-center'>
+            </div>
+            <br>
 
-            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+            <span uk-icon='icon: close' class='uk-position-bottom-right' id='remove-image'></span>
+        </div>
+
 
     </div>
 
+
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript">
+    </script>
     <script src='/js/postit.js'></script>

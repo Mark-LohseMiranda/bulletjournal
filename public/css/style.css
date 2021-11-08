@@ -6,8 +6,6 @@
 }
 
 
-
-
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -27,7 +25,7 @@ a:hover {
 }
 a,
 .uk-link {
-  color: var(--lightcolor);
+  color: #444444;
   text-decoration: none;
   cursor: pointer;
 }
@@ -47,7 +45,7 @@ strong {
 :not(pre) > kbd,
 :not(pre) > samp {
   font-size: 12px;
-  font-family: Consolas, monospace, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #dd0055;
   white-space: nowrap;
   padding: 0 4px;
@@ -140,7 +138,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   color: #444444;
   text-transform: none;
@@ -219,7 +217,7 @@ blockquote {
 pre {
   padding: 10px;
   background: #fafafa;
-  font: 12px / 18px Consolas, monospace, serif;
+  font: 12px / 18px 'Montserrat', sans-serif;
   color: #444444;
   -moz-tab-size: 4;
   tab-size: 4;
@@ -322,7 +320,6 @@ background: var(--mediumcolor);
 }
 .uk-table th,
 .uk-table td {
-  padding: 8px 8px;
   border-bottom: 1px solid var(--mediumcolor);
 }
 .uk-table th {
@@ -528,11 +525,19 @@ select.uk-form-width-mini {
   width: 500px;
 }
 
+.uk-input {
+  overflow: hidden;
+}
+
 /* BUTTONS */
 
-.uk-navbar-container .uk-navbar-right .uk-icon-button {
+.uk-navbar-container .uk-navbar-right .uk-icon-button,  .uk-text-bold .uk-icon-button, .calendar-note {
   background: var(--lightcolor);
   color: white;
+}
+
+.topnav, #topnav{
+  background: #f8f8f8;
 }
 
 .uk-button::-moz-focus-inner {
@@ -783,94 +788,7 @@ color: var(--lightcolor);
 }
 
 
-/* DATEPICKER */
 
-.uk-datepicker {
-  z-index: 1050;
-  width: auto;
-  -webkit-animation: uk-fade 0.2s ease-in-out;
-  animation: uk-fade 0.2s ease-in-out;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-.uk-datepicker-nav {
-  margin-bottom: 15px;
-  text-align: center;
-  line-height: 20px;
-}
-.uk-datepicker-nav:before,
-.uk-datepicker-nav:after {
-  content: "";
-  display: table;
-}
-.uk-datepicker-nav:after {
-  clear: both;
-}
-.uk-datepicker-nav a {
-  color: #444444;
-  text-decoration: none;
-}
-.uk-datepicker-nav a:hover {
-  color: #444444;
-}
-.uk-datepicker-previous {
-  float: left;
-}
-.uk-datepicker-next {
-  float: right;
-}
-.uk-datepicker-previous:after,
-.uk-datepicker-next:after {
-  width: 20px;
-  font-family: FontAwesome;
-}
-.uk-datepicker-previous:after {
-  content: "\f053";
-}
-.uk-datepicker-next:after {
-  content: "\f054";
-}
-.uk-datepicker-table {
-  width: 100%;
-}
-.uk-datepicker-table th,
-.uk-datepicker-table td {
-  padding: 2px;
-}
-.uk-datepicker-table th {
-  font-size: 12px;
-}
-.uk-datepicker-table a {
-  display: block;
-  width: 26px;
-  line-height: 24px;
-  text-align: center;
-  color: #444444;
-  text-decoration: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-a.uk-datepicker-table-muted {
-  color: #999999;
-}
-.uk-datepicker-table a:hover,
-.uk-datepicker-table a:focus {
-  background-color: #fafafa;
-  color: #444444;
-  outline: none;
-  border-color: rgba(0, 0, 0, 0.16);
-  text-shadow: 0 1px 0 #ffffff;
-}
-.uk-datepicker-table a:active {
-  background-color: var(--bg);
-  color: #444444;
-}
-.uk-datepicker-table a.uk-active {
-  background: var(--mediumcolor);
-  color: #ffffff;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-}
 
 .uk-section {
     background-color: var(--bg);

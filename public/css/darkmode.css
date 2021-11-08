@@ -1,10 +1,10 @@
+
 :root {
   --bg:#112031;
   --lightcolor:#D4ECDD;
   --mediumcolor:#345B63;
   --darkcolor:#152D35;
 }
-
 
 html {
   font: normal 14px / 20px "Trebuchet MS", Verdana, Arial, sans-serif;
@@ -25,13 +25,13 @@ a:hover {
 }
 a,
 .uk-link {
-  color: #d4ecdd;
+  color: var(--darkcolor);
   text-decoration: none;
   cursor: pointer;
 }
 a:hover,
 .uk-link:hover {
-  color: #345b63;
+  color: var(--bg);
   text-decoration: underline;
 }
 abbr[title] {
@@ -45,7 +45,7 @@ strong {
 :not(pre) > kbd,
 :not(pre) > samp {
   font-size: 12px;
-  font-family: Consolas, monospace, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #dd0055;
   white-space: nowrap;
   padding: 0 4px;
@@ -148,7 +148,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
   color: #ffffff;
   text-transform: none;
@@ -163,7 +163,7 @@ h6 {
 }
 h1,
 .uk-h1 {
-  font-size: 36px;
+  font-size: 42px;
   line-height: 42px;
 }
 h2,
@@ -227,7 +227,7 @@ blockquote {
 pre {
   padding: 10px;
   background: #fafafa;
-  font: 12px / 18px Consolas, monospace, serif;
+  font: 12px / 18px 'Montserrat', sans-serif;
   color: #ffffff;
   -moz-tab-size: 4;
   tab-size: 4;
@@ -279,7 +279,7 @@ iframe {
 
 /* NAVBAR STUFF */
 
-#topnav {
+.topnav, #topnav {
   background: var(--darkcolor);
 }
 
@@ -327,8 +327,9 @@ iframe {
 
 /* MODAL FOR DEVELOPERS IN NAV */
 
-#development-modal .uk-modal-body {
+#development-modal .uk-modal-body, #about .uk-modal-body, #welcomeUser {
   background: var(--mediumcolor);
+  color: white;
 }
 
 
@@ -372,6 +373,10 @@ iframe {
   border-top: 1px solid #345b63;
 }
 
+.uk-input {
+  overflow: hidden;
+}
+
 /* CARDS */
 
 .uk-card{
@@ -380,11 +385,7 @@ iframe {
   color:#ffffff;
 }
 
-.uk-card-title {
-  color:var(--lightcolor)
-}
-
-.uk-card-header .uk-card-title {
+.uk-card-header, .uk-card-title, .uk-card-default .uk-card-title {
   color: white;
 }
 
@@ -409,14 +410,14 @@ iframe {
 }
 .uk-table th,
 .uk-table td {
-  padding: 8px 8px;
   border-bottom: 1px solid #345b63;
 }
 .uk-table th {
-  text-align: left;
+  text-align: center;
 }
 .uk-table td {
   vertical-align: top;
+  text-align: center;
 }
 .uk-table thead th {
   vertical-align: bottom;
@@ -679,7 +680,7 @@ select.uk-form-width-mini {
 
 /* BUTTONS */
 
-.uk-navbar-container .uk-navbar-right .uk-icon-button {
+.uk-navbar-container .uk-navbar-right .uk-icon-button, .uk-text-bold .uk-icon-button, .calendar-note {
   background: var(--lightcolor);
   color: white;
 }

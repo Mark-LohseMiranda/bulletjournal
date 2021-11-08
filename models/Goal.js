@@ -53,7 +53,7 @@ Goal.init(
         },
         css: {
             type: DataTypes.STRING,
-            defaultValue: 'position: absolute;',
+            defaultValue: 'position:absolute;top:64.31924882629107vw; left:42.72300469483568vw;',
         }
     },{
         sequelize,

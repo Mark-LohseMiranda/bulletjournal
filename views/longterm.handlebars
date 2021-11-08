@@ -1,32 +1,33 @@
-<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span uk-icon='icon: menu'></span></button>
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav"><span
+        uk-icon='icon: menu'></span></button>
 
 {{!-- side bar for navigating the site --}}
 <div id="offcanvas-nav" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-            <li class="uk-active"><a href="#">New Page</a></li>
+         <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+            <li class="newnote uk-active"><a href="#modal" uk-toggle><span class="uk-margin-small-right"
+                        uk-icon="icon: plus"></span>Add Today's Page</a></li>
+            <li class="uk-nav-divider"></li>
+
             <li class="uk-nav-header">PAGES</li>
-            <li><a href="#">Add a Page</a></li>
-            <li><a href="#">New Page From Template</a></li>
-            <li><a href="#">New Long-Term Page</a></li>
-            <li><a href="#">View All Daily Pages</a></li>
-            <li><a href="#">View All Long-Term Pages</a></li>
-
+            <li id='newList'><a href="/lists">New Long-Term Page</a></li>
+            <li id='pageArchive'><a href="/alldailynotes">View All Daily Pages</a></li>
+            <li id='listArchive'><a href="/longterm">View All Long-Term Pages</a></li>
+            <br>
+            <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">TEMPLATES</li>
-
-            <li><a href="#">View Your Templates</a></li>
-            <li><a href="#">Add A Template</a></li>
-            <li><a href="#">Example Templates</a></li>
-
-
+            <li><a href="#template-slideshow">Example Templates</a></li>
+            <br>
+            <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">ACCOUNT</li>
             <li><a href="#theme-modal" uk-toggle><span class="uk-margin-small-right" uk-icon="icon: star"></span>Change
                     Your Theme</a></li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Account Settings</a></li>
+            <br>
             <li class="uk-nav-divider"></li>
-            <li id='logout'><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a>
+            <li id='logout'><a href="/api/users/logout"><span class="uk-margin-small-right"
+                        uk-icon="icon: sign-out"></span> Log Out</a>
             </li>
         </ul>
     </div>
@@ -52,6 +53,14 @@
                 <span class="uk-icon uk-icon-image" style="background-image: url(/images/softtheme.png);"></span><br>
                 <input class="uk-radio" type="radio" name="radio1" id='soft-theme'>
                 Soft Default</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/darkmode.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='dark-mode'>
+                Default Dark</label>
+            <label>
+                <span class="uk-icon uk-icon-image" style="background-image: url(/images/darkmono.png);"></span><br>
+                <input class="uk-radio" type="radio" name="radio1" id='dark-mono'>
+                Classic Dark Mode</label>
         </div>
         <br><br>
 
@@ -61,14 +70,168 @@
     </div>
 </div>
 
-<div class="uk-section uk-section-default uk-margin-auto uk-margin-auto-vertical uk-child-width-expand uk-align-center">
-    <!-- SORTABLE ELEMENT DIV WRAPPED AROUND ALL TEMPLATE ELEMENTS -->
-    <div uk-sortable="handle: .uk-card"
-        class='uk-flex uk-flex-between uk-flex-wrap uk-margin-auto uk-flex-wrap-between uk-width-3-4'>
+<br><br><br>
 
-        {{#if goals.[0]}}
-            {{> pastGoals}}
-        {{/if}}
+<ul class="uk-grid-small uk-width-5-6 uk-margin-auto uk-child-width-1-2 uk-child-width-1-3@s" uk-sortable="handle: .uk-card" uk-grid>
+    {{#each lists}}
+    <li>
+        <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <button data-id={{id}} class="deletebtn uk-button uk-button-default uk-align-right" type="button"><span data-id={{id}} uk-icon="icon:  minus-circle"></span></button>
+            <h3>{{title}}</h3>
+            {{#if (empty content1)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content1}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content2)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content2}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content3)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content3}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content4)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content4}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content5)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content5}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content6)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content6}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content7)}}
+                <label>
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content7}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content8)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content8}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content9)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content9}}</span>
+                </label>
+            {{/if}}
+            {{#if (empty content10)}}
+                <label style="display: block;">
+                    <span uk-icon="icon:  chevron-double-right"></span>
+                    <span>{{content10}}</span>
+                </label>
+            {{/if}}
+        </div>
+    </li>
+    {{/each}}
+</ul>
 
+
+<script src="/js/themes.js"></script>
+{{!-- EXAMPLE THEMES SLIDESHOW MODAL --}}
+
+   <div id="template-slideshow" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: slide; finite: true">
+                <ul class="uk-slideshow-items">
+                    <li>
+                        <img src="/images/addnew.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Customize Your Daily Page!</h3>
+                            <p class="uk-margin-remove">Make your pages fit your lifestyle by including elements that work for your day. You can select any combination by checking the boxes on our 'Add Today's Page' builder, or base your selection on one of our pre-made example templates. Scroll for inspiration!</p><br>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/defaultfullday.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Full Day</h3>
+                            <p class="uk-margin-remove">This template shows all of our available elements on one page. If you have a full day ahead of you, this option offers the most opportunity for organization and planning. To create this page in our Daily Page builder, make sure all of those boxes are checked!</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="/images/creatingday.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">All The Lists</h3>
+                            <p class="uk-margin-remove">Some of us are just list people - and this layout is perfect if you are. To create this page in our Daily Page builder, you'll want to check the boxes next to To Do List and Goals.</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="images/defaultacnhday.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Keep Track of Big Events</h3>
+                            <p class="uk-margin-remove">Hold onto memories of important events - like Animal Crossing 2.0! To achieve this simple layout, select Brain Dump and Post-It Note in our Daily Page builder.</p>
+                            <p><span uk-icon="chevron-double-right"></span>  Brain Dump, Post-It Note</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="images/defaultthreedaytemp.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Add Inspiration</h3>
+                            <p class="uk-margin-remove">Do you have a busy day ahead of you but you can't seem to find the motivation to get started? Include an Inspiration on the page builder and an inspirational quote will automatically be included to give you that boost you need to take on the day.</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="images/fouritemtemp.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Make It Personal</h3>
+                            <p class="uk-margin-remove">description</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/tododetailstemp.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Go Into Detail</h3>
+                            <p class="uk-margin-remove">If the to-do's in your day are too long to fit on one line, add in a brain dump so you don't forget those extra details.</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="images/inspodumptemp.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Do Some Reflecting</h3>
+                            <p class="uk-margin-remove">Use the brain dump widget in tandem with some Inspiration as a moment to reflect on what the selected quote means to you.</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="images/memorydumptemp.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Capture Your Life's Big Moments</h3>
+                            <p class="uk-margin-remove">Use the sticky note and brain dump widgets to keep track of important memories and jot down those crucial details!</p>
+                        </div>
+                    </li> 
+                    <li>
+                        <img src="images/addwidget.png" alt="" uk-cover>
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                            <h3 class="uk-margin-remove">Forget to add an element?</h3>
+                            <p class="uk-margin-remove">If your created template isn't meeting the requirements for your day, don't worry! You can add additional widgets into your daily page easily in the top right corner of your note.</p>
+                        </div>
+                    </li> 
+                </ul>
+                <div class="uk-light">
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+        </div>
     </div>
-</div>
+
+<script src="/js/longterm.js"></script>

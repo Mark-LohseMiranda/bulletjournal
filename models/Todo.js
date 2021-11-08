@@ -103,7 +103,7 @@ Todo.init(
         },
         css: {
             type: DataTypes.STRING,
-            defaultValue: 'position: absolute;',
+            defaultValue: 'position:absolute;top:64.22535211267606vw; left:8.63849765258216vw;',
         }
     },{
         sequelize,

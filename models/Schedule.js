@@ -65,7 +65,7 @@ Schedule.init(
         },
         css: {
             type: DataTypes.STRING,
-            defaultValue: 'position: absolute;',
+            defaultValue: 'position:absolute;top:19.061032863849764vw; left:8.450704225352112vw;',
         }
     },{
         sequelize,

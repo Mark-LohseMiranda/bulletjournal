@@ -5,50 +5,58 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/css/uikit.min.css" />
+    <link rel="shortcut icon" href="/images/logoDark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" id='theme-css'>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit-icons.min.js"></script>
+    
 </head>
 <body>
-<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" id='topnav'>
-    <div class="uk-navbar-left">
-        <a href="" class="uk-navbar-item uk-logo"></a>
-        <ul class="uk-navbar-nav">
-            <li class="uk-active" >
+<nav class="uk-navbar-container uk-margin topnav" uk-navbar="mode: click" id="topnav">
+    <div class="uk-navbar-left topnav">
+        <ul class="uk-navbar-nav topnav">
+            <li>
+                <a href="" class="uk-navbar-item uk-logo"><img src="/images/logoDark.png" width="30px" height="30px" alt="bullet journal squared logo" id="smallLogo"></a>
+            </li>
+            <li class="main-navlink uk-width-auto" >
                 <a href="/" id='active-navlink'>Home</a>
             </li>
-            <li class="uk-active">
+            <li class="main-navlink uk-width-auto">
                 <a href="/dashboard" id='dash-navlink'>Dashboard</a>
             </li>
-            <li>
-                <a href="#" id='more-navlink'>More</a>
-                <div class="uk-navbar-dropdown" id='dropdown'>
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="#ex-templates" uk-toggle>Templates</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#development-modal" uk-toggle>Development</a></li>
-                        <div id="development-modal" uk-modal>
-                            <div class="uk-modal-dialog uk-modal-body">
-                                <h2 class="uk-modal-title">Development</h2>
-                                <a href="https://github.com/lindsfitz"><h4>Lindsay Fitzgerald - Project Manager</h4></a>
-                                <a href="https://github.com/Mark-LohseMiranda"><h4>Mark Lohse-Miranda - Git Coordinator</h4></a>
-                                <a href="https://github.com/axumdzn"><h4>Kenneth Felix - Back-End Engineer</h4></a>
-                                <a href="https://github.com/kelliekumasaka"><h4>Kellie Kumasaka - Front-End Developer</h4></a>
-                                <p class="uk-text-right">
-                                    <button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
-                                </p>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-            </li>
+            <li class="main-navlink uk-width-auto"><a  uk-toggle="target:#about">About</a></li>
+            <li class="main-navlink uk-width-auto"><a  uk-toggle="target: #development-modal">Development</a></li>
         </ul>
     </div>
-    <div class='uk-navbar-right'>
+    <div class='uk-navbar-right topnav'>
         <a href="#" class="uk-icon-button uk-margin-small-right" id='user-icon' style='visibility:hidden;'></a>
         <div uk-dropdown="mode: click" id="welcomeUser"></div>
     </div>
 </nav>
+
+<div id="development-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">Development</h2>
+        <h4>Meet the team!</h4>
+        <a href="https://github.com/lindsfitz"><p>Lindsay Fitzgerald - Project Manager</p></a>
+        <a href="https://github.com/Mark-LohseMiranda"><p>Mark Lohse-Miranda - Git Coordinator</p></a>
+        <a href="https://github.com/axumdzn"><p>Kenneth Felix - Back-End Engineer</p></a>
+        <a href="https://github.com/kelliekumasaka"><p>Kellie Kumasaka - Front-End Developer</p></a>
+    </div>
+</div>
+
+<div id="about" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">About</h2>
+        <p>Bullet Journaling Squared was inspired by bullet journaling, a way to keep track of your daily activities in a fun and personalized way. We wanted to make an online version of this, so that people can view their journals from anywhere, and jot down any thoughts they might have at any moment. Hope you enjoy!</p>
+    </div>
+</div>
+
 <div id="content">
     {{{body}}}
 </div>

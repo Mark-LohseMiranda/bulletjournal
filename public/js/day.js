@@ -3,13 +3,15 @@ const deleteBtn = document.querySelector("#deleteNote");
 const todoList = document.querySelector(".checker");
 let screenWidth = 0;
 const d = new Date();
+const date =  "" + (d.getMonth()+1) + d.getDate() + d.getFullYear();
+
 //get the day from the URL
 
 const day = window.location.toString().split("/")[
   window.location.toString().split("/").length - 1
 ];
 
-if (day == d.getDate()) {
+if (day == date) {
   editPage.removeAttribute("style")
 }
 
@@ -209,7 +211,6 @@ async function movingToTheGroovin() {
 
 window.addEventListener("resize", (e) => {
   screenWidth = document.documentElement.clientWidth;
-  console.log(screenWidth);
   if (screenWidth > 767) {
     movingToTheGroovin();
   } else {
