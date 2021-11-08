@@ -326,7 +326,7 @@ iframe {
 
 /* MODAL FOR DEVELOPERS IN NAV */
 
-#development-modal .uk-modal-body {
+#development-modal .uk-modal-body, #about .uk-modal-body{
   background: var(--mediumcolor);
 }
 
