@@ -2,6 +2,8 @@
 ## About
 Bullet Journal Squared is a website that allows users to create an account, write journal entries, and view their past thoughts and feelings. 
 
+Deployed Link: https://bullet-journal-squared.herokuapp.com/
+
 
 ## Table of Contents
 * [Description](#description)
