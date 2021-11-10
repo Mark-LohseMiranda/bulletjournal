@@ -94,8 +94,8 @@ if (document.getElementById("green_theme")) {
 function loadTheme() {
   var currentTheme = JSON.parse(localStorage.getItem("theme")) || [];
 
-  if (currentTheme === null) {
-    return;
+  if(!currentTheme.includes('.css')){
+    return
   } else {
     document.getElementById("theme-css").href = currentTheme;
   }
