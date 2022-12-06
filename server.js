@@ -3,8 +3,17 @@ const sequelize = require("./config/connection.js")
 const session = require("express-session");
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const { createServer } = require("https");
+const fs = require("fs");
+
+const https_options = {
+    ca: fs.readFileSync("ca_bundle.crt"),
+    key: fs.readFileSync("private.key"),
+    cert: fs.readFileSync("certificate.crt"),
+  };
 
 const app = express();
+const https = createServer(https_options, app);
 const PORT = process.env.PORT || 3000;
 
 const hbs = exphbs.create({
@@ -40,7 +49,7 @@ app.use(express.json());
 app.use(routes)
 
 sequelize.sync({ force: false }).then(function() {
-    app.listen(PORT, function() {
+    https.listen(PORT, function() {
     console.log('App listening on PORT ' + PORT);
     });
 });
